@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("walk")
 	
+	
 	#Apply movement
 	if direction:
 		velocity.x = direction * SPEED
