@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://6d0h0p15nx0x"]
 
-[ext_resource type="Script" path="res://scene/game.gd" id="1_60ujt"]
+[ext_resource type="Script" path="res://script/game.gd" id="1_60ujt"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_xw5h0"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="3_ymg26"]
 [ext_resource type="PackedScene" uid="uid://efvdv3kcd3ax" path="res://scene/coin_2d.tscn" id="4_e503p"]
@@ -197,17 +197,13 @@ position = Vector2(-138, -70)
 zoom = Vector2(3, 3)
 
 [node name="coin1" parent="." instance=ExtResource("4_e503p")]
-position = Vector2(-72, -24)
-
-[node name="coin2" parent="." instance=ExtResource("4_e503p")]
-visible = false
-position = Vector2(149, -27)
+position = Vector2(-142, -77)
 
 [node name="coin3" parent="." instance=ExtResource("4_e503p")]
 position = Vector2(91, -110)
 
 [node name="platform" parent="." instance=ExtResource("5_hckou")]
-position = Vector2(-153, -97)
+position = Vector2(-142, -63)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 

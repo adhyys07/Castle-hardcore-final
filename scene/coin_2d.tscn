@@ -91,7 +91,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"coin",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7shb5"]
@@ -105,7 +105,7 @@ scale = Vector2(1.75, 1.5625)
 sprite_frames = SubResource("SpriteFrames_lkxi1")
 animation = &"coin"
 autoplay = "coin"
-frame_progress = 0.122198
+frame_progress = 0.196546
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, -4)
