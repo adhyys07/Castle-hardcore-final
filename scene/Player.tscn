@@ -1560,3 +1560,13 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-34, -16)
 shape = SubResource("CapsuleShape2D_pocwi")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-34, -16)
+shape = SubResource("CapsuleShape2D_pocwi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
