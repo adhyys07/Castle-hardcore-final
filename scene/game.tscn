@@ -203,3 +203,5 @@ position = Vector2(-142, -63)
 
 [node name="coin_1" parent="." instance=ExtResource("8_8pfrl")]
 position = Vector2(-137, -86)
+
+[connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
