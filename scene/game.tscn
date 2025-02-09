@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="7_ovmy4"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_8pfrl"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjofc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
 texture = ExtResource("2_xw5h0")
 0:0/0 = 0
 1:0/0 = 0
@@ -25,7 +25,7 @@ texture = ExtResource("2_xw5h0")
 2:3/0 = 0
 3:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcvjw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwxuf"]
 texture = ExtResource("3_ymg26")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -160,16 +160,16 @@ texture = ExtResource("3_ymg26")
 2:15/0 = 0
 3:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05f4g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rd7o3"]
 texture = ExtResource("4_pb1cw")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_lyglj"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wjofc")
-sources/1 = SubResource("TileSetAtlasSource_hcvjw")
-sources/2 = SubResource("TileSetAtlasSource_05f4g")
+sources/0 = SubResource("TileSetAtlasSource_6teo4")
+sources/1 = SubResource("TileSetAtlasSource_wwxuf")
+sources/2 = SubResource("TileSetAtlasSource_rd7o3")
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_60ujt")
