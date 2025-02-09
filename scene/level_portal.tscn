@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://csy122of26ss6"]
+
+[ext_resource type="Texture2D" uid="uid://beaxdns5qkfgs" path="res://assets/Pixel Art Animated Portal/sprite-sheet.png" id="1_06akx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spg8r"]
+size = Vector2(46, 46.375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0lv7"]
+atlas = ExtResource("1_06akx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj2ux"]
+atlas = ExtResource("1_06akx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhwy8"]
+atlas = ExtResource("1_06akx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhq32"]
+atlas = ExtResource("1_06akx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3xx3"]
+atlas = ExtResource("1_06akx")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm4wt"]
+atlas = ExtResource("1_06akx")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uh8a"]
+atlas = ExtResource("1_06akx")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xm7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0lv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj2ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhwy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhq32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3xx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm4wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uh8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm4wt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 17.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(153, -41)
+shape = SubResource("RectangleShape2D_spg8r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(153, -40)
+sprite_frames = SubResource("SpriteFrames_7xm7r")
+autoplay = "default"
+frame_progress = 0.494021

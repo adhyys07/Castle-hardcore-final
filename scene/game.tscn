@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="4_pb1cw"]
 [ext_resource type="PackedScene" uid="uid://clmfafvgxfd5t" path="res://scene/platform .tscn" id="5_hckou"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="6_6gkk4"]
+[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="7_ovmy4"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_8pfrl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjofc"]
@@ -170,9 +171,6 @@ sources/0 = SubResource("TileSetAtlasSource_wjofc")
 sources/1 = SubResource("TileSetAtlasSource_hcvjw")
 sources/2 = SubResource("TileSetAtlasSource_05f4g")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spg8r"]
-size = Vector2(84, 46.375)
-
 [node name="game" type="Node2D"]
 script = ExtResource("1_60ujt")
 
@@ -201,20 +199,7 @@ position = Vector2(-142, -63)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
-offset_left = 207.0
-offset_top = -53.0
-offset_right = 246.0
-offset_bottom = -15.0
-color = Color(0, 0, 0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(246, -49.1875)
-shape = SubResource("RectangleShape2D_spg8r")
+[node name="level_portal1" parent="." instance=ExtResource("7_ovmy4")]
 
 [node name="coin_1" parent="." instance=ExtResource("8_8pfrl")]
 position = Vector2(-137, -86)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
