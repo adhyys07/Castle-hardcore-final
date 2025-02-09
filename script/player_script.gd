@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @onready
 var sprite = $AnimatedSprite2D
@@ -49,3 +49,5 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
 			body.Collect()
+			
+			

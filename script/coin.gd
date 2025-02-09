@@ -1,6 +1,11 @@
-extends StaticBody2D
+extends Area2D
 
-@export var value = 1
+func _ready() -> void:
+	pass
+	
+@export var value: int = 1
 
-func Collect():
-	queue_free()
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		Gamecontroller.coin_collected(value)
+		self.queue_free()
