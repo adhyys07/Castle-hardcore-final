@@ -1232,7 +1232,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1554,8 +1554,9 @@ script = ExtResource("1_2ubww")
 position = Vector2(-28, -25)
 scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
-animation = &"attack"
+animation = &"leap"
 autoplay = "idle"
+frame_progress = 0.0747382
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-34, -16)

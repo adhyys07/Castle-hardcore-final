@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cysxdwxs7s0nm"]
+[gd_scene load_steps=10 format=3 uid="uid://cysxdwxs7s0nm"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_1na3d"]
 [ext_resource type="Script" path="res://script/level_2.gd" id="1_lyjr5"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_2a7h7"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="2_g414m"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_jv5ba"]
+[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_miude"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2g28"]
 texture = ExtResource("1_1na3d")
@@ -163,5 +164,7 @@ position = Vector2(104, -14)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(325, -73)
 zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_miude")]
 
 [connection signal="body_entered" from="level_portal2" to="." method="_on_area_2d_body_entered"]

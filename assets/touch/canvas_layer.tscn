@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cosvs0c8lbcgk"]
+
+[ext_resource type="Script" path="res://assets/touch/touch.gd" id="1_4b2st"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_4b2st")
