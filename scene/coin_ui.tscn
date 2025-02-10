@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn5fcfg4mn50x"]
 
-[ext_resource type="Texture2D" uid="uid://fxrh2v40cwew" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="1_60lvr"]
 [ext_resource type="Script" path="res://script/coin_ui.gd" id="1_88rqi"]
+[ext_resource type="Texture2D" uid="uid://b1vubonhwhsfu" path="res://assets/coin.png" id="2_4sseu"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -14,18 +14,23 @@ script = ExtResource("1_88rqi")
 
 [node name="TextureRect" type="TextureRect" parent="coin_ui"]
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("1_60lvr")
-expand_mode = 1
-stretch_mode = 1
+offset_left = 1820.0
+offset_top = 1.0
+offset_right = 1875.0
+offset_bottom = 55.0
+texture = ExtResource("2_4sseu")
 
 [node name="Label" type="Label" parent="coin_ui"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = -10.0
-offset_right = 36.0
-offset_bottom = 25.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 48.0
+anchor_top = 0.5
+anchor_right = 48.0
+anchor_bottom = 0.5
+offset_left = -60.0001
+offset_top = -9.0
+offset_right = -1.00012
+offset_bottom = 26.0
 theme_override_font_sizes/font_size = 25
 text = "0"
 horizontal_alignment = 1
