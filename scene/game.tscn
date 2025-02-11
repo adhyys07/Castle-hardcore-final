@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://6d0h0p15nx0x"]
+[gd_scene load_steps=14 format=4 uid="uid://6d0h0p15nx0x"]
 
 [ext_resource type="Script" path="res://script/game.gd" id="1_60ujt"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_xw5h0"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="7_ovmy4"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_8pfrl"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="9_qoi7g"]
-[ext_resource type="PackedScene" uid="uid://brq8clinmh2dr" path="res://assets/canvas_layer.tscn" id="10_otw1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
 texture = ExtResource("2_xw5h0")
@@ -186,6 +185,7 @@ root_node = NodePath("")
 position = Vector2(-7, -1)
 tile_set = SubResource("TileSet_lyglj")
 format = 2
+layer_0/tile_data = PackedInt32Array(-1, 2, 0, 65539, 2, 0)
 
 [node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
@@ -210,13 +210,5 @@ position = Vector2(-137, -86)
 
 [node name="coin_2" parent="." instance=ExtResource("8_8pfrl")]
 position = Vector2(-72, -26)
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CanvasLayer" parent="Control" instance=ExtResource("10_otw1t")]
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
