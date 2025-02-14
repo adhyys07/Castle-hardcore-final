@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c053ub4jan1b7"]
+[gd_scene load_steps=12 format=4 uid="uid://c053ub4jan1b7"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_ky3s0"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_r4dhi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_1rtl8"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_nllls"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
+[ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mob.tscn" id="7_q215r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
 texture = ExtResource("1_r4dhi")
@@ -189,3 +190,6 @@ tile_map_data = PackedByteArray("AAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD8/wAAAgAAAAA
 tile_set = SubResource("TileSet_v5t0b")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_bqdhi")]
+
+[node name="mob" parent="." instance=ExtResource("7_q215r")]
+position = Vector2(-138, -15)

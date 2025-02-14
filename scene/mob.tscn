@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://busc6tswoyesa"]
+
+[ext_resource type="Texture2D" uid="uid://fsmqtjx2fi5w" path="res://assets/OutlinedRat/rat-idle-outline.png" id="1_k7crr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1ppk"]
+atlas = ExtResource("1_k7crr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25vrj"]
+atlas = ExtResource("1_k7crr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42mp7"]
+atlas = ExtResource("1_k7crr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwr6s"]
+atlas = ExtResource("1_k7crr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blv55"]
+atlas = ExtResource("1_k7crr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjwfm"]
+atlas = ExtResource("1_k7crr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7c60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1ppk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25vrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42mp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwr6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blv55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjwfm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="mob" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(22.5, -20.7751)
+scale = Vector2(1.34375, 1.20457)
+sprite_frames = SubResource("SpriteFrames_g7c60")
+autoplay = "default"
+frame_progress = 0.909866
+offset = Vector2(0, 0.04)
+flip_h = true
