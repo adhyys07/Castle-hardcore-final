@@ -1556,7 +1556,8 @@ scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
 animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.242925
+frame = 11
+frame_progress = 0.349595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-34, -16)

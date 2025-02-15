@@ -1,17 +1,16 @@
-[gd_scene load_steps=14 format=4 uid="uid://6d0h0p15nx0x"]
+[gd_scene load_steps=13 format=4 uid="uid://6d0h0p15nx0x"]
 
-[ext_resource type="Script" path="res://script/game.gd" id="1_60ujt"]
-[ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_xw5h0"]
-[ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="3_ymg26"]
-[ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="4_pb1cw"]
-[ext_resource type="PackedScene" uid="uid://clmfafvgxfd5t" path="res://scene/platform .tscn" id="5_hckou"]
-[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="6_6gkk4"]
-[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="7_ovmy4"]
-[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_8pfrl"]
-[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="9_qoi7g"]
+[ext_resource type="Script" path="res://script/level_1.gd" id="1_icvv3"]
+[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_4v5uf"]
+[ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="3_qqls0"]
+[ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_ij7ey"]
+[ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="5_ghyud"]
+[ext_resource type="PackedScene" uid="uid://clmfafvgxfd5t" path="res://scene/platform .tscn" id="6_wnjro"]
+[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="7_5qagi"]
+[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_fh5km"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
-texture = ExtResource("2_xw5h0")
+texture = ExtResource("3_qqls0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -27,7 +26,7 @@ texture = ExtResource("2_xw5h0")
 3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwxuf"]
-texture = ExtResource("3_ymg26")
+texture = ExtResource("4_ij7ey")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -162,7 +161,7 @@ texture = ExtResource("3_ymg26")
 3:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rd7o3"]
-texture = ExtResource("4_pb1cw")
+texture = ExtResource("5_ghyud")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
@@ -172,10 +171,10 @@ sources/0 = SubResource("TileSetAtlasSource_6teo4")
 sources/1 = SubResource("TileSetAtlasSource_wwxuf")
 sources/2 = SubResource("TileSetAtlasSource_rd7o3")
 
-[node name="game" type="Node2D"]
-script = ExtResource("1_60ujt")
+[node name="level_1" type="Node2D"]
+script = ExtResource("1_icvv3")
 
-[node name="Player" parent="." instance=ExtResource("6_6gkk4")]
+[node name="Player" parent="." instance=ExtResource("2_4v5uf")]
 position = Vector2(-398, -18)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -196,19 +195,17 @@ tile_set = SubResource("TileSet_lyglj")
 position = Vector2(-138, -70)
 zoom = Vector2(3, 3)
 
-[node name="platform" parent="." instance=ExtResource("5_hckou")]
+[node name="platform" parent="." instance=ExtResource("6_wnjro")]
 position = Vector2(-142, -63)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 
-[node name="level_portal1" parent="." instance=ExtResource("7_ovmy4")]
+[node name="level_portal1" parent="." instance=ExtResource("7_5qagi")]
 
-[node name="coin_1" parent="." instance=ExtResource("8_8pfrl")]
+[node name="coin_1" parent="." instance=ExtResource("8_fh5km")]
 position = Vector2(-137, -86)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("9_qoi7g")]
-
-[node name="coin_2" parent="." instance=ExtResource("8_8pfrl")]
+[node name="coin_2" parent="." instance=ExtResource("8_fh5km")]
 position = Vector2(-72, -26)
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
