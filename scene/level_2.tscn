@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cysxdwxs7s0nm"]
+[gd_scene load_steps=11 format=3 uid="uid://cysxdwxs7s0nm"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_1na3d"]
 [ext_resource type="Script" path="res://script/level_2.gd" id="1_lyjr5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="2_g414m"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_jv5ba"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_miude"]
+[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="7_m4q1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2g28"]
 texture = ExtResource("1_1na3d")
@@ -166,5 +167,11 @@ position = Vector2(325, -73)
 zoom = Vector2(3, 3)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_miude")]
+
+[node name="Area2D" parent="." instance=ExtResource("7_m4q1d")]
+position = Vector2(254, -55)
+
+[node name="Area2D2" parent="." instance=ExtResource("7_m4q1d")]
+position = Vector2(494, -46)
 
 [connection signal="body_entered" from="level_portal2" to="." method="_on_area_2d_body_entered"]

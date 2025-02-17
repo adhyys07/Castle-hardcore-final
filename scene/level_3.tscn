@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://c053ub4jan1b7"]
+[gd_scene load_steps=13 format=4 uid="uid://c053ub4jan1b7"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_ky3s0"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_r4dhi"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_nllls"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
 [ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mob.tscn" id="7_q215r"]
+[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_ph1le"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
 texture = ExtResource("1_r4dhi")
@@ -193,3 +194,9 @@ tile_set = SubResource("TileSet_v5t0b")
 
 [node name="mob" parent="." instance=ExtResource("7_q215r")]
 position = Vector2(-138, -15)
+
+[node name="Area2D" parent="." instance=ExtResource("8_ph1le")]
+position = Vector2(-111, -74)
+
+[node name="Area2D2" parent="." instance=ExtResource("8_ph1le")]
+position = Vector2(56, -1)
