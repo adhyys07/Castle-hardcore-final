@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://busc6tswoyesa"]
+[gd_scene load_steps=10 format=3 uid="uid://busc6tswoyesa"]
 
 [ext_resource type="Texture2D" uid="uid://fsmqtjx2fi5w" path="res://assets/OutlinedRat/rat-idle-outline.png" id="1_k7crr"]
 
@@ -52,9 +52,13 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_d8w6b"]
+
 [node name="mob" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 position = Vector2(22.5, -20.7751)
 scale = Vector2(1.34375, 1.20457)
 sprite_frames = SubResource("SpriteFrames_g7c60")
@@ -62,3 +66,7 @@ autoplay = "default"
 frame_progress = 0.909866
 offset = Vector2(0, 0.04)
 flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(20, -9)
+shape = SubResource("CircleShape2D_d8w6b")

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://8ms87mq81cuk"]
+
+[ext_resource type="Script" path="res://script/main_menu.gd" id="1_a6jqb"]
+[ext_resource type="Texture2D" uid="uid://cqb4veq8mcrjb" path="res://assets/bgi.png" id="2_5xsr3"]
+[ext_resource type="Texture2D" uid="uid://40x27pxccd81" path="res://assets/icons8-circled-play-100.png" id="3_15hnw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jp8b6"]
+texture = ExtResource("2_5xsr3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fah2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a6jqb")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1076.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jp8b6")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.731
+anchor_right = 0.5
+anchor_bottom = 0.731
+offset_left = -52.0
+offset_top = -49.48
+offset_right = 48.0
+offset_bottom = 50.52
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1fah2")
+icon = ExtResource("3_15hnw")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
