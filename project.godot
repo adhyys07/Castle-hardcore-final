@@ -25,6 +25,10 @@ Gamecontroller="*res://script/gamecontroller.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[global_group]
+
+mob=""
+
 [importer_defaults]
 
 animation_library={
