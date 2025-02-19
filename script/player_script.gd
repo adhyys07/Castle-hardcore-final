@@ -58,13 +58,13 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
-			body.Collect()
+		body.Collect()
 
 		
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
-		_file("res://scene/main_menu.tscn")
-print("youre gay")
+		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+			#print("youre gay")
 		#animated_sprite.play("death")
 		#OS.delay_msec(1000)
 		#get_tree().change_scene_to

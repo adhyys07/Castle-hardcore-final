@@ -1,11 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwbycoo62m3w5"]
+[gd_scene load_steps=9 format=3 uid="uid://cwbycoo62m3w5"]
 
 [ext_resource type="Script" path="res://script/enemy_1.gd" id="1_4ctc7"]
 [ext_resource type="Texture2D" uid="uid://bc7btcwxj13pn" path="res://assets/32x32-bat-sprite.png" id="3_kspoh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n58bw"]
-atlas = ExtResource("3_kspoh")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g43mw"]
 atlas = ExtResource("3_kspoh")
@@ -23,9 +19,6 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n58bw")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_g43mw")
 }, {
 "duration": 1.0,
@@ -36,7 +29,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"defaults",
-"speed": 12.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8w6b"]
@@ -45,6 +38,7 @@ animations = [{
 radius = 12.0416
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["mob"]]
+gravity_scale = 0.0
 script = ExtResource("1_4ctc7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -53,6 +47,7 @@ scale = Vector2(1.34375, 1.20457)
 sprite_frames = SubResource("SpriteFrames_g7c60")
 animation = &"defaults"
 autoplay = "defaults"
+frame_progress = 0.833012
 offset = Vector2(0, 0.04)
 flip_h = true
 

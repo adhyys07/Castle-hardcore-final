@@ -213,6 +213,6 @@ position = Vector2(-72, -26)
 [node name="CanvasLayer" parent="." instance=ExtResource("9_vd1iu")]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("10_7yj7q")]
-position = Vector2(-169, -16)
+position = Vector2(-176, -85)
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
