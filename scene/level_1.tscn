@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://6d0h0p15nx0x"]
+[gd_scene load_steps=20 format=4 uid="uid://6d0h0p15nx0x"]
 
 [ext_resource type="Script" path="res://script/level_1.gd" id="1_icvv3"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_4v5uf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="9_vd1iu"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://Mob1.tscn" id="10_7yj7q"]
 [ext_resource type="Script" path="res://scene/trapmap.gd" id="11_a83uf"]
+[ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="12_rmmfb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
 texture = ExtResource("3_qqls0")
@@ -226,7 +227,7 @@ position = Vector2(-72, -26)
 [node name="CanvasLayer" parent="." instance=ExtResource("9_vd1iu")]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("10_7yj7q")]
-position = Vector2(-211, -61)
+position = Vector2(-221, -52)
 
 [node name="trapmap" type="TileMap" parent="."]
 position = Vector2(-7, -1)
@@ -241,6 +242,12 @@ position = Vector2(61, -63)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trapmap/Area2D"]
 position = Vector2(-469, 55)
 shape = SubResource("RectangleShape2D_q8jyw")
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("12_rmmfb")]
+position = Vector2(-317, -7)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("12_rmmfb")]
+position = Vector2(29, -57)
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
 [connection signal="body_entered" from="trapmap/Area2D" to="trapmap" method="_on_area_2d_body_entered"]

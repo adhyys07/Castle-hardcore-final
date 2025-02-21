@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c053ub4jan1b7"]
+[gd_scene load_steps=14 format=4 uid="uid://c053ub4jan1b7"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_ky3s0"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_r4dhi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://Mob1.tscn" id="8_24oop"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_ph1le"]
+[ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="9_lmagp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
 texture = ExtResource("1_r4dhi")
@@ -206,3 +207,18 @@ position = Vector2(-179, 33)
 
 [node name="Area2D4" parent="." instance=ExtResource("8_ph1le")]
 position = Vector2(188, -33)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("9_lmagp")]
+position = Vector2(-15, 72)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("9_lmagp")]
+position = Vector2(10, 71)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("9_lmagp")]
+position = Vector2(47, 72)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("9_lmagp")]
+position = Vector2(72, 73)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("9_lmagp")]
+position = Vector2(284, 88)
