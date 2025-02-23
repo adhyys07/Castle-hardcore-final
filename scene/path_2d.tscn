@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5upm72n0uyky"]
+
+[ext_resource type="Script" path="res://script/path_follow_2d.gd" id="1_4ulqx"]
+[ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="2_ihhgr"]
+
+[sub_resource type="Curve2D" id="Curve2D_24xl2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 133, 186, 0, 0, 0, 0, 432, 180, 0, 0, 0, 0, 135, 186, 0, 0, 0, 0, 134, 188, 0, 0, 0, 0, 280, 341)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f42k"]
+size = Vector2(119.588, 121.424)
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_24xl2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(133, 186)
+rotation = -0.0200642
+script = ExtResource("1_4ulqx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/StaticBody2D"]
+texture = ExtResource("2_ihhgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/StaticBody2D"]
+position = Vector2(0.989746, 0.519958)
+shape = SubResource("RectangleShape2D_5f42k")

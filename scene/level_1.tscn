@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://6d0h0p15nx0x"]
+[gd_scene load_steps=24 format=4 uid="uid://6d0h0p15nx0x"]
 
 [ext_resource type="Script" path="res://script/level_1.gd" id="1_icvv3"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_4v5uf"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://Mob1.tscn" id="10_7yj7q"]
 [ext_resource type="Script" path="res://scene/trapmap.gd" id="11_a83uf"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="12_rmmfb"]
+[ext_resource type="Script" path="res://scene/path_follow_2d.gd" id="13_xfdes"]
+[ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="14_kkl7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
 texture = ExtResource("3_qqls0")
@@ -187,6 +189,15 @@ sources/0 = SubResource("TileSetAtlasSource_fk1js")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8jyw"]
 size = Vector2(56, 24)
 
+[sub_resource type="Curve2D" id="Curve2D_jbuwa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -342, -69, 0, 0, 0, 0, -231, -70, 0, 0, 0, 0, -342, -69)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nceqv"]
+size = Vector2(50.9706, 3.97436)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_icvv3")
 
@@ -248,6 +259,25 @@ position = Vector2(-317, -7)
 
 [node name="RigidBody2D3" parent="." instance=ExtResource("12_rmmfb")]
 position = Vector2(29, -57)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jbuwa")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-342, -69)
+rotation = -0.00900877
+script = ExtResource("13_xfdes")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/StaticBody2D"]
+position = Vector2(1.99982, 0.0253143)
+scale = Vector2(0.428168, 0.0377268)
+texture = ExtResource("14_kkl7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/StaticBody2D"]
+position = Vector2(2.53775, 0.0253448)
+shape = SubResource("RectangleShape2D_nceqv")
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
 [connection signal="body_entered" from="trapmap/Area2D" to="trapmap" method="_on_area_2d_body_entered"]
