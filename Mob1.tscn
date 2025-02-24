@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8w6b"]
@@ -52,6 +52,8 @@ script = ExtResource("1_4ctc7")
 position = Vector2(21, -30)
 scale = Vector2(1.34375, 1.20457)
 sprite_frames = SubResource("SpriteFrames_6sq6r")
+autoplay = "default"
+frame_progress = 0.649967
 offset = Vector2(0, 0.04)
 flip_h = true
 

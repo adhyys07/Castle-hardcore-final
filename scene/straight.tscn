@@ -1,13 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://6oje38rv3gh6"]
+[gd_scene load_steps=7 format=3 uid="uid://6oje38rv3gh6"]
 
 [ext_resource type="Script" path="res://script/path_2d.gd" id="1_w47cc"]
 [ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="2_v0p7w"]
-
-[sub_resource type="Curve2D" id="Curve2D_ebqic"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 370, 251, 0, 0, 0, 0, 585, 246)
-}
-point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
 size = Vector2(76.9792, 5.85896)
@@ -50,11 +44,10 @@ _data = {
 }
 
 [node name="Straight" type="Path2D"]
-curve = SubResource("Curve2D_ebqic")
 script = ExtResource("1_w47cc")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(578.514, 246.151)
+position = Vector2(370, 251)
 rotation = -0.0232516
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]

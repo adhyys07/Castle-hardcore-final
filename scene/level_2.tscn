@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cysxdwxs7s0nm"]
+[gd_scene load_steps=15 format=3 uid="uid://cysxdwxs7s0nm"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_1na3d"]
 [ext_resource type="Script" path="res://script/level_2.gd" id="1_lyjr5"]
@@ -151,6 +151,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i2g28")
 sources/1 = SubResource("TileSetAtlasSource_tsyfu")
 
+[sub_resource type="Curve2D" id="Curve2D_2skhj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 375, 252, 0, 0, 0, 0, 477, 253)
+}
+point_count = 2
+
 [node name="level2" type="Node2D"]
 script = ExtResource("1_lyjr5")
 
@@ -206,5 +212,7 @@ position = Vector2(138, -216)
 
 [node name="Straight" parent="." instance=ExtResource("10_hf73m")]
 position = Vector2(-81, -333)
+curve = SubResource("Curve2D_2skhj")
+loop = false
 
 [connection signal="body_entered" from="level_portal2" to="." method="_on_area_2d_body_entered"]

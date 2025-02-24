@@ -7,12 +7,11 @@ extends Path2D
 @onready var path = $PathFollow2D
 @onready var animation = $AnimationPlayer
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready():
 	if not loop:
 		animation.play("new_animation")
 		animation.speed_scale = speed_scale
-		set_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta):
 	path.progress += speed
