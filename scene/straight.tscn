@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://6oje38rv3gh6"]
 
 [ext_resource type="Script" path="res://script/path_2d.gd" id="1_w47cc"]
-[ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="2_v0p7w"]
+[ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_ak1j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
-size = Vector2(76.9792, 5.85896)
+size = Vector2(32.0146, 6.92841)
 
 [sub_resource type="Animation" id="Animation_834ap"]
 resource_name = "new_animation"
@@ -52,11 +52,12 @@ rotation = -0.0232516
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(1.04524, 2.28418)
-scale = Vector2(0.60948, 0.0525821)
-texture = ExtResource("2_v0p7w")
+texture = ExtResource("2_ak1j0")
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(-0.523132, 3.02243)
+position = Vector2(0.941589, 2.4877)
 shape = SubResource("RectangleShape2D_5tyy2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

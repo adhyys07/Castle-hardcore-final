@@ -1,4 +1,4 @@
-[gd_scene load_steps=225 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=226 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_2ubww"]
 [ext_resource type="Texture2D" uid="uid://cgq86ww6oq4dg" path="res://assets/sheets/spr_Idle_strip.png" id="1_dbfoi"]
@@ -1543,9 +1543,11 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pocwi"]
-radius = 8.0
-height = 26.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bewli"]
+size = Vector2(14, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngksc"]
+size = Vector2(16, 28)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2ubww")
@@ -1560,8 +1562,8 @@ frame = 11
 frame_progress = 0.349595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-34, -14)
-shape = SubResource("CapsuleShape2D_pocwi")
+position = Vector2(-34, -15.5)
+shape = SubResource("RectangleShape2D_bewli")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -1569,6 +1571,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-34, -16)
-shape = SubResource("CapsuleShape2D_pocwi")
+shape = SubResource("RectangleShape2D_ngksc")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

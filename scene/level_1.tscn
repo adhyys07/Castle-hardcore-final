@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://6d0h0p15nx0x"]
+[gd_scene load_steps=21 format=4 uid="uid://6d0h0p15nx0x"]
 
 [ext_resource type="Script" path="res://script/level_1.gd" id="1_icvv3"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_4v5uf"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://Mob1.tscn" id="10_7yj7q"]
 [ext_resource type="Script" path="res://scene/trapmap.gd" id="11_a83uf"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="12_rmmfb"]
+[ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="13_bptp0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
 texture = ExtResource("3_qqls0")
@@ -248,6 +249,9 @@ position = Vector2(-317, -7)
 
 [node name="RigidBody2D3" parent="." instance=ExtResource("12_rmmfb")]
 position = Vector2(29, -57)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("13_bptp0")]
+position = Vector2(-296, -69)
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
 [connection signal="body_entered" from="trapmap/Area2D" to="trapmap" method="_on_area_2d_body_entered"]
