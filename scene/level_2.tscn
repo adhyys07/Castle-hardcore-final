@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cysxdwxs7s0nm"]
+[gd_scene load_steps=14 format=3 uid="uid://cysxdwxs7s0nm"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_1na3d"]
 [ext_resource type="Script" path="res://script/level_2.gd" id="1_lyjr5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="7_m4q1d"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://Mob1.tscn" id="8_f1kqi"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="9_lffid"]
+[ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/straight.tscn" id="10_hf73m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2g28"]
 texture = ExtResource("1_1na3d")
@@ -202,5 +203,8 @@ position = Vector2(107, -214)
 
 [node name="RigidBody2D5" parent="." instance=ExtResource("9_lffid")]
 position = Vector2(138, -216)
+
+[node name="Straight" parent="." instance=ExtResource("10_hf73m")]
+position = Vector2(-81, -333)
 
 [connection signal="body_entered" from="level_portal2" to="." method="_on_area_2d_body_entered"]
