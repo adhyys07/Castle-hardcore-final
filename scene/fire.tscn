@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"defaults",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8w6b"]
@@ -82,7 +82,7 @@ scale = Vector2(0.255229, 0.178469)
 sprite_frames = SubResource("SpriteFrames_g7c60")
 animation = &"defaults"
 autoplay = "defaults"
-frame_progress = 0.41691
+frame_progress = 0.270089
 offset = Vector2(0, 0.04)
 flip_h = true
 
