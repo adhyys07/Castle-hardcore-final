@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="7_5qagi"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="8_fh5km"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="9_vd1iu"]
-[ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://Mob1.tscn" id="10_7yj7q"]
+[ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/Mob1.tscn" id="10_7yj7q"]
 [ext_resource type="Script" path="res://scene/trapmap.gd" id="11_a83uf"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="12_rmmfb"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="13_bptp0"]

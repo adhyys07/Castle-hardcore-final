@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5olu331mj7qw"]
 
-[ext_resource type="Texture2D" uid="uid://b1p6a1q4rifmk" path="res://kenney_onscreen-controls/Sprites/line-light/lineLight23.png" id="1_bj8pi"]
-[ext_resource type="Texture2D" uid="uid://dlh5ir6i84cjx" path="res://kenney_onscreen-controls/Sprites/line-light/lineLight22.png" id="2_glhbu"]
-[ext_resource type="Texture2D" uid="uid://mxmespxj6tp6" path="res://kenney_onscreen-controls/Sprites/line-light/lineLight24.png" id="3_3idxe"]
+[ext_resource type="Texture2D" uid="uid://b1p6a1q4rifmk" path="res://android/kenney_onscreen-controls/Sprites/line-light/lineLight23.png" id="1_bj8pi"]
+[ext_resource type="Texture2D" uid="uid://dlh5ir6i84cjx" path="res://android/kenney_onscreen-controls/Sprites/line-light/lineLight22.png" id="2_glhbu"]
+[ext_resource type="Texture2D" uid="uid://mxmespxj6tp6" path="res://android/kenney_onscreen-controls/Sprites/line-light/lineLight24.png" id="3_3idxe"]
 
 [node name="TouchControls" type="CanvasLayer"]
 
