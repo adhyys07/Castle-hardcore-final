@@ -7,7 +7,7 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -350.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@export var attack = false
 
 func _process(delta: float) -> void:
 	# Add the gravity.
@@ -17,19 +17,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
-	#get input direction
 	var direction := Input.get_axis("ui_left", "ui_right")
-	
-	#Flip the sprite
+
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
-	#Play animation
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
@@ -42,25 +36,20 @@ func _process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
 	move_and_slide()
 	
-	if is_on_floor():
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			if not animated_sprite.is_playing() or animated_sprite.animation != "attack":
-				animated_sprite.play("attack")
-			else:
-				if not animated_sprite.is_playing() or animated_sprite.animation == "attack":
-					animated_sprite.play("idle")
-
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
 		body.Collect()
-
 		
+
+func attack2():
+	attack = true
+	animated_sprite.play("attack")
+			
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
 		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
@@ -68,3 +57,11 @@ func mob_entered(body: Node2D) -> void:
 		#animated_sprite.play("death")
 		#OS.delay_msec(1000)
 		#get_tree().change_scene_to
+		
+func _process2(delta):
+	if Input.is_action_just_pressed("attack"):
+		attack2()
+		
+
+	
+	

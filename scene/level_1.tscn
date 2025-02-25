@@ -228,7 +228,7 @@ position = Vector2(-72, -26)
 [node name="CanvasLayer" parent="." instance=ExtResource("9_vd1iu")]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("10_7yj7q")]
-position = Vector2(-221, -52)
+position = Vector2(-225, -98)
 
 [node name="trapmap" type="TileMap" parent="."]
 position = Vector2(-7, -1)
@@ -245,7 +245,7 @@ position = Vector2(-469, 55)
 shape = SubResource("RectangleShape2D_q8jyw")
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("12_rmmfb")]
-position = Vector2(-317, -7)
+position = Vector2(-377, -169)
 
 [node name="RigidBody2D3" parent="." instance=ExtResource("12_rmmfb")]
 position = Vector2(29, -57)

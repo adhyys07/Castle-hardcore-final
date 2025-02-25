@@ -1,19 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c670a5netct3d"]
+[gd_scene load_steps=2 format=3 uid="uid://c670a5netct3d"]
 
-[ext_resource type="PackedScene" uid="uid://6d0h0p15nx0x" path="res://scene/level_1.tscn" id="1_jwqwi"]
-[ext_resource type="PackedScene" uid="uid://cysxdwxs7s0nm" path="res://scene/level_2.tscn" id="2_v8vwb"]
-[ext_resource type="PackedScene" uid="uid://c053ub4jan1b7" path="res://scene/level_3.tscn" id="3_gf2eu"]
-[ext_resource type="PackedScene" uid="uid://kudrosoiw0t0" path="res://scene/level_4.tscn" id="4_vi61w"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="5_hocwk"]
 
 [node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_hocwk")]
-
-[node name="level_1" parent="." instance=ExtResource("1_jwqwi")]
-
-[node name="level2" parent="." instance=ExtResource("2_v8vwb")]
-
-[node name="level_3" parent="." instance=ExtResource("3_gf2eu")]
-
-[node name="level4" parent="." instance=ExtResource("4_vi61w")]
