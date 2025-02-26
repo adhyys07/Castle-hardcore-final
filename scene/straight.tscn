@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_ak1j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
-size = Vector2(32.0146, 6.92841)
+size = Vector2(32.3725, 7.99265)
 
 [sub_resource type="Animation" id="Animation_cu4j1"]
-length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,10 +15,10 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_834ap"]
@@ -47,8 +47,8 @@ _data = {
 script = ExtResource("1_w47cc")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(370, 251)
-rotation = -0.0232516
+position = Vector2(0.976471, 1.02298)
+rotation = 0.0428566
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(1.04524, 2.28418)
@@ -57,12 +57,12 @@ region_enabled = true
 region_rect = Rect2(16, 16, 32, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0.941589, 2.4877)
+position = Vector2(1.12055, 2.24494)
 shape = SubResource("RectangleShape2D_5tyy2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(370, 251)
-rotation = -0.0232516
+position = Vector2(0.976471, 1.02298)
+rotation = 0.0428566
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")

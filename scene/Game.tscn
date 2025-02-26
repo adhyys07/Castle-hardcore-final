@@ -1,7 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c670a5netct3d"]
+[gd_scene load_steps=6 format=3 uid="uid://c670a5netct3d"]
 
+[ext_resource type="PackedScene" uid="uid://6d0h0p15nx0x" path="res://scene/level_1.tscn" id="2_ajnkx"]
+[ext_resource type="PackedScene" uid="uid://cysxdwxs7s0nm" path="res://scene/level_2.tscn" id="3_wgvr0"]
+[ext_resource type="PackedScene" uid="uid://c053ub4jan1b7" path="res://scene/level_3.tscn" id="4_t7oyh"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="5_hocwk"]
+[ext_resource type="PackedScene" uid="uid://kudrosoiw0t0" path="res://scene/level_4.tscn" id="5_riqj1"]
 
 [node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_hocwk")]
+
+[node name="level_1" parent="." instance=ExtResource("2_ajnkx")]
+position = Vector2(-184, -95)
+
+[node name="level2" parent="." instance=ExtResource("3_wgvr0")]
+position = Vector2(-2, -107)
+
+[node name="level_3" parent="." instance=ExtResource("4_t7oyh")]
+position = Vector2(-319, 182)
+
+[node name="level4" parent="." instance=ExtResource("5_riqj1")]
+position = Vector2(321, 179)

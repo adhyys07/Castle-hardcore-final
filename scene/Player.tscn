@@ -1,4 +1,4 @@
-[gd_scene load_steps=225 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=226 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_2ubww"]
 [ext_resource type="Texture2D" uid="uid://cgq86ww6oq4dg" path="res://assets/sheets/spr_Idle_strip.png" id="1_dbfoi"]
@@ -1544,7 +1544,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bewli"]
-size = Vector2(24, 29)
+size = Vector2(14, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_278y1"]
+size = Vector2(13, 20)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2ubww")
@@ -1556,12 +1559,19 @@ sprite_frames = SubResource("SpriteFrames_ytty7")
 animation = &"attack"
 autoplay = "idle"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-40, -16)
+position = Vector2(-35, -16)
 shape = SubResource("RectangleShape2D_bewli")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-34.5, -17)
+shape = SubResource("RectangleShape2D_278y1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
