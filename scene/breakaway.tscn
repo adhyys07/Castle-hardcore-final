@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://script/breakaway.gd" id="1_w1286"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_vk1rb"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qq50q"]
 size = Vector2(14, 14)
 
