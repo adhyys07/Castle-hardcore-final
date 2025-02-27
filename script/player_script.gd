@@ -62,6 +62,8 @@ func _process2(delta):
 	if Input.is_action_just_pressed("attack"):
 		attack2()
 		
-
+func _input(event: InputEvent):
+	if(event.is_action_pressed("ui_down")):
+		position.y += 1
 	
 	

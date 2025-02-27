@@ -3,64 +3,64 @@
 [ext_resource type="Script" path="res://script/enemy_1.gd" id="1_wbj36"]
 [ext_resource type="Texture2D" uid="uid://dhj8m5d2og0jy" path="res://assets/faaltu/original-fe273949060eb9c7600927ec6f50e85b-357016309-Photoroom.png" id="2_814qc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ko56s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_78823"]
 atlas = ExtResource("2_814qc")
-region = Rect2(127, 423, 127, 423)
+region = Rect2(128, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ohx0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_prruf"]
 atlas = ExtResource("2_814qc")
-region = Rect2(254, 423, 127, 423)
+region = Rect2(256, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtng3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdkmr"]
 atlas = ExtResource("2_814qc")
-region = Rect2(381, 423, 127, 423)
+region = Rect2(384, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tnq1t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr48m"]
 atlas = ExtResource("2_814qc")
-region = Rect2(508, 423, 127, 423)
+region = Rect2(512, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_epndw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yei6o"]
 atlas = ExtResource("2_814qc")
-region = Rect2(635, 423, 127, 423)
+region = Rect2(640, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_024qx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_js5je"]
 atlas = ExtResource("2_814qc")
-region = Rect2(762, 423, 127, 423)
+region = Rect2(768, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_20jpr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwxyj"]
 atlas = ExtResource("2_814qc")
-region = Rect2(889, 423, 127, 423)
+region = Rect2(896, 493, 128, 278)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8slrg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jurjh"]
 atlas = ExtResource("2_814qc")
-region = Rect2(1016, 423, 127, 423)
+region = Rect2(1024, 493, 128, 278)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7c60"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ko56s")
+"texture": SubResource("AtlasTexture_78823")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8ohx0")
+"texture": SubResource("AtlasTexture_prruf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qtng3")
+"texture": SubResource("AtlasTexture_fdkmr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tnq1t")
+"texture": SubResource("AtlasTexture_dr48m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_epndw")
+"texture": SubResource("AtlasTexture_yei6o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_024qx")
+"texture": SubResource("AtlasTexture_js5je")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_20jpr")
+"texture": SubResource("AtlasTexture_iwxyj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8slrg")
+"texture": SubResource("AtlasTexture_jurjh")
 }],
 "loop": true,
 "name": &"defaults",
@@ -82,7 +82,7 @@ scale = Vector2(0.255229, 0.178469)
 sprite_frames = SubResource("SpriteFrames_g7c60")
 animation = &"defaults"
 autoplay = "defaults"
-frame_progress = 0.270089
+frame_progress = 0.960875
 offset = Vector2(0, 0.04)
 flip_h = true
 
