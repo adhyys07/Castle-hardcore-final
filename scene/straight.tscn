@@ -63,6 +63,7 @@ shape = SubResource("RectangleShape2D_5tyy2")
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(0.976471, 1.02298)
 rotation = 0.0428566
+rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
