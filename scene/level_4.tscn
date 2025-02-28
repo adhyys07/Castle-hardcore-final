@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://kudrosoiw0t0"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_05ba0"]
-[ext_resource type="Script" path="res://scene/level_4.gd" id="1_rcm5h"]
+[ext_resource type="Script" path="res://script/level_4.gd" id="1_rcm5h"]
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="2_bpc8v"]
 [ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/fake.tscn" id="3_s2mjw"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="4_xioe5"]
@@ -43,7 +43,12 @@ point_count = 2
 script = ExtResource("1_rcm5h")
 
 [node name="Player" parent="." instance=ExtResource("1_05ba0")]
+<<<<<<< HEAD
 position = Vector2(312, 160)
+=======
+position = Vector2(311, 160)
+rotation = 6.28319
+>>>>>>> f163beff3bc98bf74e6198f3bff83e00d3c2ae5e
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_p6wcl")
