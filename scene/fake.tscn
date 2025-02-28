@@ -1,8 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqnhg1omya3xd"]
 
-[ext_resource type="Texture2D" uid="uid://b1dpwj1nqlm8k" path="res://assets/handmade/pixil-frame-0 (7).png" id="1_51fb7"]
+[ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_cgtb4"]
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(-1, 0)
-texture = ExtResource("1_51fb7")
-region_rect = Rect2(64, 16, 16, 16)
+rotation = 3.14159
+texture = ExtResource("1_cgtb4")
+region_enabled = true
+region_rect = Rect2(96, 16, 16, 17)
