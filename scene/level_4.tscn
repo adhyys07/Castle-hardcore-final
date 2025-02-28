@@ -41,7 +41,8 @@ point_count = 2
 [node name="level4" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_05ba0")]
-position = Vector2(32, 0)
+position = Vector2(311, 160)
+rotation = 6.28319
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_p6wcl")
