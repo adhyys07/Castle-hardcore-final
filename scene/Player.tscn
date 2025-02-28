@@ -1556,8 +1556,10 @@ script = ExtResource("1_2ubww")
 position = Vector2(-25, -26)
 scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
-animation = &"attack"
+animation = &"taunt"
 autoplay = "idle"
+frame = 14
+frame_progress = 0.259367
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

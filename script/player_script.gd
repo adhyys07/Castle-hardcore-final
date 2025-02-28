@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("walk")
-	
+			
 	
 	#Apply movement
 	if direction:
@@ -46,9 +46,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.Collect()
 		
 
-func attack2():
-	attack = true
-	animated_sprite.play("attack")
+
 			
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
@@ -58,12 +56,16 @@ func mob_entered(body: Node2D) -> void:
 		#OS.delay_msec(1000)
 		#get_tree().change_scene_to
 		
-func _process2(delta):
-	if Input.is_action_just_pressed("attack"):
-		attack2()
-		
 func _input(event: InputEvent):
 	if(event.is_action_pressed("ui_down")):
 		position.y += 1
+		
+func emote():
+	if Input.is_action_just_released("emote"):
+		animated_sprite.play("taunt")
+		
+
+	
+	
 	
 	

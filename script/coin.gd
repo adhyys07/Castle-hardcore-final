@@ -4,12 +4,12 @@ func _ready() -> void:
 	pass
 	
 @export var value: int = 1
-@onready var coin_sound: AudioStreamPlayer = $AudioStreamPlayer
+@onready var sound
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Gamecontroller.coin_collected(value)
-		coin_sound.play()
+		$pickupsfx.play()
 		queue_free()
 
 

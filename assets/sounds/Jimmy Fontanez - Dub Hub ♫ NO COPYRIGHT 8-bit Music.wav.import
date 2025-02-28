@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjeqfaotj0elg"
+path="res://.godot/imported/Jimmy Fontanez - Dub Hub ♫ NO COPYRIGHT 8-bit Music.wav-0db467ff8b088953de30b3c4ec1806b3.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Jimmy Fontanez - Dub Hub ♫ NO COPYRIGHT 8-bit Music.wav"
+dest_files=["res://.godot/imported/Jimmy Fontanez - Dub Hub ♫ NO COPYRIGHT 8-bit Music.wav-0db467ff8b088953de30b3c4ec1806b3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
