@@ -41,7 +41,7 @@ point_count = 2
 [node name="level4" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_05ba0")]
-position = Vector2(-72, 32)
+position = Vector2(32, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_p6wcl")
@@ -76,6 +76,7 @@ position = Vector2(115, -136)
 [node name="Straight" parent="TileMap" instance=ExtResource("7_cvlow")]
 position = Vector2(280, -96)
 curve = SubResource("Curve2D_0y4rh")
+loop = false
 
 [node name="Sprite2D3" parent="TileMap" instance=ExtResource("9_ngv1u")]
 position = Vector2(288, -232)
