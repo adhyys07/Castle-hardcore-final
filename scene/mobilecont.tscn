@@ -7,24 +7,24 @@
 [node name="MobileControls" type="CanvasLayer" parent="."]
 
 [node name="Right" type="TouchScreenButton" parent="MobileControls"]
-position = Vector2(469, 893)
+position = Vector2(427.393, 888)
 rotation = 1.5708
-scale = Vector2(2.20718, 2.08746)
+scale = Vector2(2.09324, 1.87139)
 texture_normal = ExtResource("1_sfkbt")
 passby_press = true
 action = "ui_right"
 
 [node name="Left" type="TouchScreenButton" parent="MobileControls"]
-position = Vector2(61, 1070)
+position = Vector2(66.3826, 1057.86)
 rotation = -1.5708
-scale = Vector2(2.23524, 2.11552)
+scale = Vector2(1.9917, 1.88563)
 texture_normal = ExtResource("1_sfkbt")
 passby_press = true
 action = "ui_left"
 
 [node name="jump" type="TouchScreenButton" parent="MobileControls"]
-position = Vector2(1653, 856)
-scale = Vector2(2.15641, 2.2)
+position = Vector2(1654, 856)
+scale = Vector2(2.14391, 2.1125)
 texture_normal = ExtResource("1_sfkbt")
 passby_press = true
 action = "ui_up"
