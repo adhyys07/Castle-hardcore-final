@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://docrtoi8bwmvv"]
+
+[ext_resource type="Texture2D" uid="uid://cqji5itvwxmqf" path="res://assets/arrows/flatLight22.png" id="1_6lapy"]
+
+[node name="mobilecont" type="Node2D"]
+
+[node name="MobileControls" type="CanvasLayer" parent="."]
+
+[node name="Right" type="TouchScreenButton" parent="MobileControls"]
+position = Vector2(407, 1045)
+rotation = 3.14159
+scale = Vector2(1.85641, 1.72266)
+texture_normal = ExtResource("1_6lapy")
+passby_press = true
+action = "ui_right"
+
+[node name="Left" type="TouchScreenButton" parent="MobileControls"]
+position = Vector2(60, 909)
+scale = Vector2(1.85641, 1.72266)
+texture_normal = ExtResource("1_6lapy")
+passby_press = true
+action = "ui_left"
+
+[node name="jump" type="TouchScreenButton" parent="MobileControls"]
+position = Vector2(1869, 898)
+rotation = 1.5708
+scale = Vector2(1.85641, 1.72266)
+texture_normal = ExtResource("1_6lapy")
+passby_press = true
+action = "ui_up"
+
+[node name="Node" type="Node" parent="."]
