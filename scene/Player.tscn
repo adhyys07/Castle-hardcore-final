@@ -1,4 +1,4 @@
-[gd_scene load_steps=226 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=227 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_2ubww"]
 [ext_resource type="Texture2D" uid="uid://cgq86ww6oq4dg" path="res://assets/sheets/spr_Idle_strip.png" id="1_dbfoi"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://brptis5p5gir5" path="res://assets/sheets/spr_Death_strip.png" id="4_ui8bk"]
 [ext_resource type="Texture2D" uid="uid://bsy2pw0dktwbl" path="res://assets/sheets/spr_SpinAttack_strip.png" id="6_86wut"]
 [ext_resource type="Texture2D" uid="uid://bwvev8nxhyrj7" path="res://assets/sheets/spr_Leap_strip.png" id="6_i4gbx"]
+[ext_resource type="PackedScene" uid="uid://bu8cktq8dpdaq" path="res://scene/mobilecont.tscn" id="11_jghyx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xse2h"]
 atlas = ExtResource("2_ykqpc")
@@ -1575,5 +1576,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-32, -18)
 shape = SubResource("RectangleShape2D_278y1")
+
+[node name="mobilecont" parent="." instance=ExtResource("11_jghyx")]
+position = Vector2(-106, -4)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,32 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://docrtoi8bwmvv"]
+[gd_scene load_steps=2 format=3 uid="uid://bu8cktq8dpdaq"]
 
-[ext_resource type="Texture2D" uid="uid://cqji5itvwxmqf" path="res://assets/arrows/flatLight22.png" id="1_6lapy"]
+[ext_resource type="Texture2D" uid="uid://bs31g3nhd6waw" path="res://assets/arrows/flatLight24.png" id="1_sfkbt"]
 
 [node name="mobilecont" type="Node2D"]
 
 [node name="MobileControls" type="CanvasLayer" parent="."]
 
 [node name="Right" type="TouchScreenButton" parent="MobileControls"]
-position = Vector2(407, 1045)
-rotation = 3.14159
-scale = Vector2(1.85641, 1.72266)
-texture_normal = ExtResource("1_6lapy")
+position = Vector2(469, 893)
+rotation = 1.5708
+scale = Vector2(2.20718, 2.08746)
+texture_normal = ExtResource("1_sfkbt")
 passby_press = true
 action = "ui_right"
 
 [node name="Left" type="TouchScreenButton" parent="MobileControls"]
-position = Vector2(60, 909)
-scale = Vector2(1.85641, 1.72266)
-texture_normal = ExtResource("1_6lapy")
+position = Vector2(61, 1070)
+rotation = -1.5708
+scale = Vector2(2.23524, 2.11552)
+texture_normal = ExtResource("1_sfkbt")
 passby_press = true
 action = "ui_left"
 
 [node name="jump" type="TouchScreenButton" parent="MobileControls"]
-position = Vector2(1869, 898)
-rotation = 1.5708
-scale = Vector2(1.85641, 1.72266)
-texture_normal = ExtResource("1_6lapy")
+position = Vector2(1653, 856)
+scale = Vector2(2.15641, 2.2)
+texture_normal = ExtResource("1_sfkbt")
 passby_press = true
 action = "ui_up"
-
-[node name="Node" type="Node" parent="."]
