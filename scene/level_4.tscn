@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpfn5bokdjt74"]
+[gd_scene load_steps=14 format=3 uid="uid://cpfn5bokdjt74"]
 
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_5fu1s"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_xyx8n"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="7_fc5c4"]
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/jump_thru.tscn" id="8_bxtc0"]
 [ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mob.tscn" id="9_ha4kd"]
+[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="10_x3asf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quq1h"]
 texture = ExtResource("1_5fu1s")
@@ -153,23 +154,14 @@ point_count = 2
 
 [node name="level_4" type="Node2D"]
 
-[node name="Sprite2D8" parent="." instance=ExtResource("8_bxtc0")]
-position = Vector2(305, -155)
-
-[node name="Sprite2D7" parent="." instance=ExtResource("4_0iu42")]
-position = Vector2(-136, -152)
-rotation = 3.15381
-
-[node name="Area2D" parent="." instance=ExtResource("6_b8gmm")]
-position = Vector2(-285, 11)
-
 [node name="Player" parent="." instance=ExtResource("1_xyx8n")]
-position = Vector2(-206, -206)
+position = Vector2(59, 43)
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -1)
 tile_set = SubResource("TileSet_crxao")
 format = 2
-layer_0/tile_data = PackedInt32Array(524273, 393216, 1, 524274, 393216, 1, 524275, 393216, 1, 524276, 393216, 1, 524277, 393216, 1, 524278, 393216, 1, 524279, 393216, 1, 524280, 393216, 1, 524281, 393216, 1, 524282, 393216, 1, 524283, 393216, 1, 524284, 393216, 1, 524285, 393216, 1, 524286, 393216, 1, 524287, 393216, 1, 458752, 393216, 1, 458753, 393216, 1, 458754, 393216, 1, 458755, 393216, 1, 458756, 393216, 1, 458757, 393216, 1, 458758, 393216, 1, 458759, 393216, 1, 458760, 393216, 1, 458761, 393216, 1, 458762, 393216, 1, 458763, 393216, 1, 458764, 393216, 1, 458765, 393216, 1, 458766, 393216, 1, 458767, 393216, 1, 458768, 393216, 1, 458769, 393216, 1, 458770, 393216, 1, 458771, 393216, 1, 458772, 393216, 1, 524272, 393216, 1, 524271, 393216, 1, 524270, 393216, 1, 524269, 393216, 1, 393236, 393216, 1, 327700, 393216, 1, 262164, 393216, 1, 196628, 393216, 1, 131092, 393216, 1, 65556, 393216, 1, 20, 393216, 1, -65516, 393216, 1, -131052, 393216, 1, -196588, 393216, 1, -262124, 393216, 1, -327660, 393216, 1, -393196, 393216, 1, -458732, 393216, 1, -524268, 393216, 1, -589804, 393216, 1, -655340, 393216, 1, -720876, 393216, 1, -786412, 393216, 1, -851948, 393216, 1, -917484, 393216, 1, -983020, 393216, 1, 524268, 393216, 1, 458732, 393216, 1, 393196, 393216, 1, 327660, 393216, 1, 262124, 393216, 1, 196588, 393216, 1, 131052, 393216, 1, 65516, 393216, 1, -20, 393216, 1, -65556, 393216, 1, -131092, 393216, 1, -196628, 393216, 1, -262164, 393216, 1, -327700, 393216, 1, -393236, 393216, 1, -458772, 393216, 1, -524308, 393216, 1, -589844, 393216, 1, -655380, 393216, 1, -720916, 393216, 1, -786452, 393216, 1, -851988, 393216, 1, 262158, 393216, 1, 196618, 393216, 1, 196610, 393216, 1, 196609, 393216, 1, 131054, 393216, 1, 131053, 393216, 1, -262146, 393216, 1, -262145, 393216, 1, -393211, 393216, 1, -393203, 393216, 1, -655365, 393216, 1, -917524, 393216, 1, -983060, 393216, 1, -1048596, 393216, 1, -1114132, 393216, 1, -1179668, 393216, 1, -1245204, 393216, 1, -1310740, 393216, 1, -1376276, 393216, 1, -1441812, 393216, 1, -1507348, 393216, 1, -1572884, 393216, 1, -1048556, 393216, 1, -1114092, 393216, 1, -1179628, 393216, 1, -1245164, 393216, 1, -1310700, 393216, 1, -1376236, 393216, 1, -1441772, 393216, 1, -1507308, 393216, 1, -1572844, 393216, 1, -1638380, 393216, 1, -589837, 393216, 1, -786448, 393216, 1, -786447, 393216, 1, -589843, 393216, 1, -589842, 393216, 1)
+layer_0/tile_data = PackedInt32Array(524273, 393216, 1, 524274, 393216, 1, 524275, 393216, 1, 524276, 393216, 1, 524277, 393216, 1, 524278, 393216, 1, 524279, 393216, 1, 524280, 393216, 1, 524281, 393216, 1, 524282, 393216, 1, 524283, 393216, 1, 524284, 393216, 1, 524285, 393216, 1, 524286, 393216, 1, 524287, 393216, 1, 458752, 393216, 1, 458753, 393216, 1, 458754, 393216, 1, 458755, 393216, 1, 458756, 393216, 1, 458757, 393216, 1, 458758, 393216, 1, 458759, 393216, 1, 458760, 393216, 1, 458761, 393216, 1, 458762, 393216, 1, 458763, 393216, 1, 458764, 393216, 1, 458765, 393216, 1, 458766, 393216, 1, 458767, 393216, 1, 458768, 393216, 1, 458769, 393216, 1, 458770, 393216, 1, 458771, 393216, 1, 458772, 393216, 1, 524272, 393216, 1, 524271, 393216, 1, 524270, 393216, 1, 524269, 393216, 1, 393236, 393216, 1, 327700, 393216, 1, 262164, 393216, 1, 196628, 393216, 1, 131092, 393216, 1, 65556, 393216, 1, 20, 393216, 1, -65516, 393216, 1, -131052, 393216, 1, -196588, 393216, 1, -262124, 393216, 1, -327660, 393216, 1, -393196, 393216, 1, -458732, 393216, 1, -524268, 393216, 1, -589804, 393216, 1, -655340, 393216, 1, -720876, 393216, 1, -786412, 393216, 1, -851948, 393216, 1, -917484, 393216, 1, -983020, 393216, 1, 524268, 393216, 1, 458732, 393216, 1, 393196, 393216, 1, 327660, 393216, 1, 262124, 393216, 1, 196588, 393216, 1, 131052, 393216, 1, 65516, 393216, 1, -20, 393216, 1, -65556, 393216, 1, -131092, 393216, 1, -196628, 393216, 1, -262164, 393216, 1, -327700, 393216, 1, -393236, 393216, 1, -458772, 393216, 1, -524308, 393216, 1, -589844, 393216, 1, -655380, 393216, 1, -720916, 393216, 1, -786452, 393216, 1, -851988, 393216, 1, 262158, 393216, 1, 196618, 393216, 1, 196610, 393216, 1, 196609, 393216, 1, 131054, 393216, 1, 131053, 393216, 1, -262146, 393216, 1, -262145, 393216, 1, -393211, 393216, 1, -393203, 393216, 1, -655365, 393216, 1, -917524, 393216, 1, -983060, 393216, 1, -1048596, 393216, 1, -1114132, 393216, 1, -1179668, 393216, 1, -1245204, 393216, 1, -1310740, 393216, 1, -1376276, 393216, 1, -1441812, 393216, 1, -1507348, 393216, 1, -1572884, 393216, 1, -1048556, 393216, 1, -1114092, 393216, 1, -1179628, 393216, 1, -1245164, 393216, 1, -1310700, 393216, 1, -1376236, 393216, 1, -1441772, 393216, 1, -1507308, 393216, 1, -1572844, 393216, 1, -1638380, 393216, 1, -589837, 393216, 1, -786448, 393216, 1, -786447, 393216, 1, -589843, 393216, 1, -589842, 393216, 1, -1114115, 393216, 1, -1114114, 393216, 1, -1114113, 393216, 1, -1179648, 393216, 1, -1179647, 393216, 1, -1179646, 393216, 1, -1179645, 393216, 1, -1179644, 393216, 1, -1114116, 393216, 1, -1179643, 393216, 1, -1179642, 393216, 1, -393202, 393216, 1)
 
 [node name="fire" type="CanvasGroup" parent="."]
 
@@ -224,37 +216,81 @@ position = Vector2(-280, 121)
 [node name="RigidBody2D5" parent="fire" instance=ExtResource("3_aa72k")]
 position = Vector2(-309, 122)
 
-[node name="Sprite2D4" parent="." instance=ExtResource("4_0iu42")]
-position = Vector2(103, 56)
-
 [node name="Straight2" parent="." instance=ExtResource("5_rwoxm")]
 position = Vector2(-166, 41)
 curve = SubResource("Curve2D_ibj21")
 loop = false
 
-[node name="Area2D" parent="Straight2" instance=ExtResource("6_b8gmm")]
-position = Vector2(-7, -2)
+[node name="level_portal_2" parent="." instance=ExtResource("10_x3asf")]
+position = Vector2(17, -313)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("7_fc5c4")]
-position = Vector2(-212, -48)
+[node name="fake" type="CanvasGroup" parent="."]
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("7_fc5c4")]
+[node name="Sprite2D9" parent="fake" instance=ExtResource("4_0iu42")]
+position = Vector2(312, -200)
+rotation = -3.14159
+
+[node name="Sprite2D10" parent="fake" instance=ExtResource("4_0iu42")]
+position = Vector2(296, -200)
+
+[node name="Sprite2D11" parent="fake" instance=ExtResource("4_0iu42")]
+position = Vector2(280, -200)
+
+[node name="Sprite2D12" parent="fake" instance=ExtResource("4_0iu42")]
+position = Vector2(264, -200)
+rotation = -3.14159
+
+[node name="Sprite2D4" parent="fake" instance=ExtResource("4_0iu42")]
+position = Vector2(103, 56)
+
+[node name="Sprite2D7" parent="fake" instance=ExtResource("4_0iu42")]
+position = Vector2(-136, -152)
+rotation = -3.12938
+
+[node name="movethrou" type="CanvasGroup" parent="."]
+position = Vector2(305, -155)
+
+[node name="Sprite2D8" parent="movethrou" instance=ExtResource("8_bxtc0")]
+
+[node name="Sprite2D5" parent="movethrou" instance=ExtResource("8_bxtc0")]
+position = Vector2(-589, 136)
+
+[node name="Sprite2D6" parent="movethrou" instance=ExtResource("8_bxtc0")]
+position = Vector2(-317, 27)
+
+[node name="break" type="CanvasGroup" parent="."]
 position = Vector2(-136, -60)
 
-[node name="Sprite2D5" parent="." instance=ExtResource("8_bxtc0")]
-position = Vector2(-284, -19)
+[node name="StaticBody2D" parent="break" instance=ExtResource("7_fc5c4")]
+position = Vector2(-76, 12)
 
-[node name="Sprite2D6" parent="." instance=ExtResource("8_bxtc0")]
-position = Vector2(-12, -128)
+[node name="StaticBody2D2" parent="break" instance=ExtResource("7_fc5c4")]
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("7_fc5c4")]
-position = Vector2(147, -64)
+[node name="StaticBody2D3" parent="break" instance=ExtResource("7_fc5c4")]
+position = Vector2(283, -4)
 
-[node name="mob" parent="." instance=ExtResource("9_ha4kd")]
-position = Vector2(281, -92)
+[node name="StaticBody2D4" parent="break" instance=ExtResource("7_fc5c4")]
+position = Vector2(-24, -188)
 
-[node name="Area2D2" parent="." instance=ExtResource("6_b8gmm")]
-position = Vector2(-295, -168)
+[node name="coin" type="CanvasGroup" parent="."]
+position = Vector2(-136, -170)
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("7_fc5c4")]
-position = Vector2(-182, -247)
+[node name="Area2D" parent="coin" instance=ExtResource("6_b8gmm")]
+position = Vector2(-37, 209)
+
+[node name="Area2D4" parent="coin" instance=ExtResource("6_b8gmm")]
+
+[node name="Area2D2" parent="coin" instance=ExtResource("6_b8gmm")]
+position = Vector2(-149, 181)
+
+[node name="Area2D3" parent="coin" instance=ExtResource("6_b8gmm")]
+position = Vector2(-159, 2)
+
+[node name="mob3" type="CanvasGroup" parent="."]
+position = Vector2(-166, 41)
+
+[node name="mob" parent="mob3" instance=ExtResource("9_ha4kd")]
+position = Vector2(447, -133)
+
+[node name="mob2" parent="mob3" instance=ExtResource("9_ha4kd")]
+position = Vector2(50, -273)
