@@ -209,7 +209,7 @@ curve = SubResource("Curve2D_lwqfx")
 loop = false
 
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
-position = Vector2(-260, -208)
+position = Vector2(-397, 79)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
