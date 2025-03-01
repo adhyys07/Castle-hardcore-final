@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpfn5bokdjt74"]
+[gd_scene load_steps=6 format=3 uid="uid://cpfn5bokdjt74"]
 
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_5fu1s"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_xyx8n"]
+[ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="3_aa72k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quq1h"]
 texture = ExtResource("1_5fu1s")
@@ -24,6 +25,7 @@ texture = ExtResource("1_5fu1s")
 4:1/0 = 0
 5:1/0 = 0
 6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
 8:1/0 = 0
 9:1/0 = 0
@@ -134,6 +136,7 @@ texture = ExtResource("1_5fu1s")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_crxao"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_quq1h")
 
 [node name="level_4" type="Node2D"]
@@ -144,4 +147,57 @@ position = Vector2(316, 107)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_crxao")
 format = 2
-layer_0/tile_data = PackedInt32Array(524273, 393216, 1, 524274, 393216, 1, 524275, 393216, 1, 524276, 393216, 1, 524277, 393216, 1, 524278, 393216, 1, 524279, 393216, 1, 524280, 393216, 1, 524281, 393216, 1, 524282, 393216, 1, 524283, 393216, 1, 524284, 393216, 1, 524285, 393216, 1, 524286, 393216, 1, 524287, 393216, 1, 458752, 393216, 1, 458753, 393216, 1, 458754, 393216, 1, 458755, 393216, 1, 458756, 393216, 1, 458757, 393216, 1, 458758, 393216, 1, 458759, 393216, 1, 458760, 393216, 1, 458761, 393216, 1, 458762, 393216, 1, 458763, 393216, 1, 458764, 393216, 1, 458765, 393216, 1, 458766, 393216, 1, 458767, 393216, 1, 458768, 393216, 1, 458769, 393216, 1, 458770, 393216, 1, 458771, 393216, 1, 458772, 393216, 1, 524272, 393216, 1, 524271, 393216, 1, 524270, 393216, 1, 524269, 393216, 1, 393236, 393216, 1, 327700, 393216, 1, 262164, 393216, 1, 196628, 393216, 1, 131092, 393216, 1, 65556, 393216, 1, 20, 393216, 1, -65516, 393216, 1, -131052, 393216, 1, -196588, 393216, 1, -262124, 393216, 1, -327660, 393216, 1, -393196, 393216, 1, -458732, 393216, 1, -524268, 393216, 1, -589804, 393216, 1, -655340, 393216, 1, -720876, 393216, 1, -786412, 393216, 1, -851948, 393216, 1, -917484, 393216, 1, -983020, 393216, 1, 393197, 393216, 1, 327661, 393216, 1, 262125, 393216, 1, 458733, 393216, 1, 196589, 393216, 1, 131053, 393216, 1, 65517, 393216, 1, -19, 393216, 1, -65555, 393216, 1, -131091, 393216, 1, -196627, 393216, 1, -262163, 393216, 1, -327699, 393216, 1, -393235, 393216, 1, -458771, 393216, 1, -524307, 393216, 1, -589843, 393216, 1, -655379, 393216, 1, -720915, 393216, 1, -786451, 393216, 1, -851987, 393216, 1, -917523, 393216, 1, -983059, 393216, 1)
+layer_0/tile_data = PackedInt32Array(524273, 393216, 1, 524274, 393216, 1, 524275, 393216, 1, 524276, 393216, 1, 524277, 393216, 1, 524278, 393216, 1, 524279, 393216, 1, 524280, 393216, 1, 524281, 393216, 1, 524282, 393216, 1, 524283, 393216, 1, 524284, 393216, 1, 524285, 393216, 1, 524286, 393216, 1, 524287, 393216, 1, 458752, 393216, 1, 458753, 393216, 1, 458754, 393216, 1, 458755, 393216, 1, 458756, 393216, 1, 458757, 393216, 1, 458758, 393216, 1, 458759, 393216, 1, 458760, 393216, 1, 458761, 393216, 1, 458762, 393216, 1, 458763, 393216, 1, 458764, 393216, 1, 458765, 393216, 1, 458766, 393216, 1, 458767, 393216, 1, 458768, 393216, 1, 458769, 393216, 1, 458770, 393216, 1, 458771, 393216, 1, 458772, 393216, 1, 524272, 393216, 1, 524271, 393216, 1, 524270, 393216, 1, 524269, 393216, 1, 393236, 393216, 1, 327700, 393216, 1, 262164, 393216, 1, 196628, 393216, 1, 131092, 393216, 1, 65556, 393216, 1, 20, 393216, 1, -65516, 393216, 1, -131052, 393216, 1, -196588, 393216, 1, -262124, 393216, 1, -327660, 393216, 1, -393196, 393216, 1, -458732, 393216, 1, -524268, 393216, 1, -589804, 393216, 1, -655340, 393216, 1, -720876, 393216, 1, -786412, 393216, 1, -851948, 393216, 1, -917484, 393216, 1, -983020, 393216, 1, 524268, 393216, 1, 458732, 393216, 1, 393196, 393216, 1, 327660, 393216, 1, 262124, 393216, 1, 196588, 393216, 1, 131052, 393216, 1, 65516, 393216, 1, -20, 393216, 1, -65556, 393216, 1, -131092, 393216, 1, -196628, 393216, 1, -262164, 393216, 1, -327700, 393216, 1, -393236, 393216, 1, -458772, 393216, 1, -524308, 393216, 1, -589844, 393216, 1, -655380, 393216, 1, -720916, 393216, 1, -786452, 393216, 1, -851988, 393216, 1)
+
+[node name="fire" type="CanvasGroup" parent="."]
+
+[node name="RigidBody2D15" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(43, 121)
+
+[node name="RigidBody2D13" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(14, 121)
+
+[node name="RigidBody2D16" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(74, 122)
+
+[node name="RigidBody2D17" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(103, 121)
+
+[node name="RigidBody2D18" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(132, 121)
+
+[node name="RigidBody2D19" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(162, 121)
+
+[node name="RigidBody2D12" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-16, 122)
+
+[node name="RigidBody2D11" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-45, 122)
+
+[node name="RigidBody2D10" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-75, 122)
+
+[node name="RigidBody2D8" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-104, 121)
+
+[node name="RigidBody2D7" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-133, 121)
+
+[node name="RigidBody2D6" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-163, 121)
+
+[node name="RigidBody2D4" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-193, 121)
+
+[node name="RigidBody2D3" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-222, 121)
+
+[node name="RigidBody2D2" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-251, 121)
+
+[node name="RigidBody2D" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-280, 121)
+
+[node name="RigidBody2D5" parent="fire" instance=ExtResource("3_aa72k")]
+position = Vector2(-309, 122)

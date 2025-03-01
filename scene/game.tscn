@@ -20,4 +20,4 @@ position = Vector2(-2, -107)
 position = Vector2(-319, 182)
 
 [node name="level_4" parent="." instance=ExtResource("5_ertln")]
-position = Vector2(305, 230)
+position = Vector2(323, 232)
