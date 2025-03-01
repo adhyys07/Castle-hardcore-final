@@ -209,13 +209,13 @@ curve = SubResource("Curve2D_lwqfx")
 loop = false
 
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
-position = Vector2(-391, 75)
+position = Vector2(-260, -208)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
 
 [node name="level_portal1" parent="." instance=ExtResource("7_5qagi")]
-position = Vector2(-584, -192)
+position = Vector2(-426, -232)
 
 [node name="coin_1" parent="." instance=ExtResource("8_fh5km")]
 position = Vector2(128, -90)
