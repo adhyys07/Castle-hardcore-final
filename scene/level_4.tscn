@@ -161,7 +161,7 @@ point_count = 2
 [node name="level_4" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xyx8n")]
-position = Vector2(126, -105)
+position = Vector2(299, 102)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
@@ -289,6 +289,9 @@ position = Vector2(-136, -170)
 
 [node name="Area2D" parent="coin" instance=ExtResource("6_b8gmm")]
 position = Vector2(-37, 209)
+
+[node name="Area2D" parent="coin/Area2D" instance=ExtResource("6_b8gmm")]
+position = Vector2(260, -143)
 
 [node name="Area2D4" parent="coin" instance=ExtResource("6_b8gmm")]
 
