@@ -56,7 +56,7 @@ rotation = -0.0349066
 scale = Vector2(0.978621, 1)
 texture = ExtResource("2_ak1j0")
 region_enabled = true
-region_rect = Rect2(16, 16, 32, 8)
+region_rect = Rect2(16, 16, 32, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0.151052, 2.97328)

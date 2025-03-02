@@ -164,7 +164,7 @@ point_count = 2
 script = ExtResource("1_ec6bn")
 
 [node name="Player" parent="." instance=ExtResource("1_xyx8n")]
-position = Vector2(-258, -167)
+position = Vector2(-165, -208)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
