@@ -12,3 +12,7 @@ func _process(delta: float) -> void:
 	
 func _on_level_portal_3_body_entered(body: Player):
 	get_tree().change_scene_to_file("res://scene/level_5.tscn")
+
+
+func _on_button_4_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/level_4.tscn")

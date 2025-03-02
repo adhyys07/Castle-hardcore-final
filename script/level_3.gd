@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scene/level_4.tscn") # Replace with function body.
 	
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/level_3.tscn")

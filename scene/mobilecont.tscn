@@ -5,6 +5,7 @@
 [node name="mobilecont" type="Node2D"]
 
 [node name="MobileControls" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Right" type="TouchScreenButton" parent="MobileControls"]
 position = Vector2(427.393, 888)

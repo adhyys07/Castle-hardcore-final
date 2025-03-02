@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c053ub4jan1b7"]
+[gd_scene load_steps=12 format=4 uid="uid://c053ub4jan1b7"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_ky3s0"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_r4dhi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_1rtl8"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_nllls"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
+[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="7_brcl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
 texture = ExtResource("1_r4dhi")
@@ -173,8 +174,12 @@ sources/2 = SubResource("TileSetAtlasSource_3hsds")
 [node name="level_3" type="Node2D"]
 script = ExtResource("1_vwhh5")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -4)
+zoom = Vector2(3, 2.98)
+
 [node name="Player" parent="." instance=ExtResource("2_nllls")]
-position = Vector2(33, 158)
+position = Vector2(32, 96)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_v5t0b")
@@ -186,3 +191,13 @@ tile_map_data = PackedByteArray("AADs/woAAQAGAAEAAADt/woAAQAGAAEAAADu/woAAQAGAAE
 tile_set = SubResource("TileSet_v5t0b")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_bqdhi")]
+
+[node name="Button3" type="Button" parent="."]
+offset_left = -22.0
+offset_top = -165.0
+offset_right = 18.0
+offset_bottom = -125.0
+icon = ExtResource("7_brcl0")
+flat = true
+
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
