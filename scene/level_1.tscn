@@ -209,7 +209,7 @@ curve = SubResource("Curve2D_lwqfx")
 loop = false
 
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
-position = Vector2(-397, 79)
+position = Vector2(-393, 74)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
@@ -227,9 +227,7 @@ position = Vector2(-143, -90)
 position = Vector2(-414, -93)
 
 [node name="coin_4" parent="." instance=ExtResource("8_fh5km")]
-position = Vector2(-310, -268)
-
-[node name="CanvasLayer" parent="." instance=ExtResource("9_vd1iu")]
+position = Vector2(-305, -226)
 
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -251,5 +249,7 @@ position = Vector2(-216, -168)
 position = Vector2(-95, -199)
 curve = SubResource("Curve2D_leqh7")
 loop = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_vd1iu")]
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]

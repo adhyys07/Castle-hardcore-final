@@ -10,6 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
- #test
+func _on_level_portal_3_body_entered(body: Player):
+	get_tree().change_scene_to_file("res://scene/level_5.tscn")
