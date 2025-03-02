@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://chw7uc6c1u5ta"]
+[gd_scene load_steps=6 format=3 uid="uid://7ntxag07kmqe"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_e1p3s"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_fob37"]
