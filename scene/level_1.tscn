@@ -11,18 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="9_vd1iu"]
 [ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="10_hgsjv"]
 
-[sub_resource type="Curve2D" id="Curve2D_leqh7"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -13, -2, 0, 0, 0, 0, 103, 1)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_lwqfx"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -11, -1, 0, 0, 0, 0, 73, -4, 0, 0, 0, 0, 123, -4)
-}
-point_count = 3
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u2lvr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6teo4"]
@@ -189,6 +177,18 @@ sources/0 = SubResource("TileSetAtlasSource_6teo4")
 sources/1 = SubResource("TileSetAtlasSource_wwxuf")
 sources/2 = SubResource("TileSetAtlasSource_rd7o3")
 
+[sub_resource type="Curve2D" id="Curve2D_leqh7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -13, -2, 0, 0, 0, 0, 104, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_lwqfx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, -1, 0, 0, 0, 0, 73, -4, 0, 0, 0, 0, 123, -4)
+}
+point_count = 3
+
 [sub_resource type="Curve2D" id="Curve2D_q7efj"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -10, -3, 0, 0, 0, 0, 96, 0)
@@ -203,18 +203,8 @@ script = ExtResource("1_icvv3")
 position = Vector2(-142, -108)
 zoom = Vector2(3, 2.5)
 
-[node name="Straight" parent="." instance=ExtResource("2_4sxqk")]
-position = Vector2(34, -78)
-curve = SubResource("Curve2D_leqh7")
-loop = false
-
-[node name="Straight4" parent="." instance=ExtResource("2_4sxqk")]
-position = Vector2(-376, -112)
-curve = SubResource("Curve2D_lwqfx")
-loop = false
-
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
-position = Vector2(-378, 74)
+position = Vector2(-396, 71)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
@@ -222,42 +212,15 @@ root_node = NodePath("")
 [node name="level_portal1" parent="." instance=ExtResource("7_5qagi")]
 position = Vector2(-426, -232)
 
-[node name="coin_1" parent="." instance=ExtResource("8_fh5km")]
-position = Vector2(128, -90)
-
-[node name="coin_2" parent="." instance=ExtResource("8_fh5km")]
-position = Vector2(-143, -90)
-
-[node name="coin_3" parent="." instance=ExtResource("8_fh5km")]
-position = Vector2(-414, -93)
-
-[node name="coin_4" parent="." instance=ExtResource("8_fh5km")]
-position = Vector2(-305, -226)
-
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(-7, -1)
-tile_map_data = PackedByteArray("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")
+tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_lyglj")
-
-[node name="Straight2" parent="Layer1" instance=ExtResource("2_4sxqk")]
-position = Vector2(-145, -151)
-curve = SubResource("Curve2D_q7efj")
-loop = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Layer1"]
-
-[node name="Area2D" parent="." instance=ExtResource("8_fh5km")]
-position = Vector2(-216, -168)
-
-[node name="Straight2" parent="." instance=ExtResource("2_4sxqk")]
-position = Vector2(-95, -199)
-curve = SubResource("Curve2D_leqh7")
-loop = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_vd1iu")]
 
-[node name="Button" type="Button" parent="."]
+[node name="Button1" type="Button" parent="."]
 offset_left = -179.0
 offset_top = -317.0
 offset_right = -139.0
@@ -265,5 +228,45 @@ offset_bottom = -277.0
 icon = ExtResource("10_hgsjv")
 flat = true
 
+[node name="coin" type="CanvasGroup" parent="."]
+
+[node name="coin_1" parent="coin" instance=ExtResource("8_fh5km")]
+position = Vector2(128, -90)
+
+[node name="coin_2" parent="coin" instance=ExtResource("8_fh5km")]
+position = Vector2(-143, -90)
+
+[node name="coin_3" parent="coin" instance=ExtResource("8_fh5km")]
+position = Vector2(-414, -93)
+
+[node name="coin_4" parent="coin" instance=ExtResource("8_fh5km")]
+position = Vector2(-305, -226)
+
+[node name="coin_5" parent="coin" instance=ExtResource("8_fh5km")]
+position = Vector2(-216, -168)
+
+[node name="movinplat" type="CanvasGroup" parent="."]
+position = Vector2(128, -90)
+
+[node name="Straight" parent="movinplat" instance=ExtResource("2_4sxqk")]
+position = Vector2(-94, 12)
+curve = SubResource("Curve2D_leqh7")
+loop = false
+
+[node name="Straight4" parent="movinplat" instance=ExtResource("2_4sxqk")]
+position = Vector2(-504, -22)
+curve = SubResource("Curve2D_lwqfx")
+loop = false
+
+[node name="Straight2" parent="movinplat" instance=ExtResource("2_4sxqk")]
+position = Vector2(-223, -109)
+curve = SubResource("Curve2D_leqh7")
+loop = false
+
+[node name="Straight3" parent="movinplat" instance=ExtResource("2_4sxqk")]
+position = Vector2(-280, -62)
+curve = SubResource("Curve2D_q7efj")
+loop = false
+
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button1" to="." method="_on_button_pressed"]

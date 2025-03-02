@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://7ntxag07kmqe"]
+[gd_scene load_steps=9 format=3 uid="uid://7ntxag07kmqe"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_e1p3s"]
+[ext_resource type="Script" path="res://script/level_5.gd" id="1_ki7lv"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_fob37"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="3_5q35b"]
+[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="4_02nka"]
+[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="6_e05pf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i4qu"]
 texture = ExtResource("2_fob37")
@@ -140,9 +143,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7i4qu")
 
 [node name="level_5" type="Node2D"]
+script = ExtResource("1_ki7lv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -61)
 
 [node name="Player" parent="." instance=ExtResource("1_e1p3s")]
-position = Vector2(353, 12)
+position = Vector2(-9, 44)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
@@ -153,3 +160,17 @@ format = 2
 layer_0/tile_data = PackedInt32Array(458738, 393216, 1, 458739, 393216, 1, 458740, 393216, 1, 458741, 393216, 1, 458742, 393216, 1, 458743, 393216, 1, 458744, 393216, 1, 458745, 393216, 1, 458746, 393216, 1, 458747, 393216, 1, 458748, 393216, 1, 458749, 393216, 1, 458750, 393216, 1, 458751, 393216, 1, 393216, 393216, 1, 393217, 393216, 1, 393218, 393216, 1, 393219, 393216, 1, 393220, 393216, 1, 393221, 393216, 1, 393222, 393216, 1, 393223, 393216, 1, 393224, 393216, 1, 393225, 393216, 1, 393226, 393216, 1, 393227, 393216, 1, 393228, 393216, 1, 393229, 393216, 1, 393230, 393216, 1, 393231, 393216, 1, 393232, 393216, 1, 393233, 393216, 1, 393234, 393216, 1, 393235, 393216, 1, 393236, 393216, 1, 393237, 393216, 1, 393238, 393216, 1, 458737, 393216, 1, 458736, 393216, 1, 458735, 393216, 1, 458734, 393216, 1, -262163, 393216, 1, -196627, 393216, 1, -131091, 393216, 1, -65555, 393216, 1, -19, 393216, 1, 65517, 393216, 1, 131053, 393216, 1, 196589, 393216, 1, 262125, 393216, 1, 327661, 393216, 1, 393197, 393216, 1, 458733, 393216, 1, -917523, 393216, 1, -851987, 393216, 1, -786451, 393216, 1, -720915, 393216, 1, -655379, 393216, 1, -589843, 393216, 1, -524307, 393216, 1, -458771, 393216, 1, -393235, 393216, 1, -327699, 393216, 1, -983059, 393216, 1, 393239, 393216, 1, 393240, 393216, 1, 393241, 393216, 1, 393242, 393216, 1, 393243, 393216, 1, 393244, 393216, 1, 393245, 393216, 1, 393246, 393216, 1, 393247, 393216, 1, 393248, 393216, 1, -1048595, 393216, 1, -1114131, 393216, 1, -1179667, 393216, 1, -1245203, 393216, 1, -1310739, 393216, 1, 327712, 393216, 1, 262176, 393216, 1, 196640, 393216, 1, 131104, 393216, 1, 65568, 393216, 1, 32, 393216, 1, -65504, 393216, 1, -131040, 393216, 1, -196576, 393216, 1, -262112, 393216, 1, -327648, 393216, 1, -393184, 393216, 1, -458720, 393216, 1, -524256, 393216, 1, -589792, 393216, 1, -655328, 393216, 1, -720864, 393216, 1, -786400, 393216, 1, -851936, 393216, 1, -917472, 393216, 1, -983008, 393216, 1, -1048544, 393216, 1, -1114080, 393216, 1, -1179616, 393216, 1, -1245152, 393216, 1, -1310688, 393216, 1, -1376224, 393216, 1, -1441760, 393216, 1, -1507296, 393216, 1, -1572832, 393216, 1)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_5q35b")]
+
+[node name="level_portal_5" parent="." instance=ExtResource("4_02nka")]
+position = Vector2(278, 64)
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 80.0
+offset_top = -235.0
+offset_right = 120.0
+offset_bottom = -195.0
+icon = ExtResource("6_e05pf")
+flat = true
+
+[connection signal="body_entered" from="level_portal_5" to="." method="_on_level_portal_5_body_entered"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

@@ -69,3 +69,8 @@ func emote():
 	
 	
 	
+
+
+
+func _on_button_6_pressed() -> void:
+	pass # Replace with function body.

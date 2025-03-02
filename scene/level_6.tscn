@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://7ntxag07kmqe"]
+[gd_scene load_steps=12 format=3 uid="uid://7ntxag07kmqe"]
 
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_8jxo4"]
+[ext_resource type="Script" path="res://scene/level_6.gd" id="1_uwud3"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_0xj0w"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="3_5wiqr"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="4_c2uw5"]
 [ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/fake.tscn" id="5_a1qiq"]
 [ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/straight.tscn" id="6_q5363"]
+[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="8_1gxsu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5np1"]
 texture = ExtResource("1_8jxo4")
@@ -149,6 +151,7 @@ _data = {
 point_count = 2
 
 [node name="level_6" type="Node2D"]
+script = ExtResource("1_uwud3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jxcsa")
@@ -244,3 +247,13 @@ rotation = 3.14159
 scale = Vector2(1.01963, 1)
 curve = SubResource("Curve2D_u2ie5")
 loop = false
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 80.0
+offset_top = -235.0
+offset_right = 120.0
+offset_bottom = -195.0
+icon = ExtResource("8_1gxsu")
+flat = true
+
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]

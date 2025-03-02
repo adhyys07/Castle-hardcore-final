@@ -169,7 +169,7 @@ position = Vector2(8, -142)
 zoom = Vector2(2.92, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_xyx8n")]
-position = Vector2(313, 110)
+position = Vector2(123, -286)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
@@ -230,7 +230,7 @@ position = Vector2(-280, 121)
 [node name="RigidBody2D5" parent="fire" instance=ExtResource("3_aa72k")]
 position = Vector2(-309, 122)
 
-[node name="level_portal_3" parent="." instance=ExtResource("10_x3asf")]
+[node name="level_portal_4" parent="." instance=ExtResource("10_x3asf")]
 position = Vector2(17, -313)
 
 [node name="fake" type="CanvasGroup" parent="."]
@@ -349,5 +349,5 @@ offset_bottom = -374.0
 icon = ExtResource("13_bu6wb")
 flat = true
 
-[connection signal="body_entered" from="level_portal_3" to="." method="_on_level_portal_3_body_entered"]
+[connection signal="body_entered" from="level_portal_4" to="." method="_on_level_portal_3_body_entered"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
