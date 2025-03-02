@@ -13,7 +13,12 @@ offset_bottom = 40.0
 script = ExtResource("1_88rqi")
 
 [node name="TextureRect" type="TextureRect" parent="coin_ui"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.775
+anchor_top = 0.575
+anchor_right = -1.175
+anchor_bottom = 1.15
 offset_left = 1820.0
 offset_top = 1.0
 offset_right = 1875.0
@@ -24,15 +29,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="coin_ui"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 48.0
-anchor_top = 0.5
-anchor_right = 48.0
-anchor_bottom = 0.5
+anchor_left = 46.7
+anchor_top = 1.175
+anchor_right = 47.075
+anchor_bottom = 1.75
 offset_left = -60.0001
 offset_top = -9.0
 offset_right = -1.00012
 offset_bottom = 26.0
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 34
 text = "0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
