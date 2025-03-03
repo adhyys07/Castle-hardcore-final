@@ -71,6 +71,7 @@ rotation = 0.0428566
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_qqx8y")
 }
