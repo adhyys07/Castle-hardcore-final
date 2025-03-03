@@ -9,5 +9,6 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if body.is_in_group("player"):  # Ensure the player is in the correct group
 		CoinManager.add_coin()
+		SoundManager.play_coin_sound()
 		queue_free()  # Remove the coin
 		

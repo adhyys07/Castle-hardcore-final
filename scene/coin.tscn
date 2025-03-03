@@ -110,7 +110,7 @@ sprite_frames = SubResource("SpriteFrames_v5qge")
 autoplay = "default"
 frame_progress = 0.905723
 
-[node name="pickupsfx" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3dbs5")
 volume_db = 24.0
 pitch_scale = 0.98

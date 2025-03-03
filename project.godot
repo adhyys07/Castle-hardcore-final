@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Gamemanager="*res://script/gamemanager.gd"
 Gamecontroller="*res://script/gamecontroller.gd"
 CoinManager="*res://script/coin_manager.gd"
+SoundManager="*res://script/sound_manager.gd"
 
 [display]
 
