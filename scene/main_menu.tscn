@@ -27,8 +27,9 @@ script = ExtResource("1_a6jqb")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
+offset_top = -6.0
 offset_right = 1924.0
-offset_bottom = 1076.0
+offset_bottom = 1086.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_jp8b6")
 
 [node name="Button" type="Button" parent="."]
