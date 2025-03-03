@@ -24,7 +24,7 @@ position = Vector2(-319, 182)
 position = Vector2(318, 242)
 
 [node name="level_5" parent="." instance=ExtResource("7_4affv")]
-position = Vector2(942, -182)
+position = Vector2(738, -103)
 
 [node name="level_6" parent="." instance=ExtResource("7_4affv")]
 position = Vector2(751, 356)

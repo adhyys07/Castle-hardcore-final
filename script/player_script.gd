@@ -3,10 +3,9 @@ class_name Player extends CharacterBody2D
 @onready
 var sprite = $AnimatedSprite2D
 
-const SPEED = 200.0
 const JUMP_VELOCITY = -315.0
 @export var jump_force: float = -300.0
-@export var speed: float = 300.0
+@export var speed: float = 200.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var attack = false
 var attacking: bool = false
@@ -57,9 +56,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
+		animated_sprite.play("death")
 		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 			#print("youre gay")
-		#animated_sprite.play("death")
+		
 		#OS.delay_msec(1000)
 		#get_tree().change_scene_to
 		
