@@ -1,16 +1,13 @@
 extends Area2D
 
+@export var coin_value: int = 1
+
 func _ready() -> void:
-	pass
-	
-@export var value: int = 1
-@onready var sound
-
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
-		Gamecontroller.coin_collected(value)
-		$pickupsfx.play()
-		queue_free()
+	connect("body_entered", _on_body_entered)
 
 
+func _on_body_entered(body):
+	if body.is_in_group("player"):  # Ensure the player is in the correct group
+		CoinManager.add_coin()
+		queue_free()  # Remove the coin
 		

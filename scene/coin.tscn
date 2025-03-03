@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://fxrh2v40cwew" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="1_n7e20"]
 [ext_resource type="AudioStream" uid="uid://cfp4t85gd0ojp" path="res://assets/sounds/coin sound.wav" id="3_3dbs5"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifnji"]
+radius = 4.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dyfa"]
 atlas = ExtResource("1_n7e20")
 region = Rect2(0, 0, 16, 16)
@@ -96,19 +99,16 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ifnji"]
-radius = 4.0
-
 [node name="coin" type="Area2D"]
 script = ExtResource("1_f7wgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ifnji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v5qge")
 autoplay = "default"
 frame_progress = 0.905723
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ifnji")
 
 [node name="pickupsfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3dbs5")

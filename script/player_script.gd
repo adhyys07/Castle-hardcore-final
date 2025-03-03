@@ -10,6 +10,8 @@ const JUMP_VELOCITY = -315.0
 @export var attack = false
 var attacking: bool = false
 
+func _ready():
+	add_to_group("player")
 func _process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

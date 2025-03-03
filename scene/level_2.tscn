@@ -337,6 +337,9 @@ position = Vector2(232, -95)
 
 [node name="Area2D" parent="coins" instance=ExtResource("10_d5g4b")]
 
+[node name="Area2D" parent="coins/Area2D" instance=ExtResource("10_d5g4b")]
+position = Vector2(-130, 122)
+
 [node name="Area2D2" parent="coins" instance=ExtResource("10_d5g4b")]
 position = Vector2(144, -39)
 
