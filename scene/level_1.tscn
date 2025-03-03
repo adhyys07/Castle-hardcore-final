@@ -200,8 +200,8 @@ position = Vector2(48, 32)
 script = ExtResource("1_icvv3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-142, -108)
-zoom = Vector2(3, 2.5)
+position = Vector2(-142, -113)
+zoom = Vector2(3, 2.6)
 
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
 position = Vector2(-396, 71)
