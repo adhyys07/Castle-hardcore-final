@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_1rtl8"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_nllls"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
-[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="7_brcl0"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="7_rxa1g"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="8_bck8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
@@ -194,11 +194,11 @@ tile_set = SubResource("TileSet_v5t0b")
 [node name="CanvasLayer" parent="." instance=ExtResource("6_bqdhi")]
 
 [node name="Button3" type="Button" parent="."]
-offset_left = -22.0
-offset_top = -165.0
-offset_right = 18.0
-offset_bottom = -125.0
-icon = ExtResource("7_brcl0")
+offset_left = -17.0
+offset_top = -162.0
+offset_right = 12.0
+offset_bottom = -134.0
+icon = ExtResource("7_rxa1g")
 flat = true
 
 [node name="level_portal_3" parent="." instance=ExtResource("8_bck8x")]

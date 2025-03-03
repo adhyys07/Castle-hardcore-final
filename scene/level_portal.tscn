@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://beaxdns5qkfgs" path="res://assets/Pixel Art Animated Portal/sprite-sheet.png" id="1_06akx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nx3w7"]
-radius = 19.0
+radius = 18.6815
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0lv7"]
 atlas = ExtResource("1_06akx")

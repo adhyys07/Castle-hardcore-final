@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mob.tscn" id="11_de03v"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="12_ni7p8"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="13_gtmc3"]
-[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="14_kq34i"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="14_sju4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2g28"]
 texture = ExtResource("1_1na3d")
@@ -349,11 +349,11 @@ position = Vector2(-144, 48)
 [node name="mob2" parent="mobs" instance=ExtResource("11_de03v")]
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 321.0
-offset_top = -333.0
-offset_right = 361.0
-offset_bottom = -293.0
-icon = ExtResource("14_kq34i")
+offset_left = 320.0
+offset_top = -324.0
+offset_right = 349.0
+offset_bottom = -296.0
+icon = ExtResource("14_sju4p")
 flat = true
 
 [connection signal="body_entered" from="level_portal_2" to="." method="_on_level_portal_2_body_entered"]

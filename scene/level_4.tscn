@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mob.tscn" id="9_ha4kd"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="10_x3asf"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="11_xo4x8"]
-[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="13_bu6wb"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="13_hdfhm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quq1h"]
 texture = ExtResource("1_5fu1s")
@@ -342,11 +342,11 @@ loop = false
 [node name="CanvasLayer" parent="." instance=ExtResource("11_xo4x8")]
 
 [node name="Button4" type="Button" parent="."]
-offset_left = -22.0
-offset_top = -414.0
-offset_right = 18.0
-offset_bottom = -374.0
-icon = ExtResource("13_bu6wb")
+offset_left = -15.0
+offset_top = -413.0
+offset_right = 14.0
+offset_bottom = -385.0
+icon = ExtResource("13_hdfhm")
 flat = true
 
 [connection signal="body_entered" from="level_portal_4" to="." method="_on_level_portal_3_body_entered"]

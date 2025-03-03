@@ -5,9 +5,11 @@ var sprite = $AnimatedSprite2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -315.0
-
+@export var jump_force: float = -300.0
+@export var speed: float = 300.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var attack = false
+var attacking: bool = false
 
 func _process(delta: float) -> void:
 	# Add the gravity.
@@ -18,29 +20,34 @@ func _process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
+	if attacking:
+		move_and_slide()
+		return  # Prevent movement & animation changes while attacking
+		
+	if direction:
+		velocity.x = direction * speed
+		sprite.flip_h = direction < 0
+		sprite.play("walk")
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		if is_on_floor():
+			sprite.play("idle")
 
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
-	
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("walk")
-			
+	if Input.is_action_just_pressed("attack"):
+		sprite.play("attack")
+		attacking = true
+		
+		sprite.animation_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
+
 	
 	#Apply movement
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	move_and_slide()
 	
-
-
+func _on_attack_finished():
+	attacking = false  # Allow other animations after attack ends
+	sprite.play("idle")
+	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
 		body.Collect()
@@ -69,8 +76,3 @@ func emote():
 	
 	
 	
-
-
-
-func _on_button_6_pressed() -> void:
-	pass # Replace with function body.

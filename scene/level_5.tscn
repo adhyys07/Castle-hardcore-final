@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_fob37"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="3_5q35b"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="4_02nka"]
-[ext_resource type="Texture2D" uid="uid://deinx0envgafb" path="res://assets/arrows/box arrow.png" id="6_e05pf"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="6_5ljqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i4qu"]
 texture = ExtResource("2_fob37")
@@ -146,10 +146,11 @@ sources/0 = SubResource("TileSetAtlasSource_7i4qu")
 script = ExtResource("1_ki7lv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -61)
+position = Vector2(100, -72)
+zoom = Vector2(2.3, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_e1p3s")]
-position = Vector2(-9, 44)
+position = Vector2(3, 88)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
@@ -165,11 +166,11 @@ layer_0/tile_data = PackedInt32Array(458738, 393216, 1, 458739, 393216, 1, 45874
 position = Vector2(278, 64)
 
 [node name="Button5" type="Button" parent="."]
-offset_left = 80.0
-offset_top = -235.0
-offset_right = 120.0
-offset_bottom = -195.0
-icon = ExtResource("6_e05pf")
+offset_left = 74.0
+offset_top = -247.0
+offset_right = 103.0
+offset_bottom = -219.0
+icon = ExtResource("6_5ljqp")
 flat = true
 
 [connection signal="body_entered" from="level_portal_5" to="." method="_on_level_portal_5_body_entered"]
