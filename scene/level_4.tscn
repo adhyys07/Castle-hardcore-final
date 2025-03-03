@@ -169,7 +169,7 @@ position = Vector2(8, -142)
 zoom = Vector2(2.92, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_xyx8n")]
-position = Vector2(123, -286)
+position = Vector2(316, 98)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
