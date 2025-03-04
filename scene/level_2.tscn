@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="12_ni7p8"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="13_gtmc3"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="14_sju4p"]
-[ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/movin_mob.tscn" id="15_gj2md"]
+[ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/movin_mob.tscn" id="15_q6q15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2g28"]
 texture = ExtResource("1_1na3d")
@@ -360,9 +360,8 @@ offset_bottom = -296.0
 icon = ExtResource("14_sju4p")
 flat = true
 
-[node name="Straight" parent="." instance=ExtResource("15_gj2md")]
-position = Vector2(315, -247)
-loop = false
+[node name="Straight" parent="." instance=ExtResource("15_q6q15")]
+position = Vector2(340, -261)
 
 [connection signal="body_entered" from="level_portal_2" to="." method="_on_level_portal_2_body_entered"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
