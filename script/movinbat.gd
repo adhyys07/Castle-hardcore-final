@@ -1,16 +1,33 @@
 extends CharacterBody2D
+const SPEED = 50
+@onready var sprite = $AnimatedSprite2D
 var direction = 1
-const SPEED = 100
+var inverse = -1
 
-func enemy_float():
-	velocity.x = direction * SPEED
-	
+func _ready():
+	pass
 
-func _on_timer_timeout() -> void:
-	direction = -direction
+func enemy_gravity(delta : float):
+	if not is_on_floor():
+		velocity += delta * get_gravity()
+
+func rayc():
+	if not $RayCast2D.is_colliding():
+		direction = -direction
+		$RayCast2D.position.x *= -1
+
+
+func move_enemy():
+	velocity.x = SPEED * direction 
+
+func reverse_dir():
+	if is_on_wall():
+		direction = -direction
+		
 	
 func _physics_process(delta: float) -> void:
-	enemy_float()
-	_on_timer_timeout()
+	enemy_gravity(delta)
+	move_enemy()
 	move_and_slide()
-	
+	reverse_dir()
+	rayc()

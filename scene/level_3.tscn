@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c053ub4jan1b7"]
+[gd_scene load_steps=14 format=4 uid="uid://c053ub4jan1b7"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_ky3s0"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_r4dhi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="7_rxa1g"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="8_bck8x"]
+[ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/movinbat.tscn" id="9_3wxwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
 texture = ExtResource("1_r4dhi")
@@ -185,6 +186,7 @@ position = Vector2(32, 96)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_v5t0b")
 format = 2
+layer_0/tile_data = PackedInt32Array(589815, 393217, 1, 589816, 393217, 1, 589817, 393217, 1)
 
 [node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
@@ -203,6 +205,9 @@ flat = true
 
 [node name="level_portal_3" parent="." instance=ExtResource("8_bck8x")]
 position = Vector2(163, 127)
+
+[node name="MovingEnemy" parent="." instance=ExtResource("9_3wxwb")]
+position = Vector2(-135, 122)
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="body_entered" from="level_portal_3" to="." method="_on_level_portal_3_body_entered"]

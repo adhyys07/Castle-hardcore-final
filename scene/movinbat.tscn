@@ -1,93 +1,84 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmyyp2bcj2oip"]
+[gd_scene load_steps=12 format=3 uid="uid://bmyyp2bcj2oip"]
 
 [ext_resource type="Script" path="res://script/movinbat.gd" id="1_qi8r3"]
-[ext_resource type="Texture2D" uid="uid://bc7btcwxj13pn" path="res://assets/faaltu/32x32-bat-sprite.png" id="1_twsnq"]
+[ext_resource type="Texture2D" uid="uid://4rpj8g04qbqt" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_us8f7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xc8h"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o0qm"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(48, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_50gll"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vwgh"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(72, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iwgt"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(64, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_trql7"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(0, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n36u7"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(96, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ew7"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mc2eh"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0p2d"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_phi2i"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv3s5"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(72, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_joce3"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3yetn"]
-atlas = ExtResource("1_twsnq")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0lxm"]
+atlas = ExtResource("2_us8f7")
+region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vtn8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2xc8h")
+"texture": SubResource("AtlasTexture_4o0qm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_50gll")
+"texture": SubResource("AtlasTexture_6vwgh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1iwgt")
+"texture": SubResource("AtlasTexture_trql7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n36u7")
+"texture": SubResource("AtlasTexture_j8ew7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0p2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv3s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0lxm")
 }],
 "loop": true,
-"name": &"fly",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mc2eh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phi2i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_joce3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3yetn")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
+"name": &"walk",
+"speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w84pu"]
-radius = 8.06226
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enaag"]
+size = Vector2(12, 11)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-motion_mode = 1
 script = ExtResource("1_qi8r3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_1vtn8")
-animation = &"idle"
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.0704636
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_w84pu")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_enaag")
 debug_color = Color(0.704967, 0.373726, 0.80721, 0.42)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4096.0
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(9, -5)
+target_position = Vector2(0, 12)
+collide_with_areas = true
