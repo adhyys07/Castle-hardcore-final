@@ -1,13 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://03dgpjtm1x6x"]
+[gd_scene load_steps=8 format=3 uid="uid://03dgpjtm1x6x"]
 
+[ext_resource type="Script" path="res://scene/movin_mob.gd" id="1_bcqn3"]
 [ext_resource type="Texture2D" uid="uid://bc7btcwxj13pn" path="res://assets/faaltu/32x32-bat-sprite.png" id="2_0fn8m"]
 
-[sub_resource type="Curve2D" id="Curve2D_rldia"]
+[sub_resource type="Curve2D" id="Curve2D_vlh2j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 100, -1)
+}
+point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyso3"]
-size = Vector2(32.3725, 7.99265)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xogyc"]
 
-[sub_resource type="Animation" id="Animation_cu4j1"]
+[sub_resource type="Animation" id="Animation_wtac6"]
+resource_name = "move"
+length = 2.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -16,15 +22,14 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_834ap"]
-resource_name = "new_animation"
-loop_mode = 2
+[sub_resource type="Animation" id="Animation_54mgf"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,49 +37,42 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(-1.56, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqx8y"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4dym"]
 _data = {
-"RESET": SubResource("Animation_cu4j1"),
-"new_animation": SubResource("Animation_834ap")
+"RESET": SubResource("Animation_54mgf"),
+"move": SubResource("Animation_wtac6")
 }
 
-[node name="Path2D" type="Path2D"]
-curve = SubResource("Curve2D_rldia")
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(0.976471, 1.02298)
-rotation = 0.0428566
-
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-position = Vector2(0.703173, 2.28418)
-rotation = -0.0349066
-scale = Vector2(0.978621, 1)
-texture = ExtResource("2_0fn8m")
-region_enabled = true
-region_rect = Rect2(33, 3, 31, 26)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0.151052, 2.97328)
-rotation = -0.0349066
-shape = SubResource("RectangleShape2D_jyso3")
+[node name="Straight" type="Path2D"]
+curve = SubResource("Curve2D_vlh2j")
+script = ExtResource("1_bcqn3")
+loop = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(0.976471, 1.02298)
-rotation = 0.0428566
+position = Vector2(9.47446, -1)
+progress = 9.42202
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-callback_mode_process = 0
-libraries = {
-"": SubResource("AnimationLibrary_qqx8y")
-}
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(9.47446, -1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_0fn8m")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_xogyc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g4dym")
+}

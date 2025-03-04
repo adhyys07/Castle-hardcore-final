@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn5fcfg4mn50x"]
 
 [ext_resource type="Texture2D" uid="uid://b1vubonhwhsfu" path="res://assets/coin.png" id="2_4sseu"]
-[ext_resource type="Script" path="res://scene/label.gd" id="3_5v2em"]
+[ext_resource type="Script" path="res://label.gd" id="3_5v2em"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

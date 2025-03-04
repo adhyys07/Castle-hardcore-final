@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_ak1j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
-size = Vector2(32.3725, 7.99265)
+size = Vector2(14.9995, 20.9993)
 
 [sub_resource type="Animation" id="Animation_cu4j1"]
 loop_mode = 2
