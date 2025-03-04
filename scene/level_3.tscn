@@ -186,7 +186,6 @@ position = Vector2(32, 96)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_v5t0b")
 format = 2
-layer_0/tile_data = PackedInt32Array(589815, 393217, 1, 589816, 393217, 1, 589817, 393217, 1)
 
 [node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
