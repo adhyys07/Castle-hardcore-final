@@ -204,7 +204,7 @@ position = Vector2(-142, -113)
 zoom = Vector2(3, 2.6)
 
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
-position = Vector2(-393, 74)
+position = Vector2(-380, -67)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")

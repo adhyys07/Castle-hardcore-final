@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c670a5netct3d"]
+[gd_scene load_steps=9 format=3 uid="uid://c670a5netct3d"]
 
 [ext_resource type="PackedScene" uid="uid://6d0h0p15nx0x" path="res://scene/level_1.tscn" id="2_ajnkx"]
 [ext_resource type="PackedScene" uid="uid://cysxdwxs7s0nm" path="res://scene/level_2.tscn" id="3_wgvr0"]
@@ -6,25 +6,37 @@
 [ext_resource type="PackedScene" uid="uid://cpfn5bokdjt74" path="res://scene/level_4.tscn" id="5_ertln"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="5_hocwk"]
 [ext_resource type="PackedScene" uid="uid://7ntxag07kmqe" path="res://scene/level_6.tscn" id="7_4affv"]
+[ext_resource type="PackedScene" uid="uid://glwp8ypt7i1m" path="res://scene/level_7.tscn" id="7_ef17k"]
+[ext_resource type="PackedScene" uid="uid://du4xvssa6ues3" path="res://scene/w_2_level_1.tscn" id="8_0b4rw"]
 
 [node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_hocwk")]
 
-[node name="level_1" parent="." instance=ExtResource("2_ajnkx")]
+[node name="world_1" type="Node2D" parent="."]
+
+[node name="level_1" parent="world_1" instance=ExtResource("2_ajnkx")]
 position = Vector2(-184, -95)
 
-[node name="level_2" parent="." instance=ExtResource("3_wgvr0")]
+[node name="level_2" parent="world_1" instance=ExtResource("3_wgvr0")]
 position = Vector2(-2, -107)
 
-[node name="level_3" parent="." instance=ExtResource("4_t7oyh")]
+[node name="level_3" parent="world_1" instance=ExtResource("4_t7oyh")]
 position = Vector2(-319, 182)
 
-[node name="level_4" parent="." instance=ExtResource("5_ertln")]
+[node name="level_4" parent="world_1" instance=ExtResource("5_ertln")]
 position = Vector2(318, 242)
 
-[node name="level_5" parent="." instance=ExtResource("7_4affv")]
-position = Vector2(738, -103)
+[node name="level_5" parent="world_1" instance=ExtResource("7_4affv")]
+position = Vector2(738, -308)
 
-[node name="level_6" parent="." instance=ExtResource("7_4affv")]
-position = Vector2(751, 356)
+[node name="level_6" parent="world_1" instance=ExtResource("7_4affv")]
+position = Vector2(751, 293)
+
+[node name="level_7" parent="world_1" instance=ExtResource("7_ef17k")]
+position = Vector2(162, 847)
+
+[node name="world_2" type="Node2D" parent="."]
+
+[node name="w2_level1" parent="world_2" instance=ExtResource("8_0b4rw")]
+position = Vector2(1801, -446)
