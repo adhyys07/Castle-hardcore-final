@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://6oje38rv3gh6"]
 
-[ext_resource type="Script" path="res://script/path_2d.gd" id="1_w47cc"]
-[ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_ak1j0"]
+[ext_resource type="Script" path="res://script/path_2d.gd" id="1_cie0f"]
+[ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_bh0t7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
 size = Vector2(31.999, 8.99972)
@@ -44,7 +44,7 @@ _data = {
 }
 
 [node name="Straight" type="Path2D"]
-script = ExtResource("1_w47cc")
+script = ExtResource("1_cie0f")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(0.976471, 1.02298)
@@ -54,7 +54,7 @@ rotation = 0.0428566
 position = Vector2(0.703173, 2.28418)
 rotation = -0.0349066
 scale = Vector2(0.978621, 1)
-texture = ExtResource("2_ak1j0")
+texture = ExtResource("2_bh0t7")
 region_enabled = true
 region_rect = Rect2(16, 16, 32, 9)
 

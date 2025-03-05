@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_r4dhi"]
 [ext_resource type="Script" path="res://script/level_3.gd" id="1_vwhh5"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_1rtl8"]
-[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_nllls"]
-[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="6_bqdhi"]
+[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="2_nllls"]
+[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="6_bqdhi"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="7_rxa1g"]
-[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="8_bck8x"]
-[ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/movinbat.tscn" id="9_3wxwb"]
+[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="8_bck8x"]
+[ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="9_3wxwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo4pd"]
 texture = ExtResource("1_r4dhi")

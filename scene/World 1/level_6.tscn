@@ -1,23 +1,23 @@
 [gd_scene load_steps=21 format=3 uid="uid://7ntxag07kmqe"]
 
-[ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_8jxo4"]
-[ext_resource type="Script" path="res://script/level_6.gd" id="1_uwud3"]
-[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="2_0xj0w"]
-[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="3_5wiqr"]
-[ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="4_c2uw5"]
-[ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/fake.tscn" id="5_a1qiq"]
-[ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/straight.tscn" id="6_q5363"]
-[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="8_020lw"]
-[ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/breakaway.tscn" id="9_iedju"]
-[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="10_i0ye7"]
-[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="11_ut1oa"]
-[ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/jump_thru.tscn" id="12_f6drw"]
-[ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mob.tscn" id="13_un4t8"]
-[ext_resource type="PackedScene" uid="uid://04ac0cr730ya" path="res://scene/spiketrap.tscn" id="14_2rul2"]
-[ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/movin_mob.tscn" id="15_50xja"]
+[ext_resource type="Script" path="res://script/level_6.gd" id="1_02u1t"]
+[ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_ggmg4"]
+[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="3_b47wl"]
+[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="4_uvw1w"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="5_ukiiy"]
+[ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="6_magy8"]
+[ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="7_h8e35"]
+[ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/traps+platforms/straight.tscn" id="8_pqs6h"]
+[ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="9_nw58v"]
+[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="10_b61b6"]
+[ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/traps+platforms/fake.tscn" id="11_migid"]
+[ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/traps+platforms/fire.tscn" id="12_xisoo"]
+[ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mobs/mob.tscn" id="13_2ewl7"]
+[ext_resource type="PackedScene" uid="uid://04ac0cr730ya" path="res://scene/traps+platforms/spiketrap.tscn" id="14_txfgk"]
+[ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/mobs/movin_mob.tscn" id="15_wnkgk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5np1"]
-texture = ExtResource("1_8jxo4")
+texture = ExtResource("2_ggmg4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -170,7 +170,7 @@ _data = {
 point_count = 2
 
 [node name="level_6" type="Node2D"]
-script = ExtResource("1_uwud3")
+script = ExtResource("1_02u1t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(263, -232)
@@ -181,255 +181,255 @@ tile_set = SubResource("TileSet_jxcsa")
 format = 2
 layer_0/tile_data = PackedInt32Array(327674, 393216, 1, 327675, 393216, 1, 327676, 393216, 1, 327677, 393216, 1, 327678, 393216, 1, 327679, 393216, 1, 262144, 393216, 1, 262145, 393216, 1, 262146, 393216, 1, 262147, 393216, 1, 262148, 393216, 1, 262149, 393216, 1, 262150, 393216, 1, 262151, 393216, 1, 262152, 393216, 1, 262153, 393216, 1, 262154, 393216, 1, 262155, 393216, 1, 262156, 393216, 1, 262157, 393216, 1, 262158, 393216, 1, 262159, 393216, 1, 262160, 393216, 1, 262161, 393216, 1, 262162, 393216, 1, 262163, 393216, 1, 262164, 393216, 1, 262165, 393216, 1, 262166, 393216, 1, 262167, 393216, 1, 262168, 393216, 1, 262169, 393216, 1, 262170, 393216, 1, 262171, 393216, 1, 262172, 393216, 1, 262173, 393216, 1, 262174, 393216, 1, 262175, 393216, 1, 262176, 393216, 1, 262177, 393216, 1, 262178, 393216, 1, 262179, 393216, 1, 262180, 393216, 1, 262181, 393216, 1, 262182, 393216, 1, 262138, 393216, 1, 196602, 393216, 1, 131066, 393216, 1, 65530, 393216, 1, -6, 393216, 1, -65542, 393216, 1, -131078, 393216, 1, -196614, 393216, 1, -262150, 393216, 1, -327686, 393216, 1, -393222, 393216, 1, -458758, 393216, 1, -524294, 393216, 1, -589830, 393216, 1, -655366, 393216, 1, -720902, 393216, 1, -786438, 393216, 1, -851974, 393216, 1, -917510, 393216, 1, -983046, 393216, 1, -1048582, 393216, 1, -1114118, 393216, 1, -1179654, 393216, 1, -1245190, 393216, 1, -1310726, 393216, 1, -1376262, 393216, 1, -1441798, 393216, 1, -1507334, 393216, 1, -1572870, 393216, 1, -1638406, 393216, 1, 196646, 393216, 1, 131110, 393216, 1, 65574, 393216, 1, 38, 393216, 1, -65498, 393216, 1, -131034, 393216, 1, -196570, 393216, 1, -262106, 393216, 1, -327642, 393216, 1, -393178, 393216, 1, -458714, 393216, 1, -524250, 393216, 1, -589786, 393216, 1, -655322, 393216, 1, -720858, 393216, 1, -786394, 393216, 1, -851930, 393216, 1, -917466, 393216, 1, -983002, 393216, 1, -1048538, 393216, 1, -1114074, 393216, 1, -1179610, 393216, 1, -1310682, 393216, 1, -1245146, 393216, 1, -1376218, 393216, 1, -1441754, 393216, 1, -1507290, 393216, 1, -1572826, 393216, 1, -1638362, 393216, 1, -1703898, 393216, 1, 37, 393216, 1, 36, 393216, 1, 35, 393216, 1, 34, 393216, 1, 33, 393216, 1, -131044, 393216, 1, -131045, 393216, 1, -131064, 393216, 1, -131065, 393216, 1, -524283, 393216, 1, -1048539, 393216, 1, -1048540, 393216, 1, -2097114, 393216, 1, -2031578, 393216, 1, -1966042, 393216, 1, -1900506, 393216, 1, -1834970, 393216, 1, -1769434, 393216, 1, -1966086, 393216, 1, -1900550, 393216, 1, -1835014, 393216, 1, -1769478, 393216, 1, -1703942, 393216, 1, -1376225, 393216, 1, -1376226, 393216, 1, -1376228, 393216, 1, -1376227, 393216, 1, -1376232, 393216, 1, -1376233, 393216, 1, -1572828, 393216, 1, -1572827, 393216, 1, -2031622, 393216, 1, -2097158, 393216, 1, -2162650, 393216, 1, -2228186, 393216, 1, -2228187, 393216, 1, -2228188, 393216, 1, -2228189, 393216, 1, -2228190, 393216, 1, -2228191, 393216, 1, -2228192, 393216, 1, -2228193, 393216, 1, -2228199, 393216, 1, -2228200, 393216, 1, -2228194, 393216, 1, -2228201, 393216, 1, -2228202, 393216, 1, -2228203, 393216, 1, -2228216, 393216, 1, -2228217, 393216, 1, -2228218, 393216, 1, -2228219, 393216, 1, -2228220, 393216, 1, -2228221, 393216, 1, -2228222, 393216, 1, -2228223, 393216, 1, -2228224, 393216, 1, -2162689, 393216, 1, -2162690, 393216, 1, -2162691, 393216, 1, -2162692, 393216, 1, -2162693, 393216, 1, -2162694, 393216, 1, -2228198, 393216, 1, -2228197, 393216, 1, -2228196, 393216, 1, -2228195, 393216, 1, -2228215, 393216, 1, -2228214, 393216, 1, -2228213, 393216, 1, -2228212, 393216, 1, -2228211, 393216, 1, -2228210, 393216, 1, -2228209, 393216, 1, -2228208, 393216, 1, -2228207, 393216, 1, -2228206, 393216, 1, -2228205, 393216, 1, -2228204, 393216, 1, -1376234, 393216, 1, -1179631, 393216, 1, -1179630, 393216, 1, -1179632, 393216, 1, -1638384, 393216, 1, -1638383, 393216, 1, -1638382, 393216, 1, -1376245, 393216, 1, -1376244, 393216, 1, -1703941, 393216, 1, -1703940, 393216, 1, -1703939, 393216, 1, -1703938, 393216, 1, -1703937, 393216, 1, -1769472, 393216, 1, -1769440, 393216, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_0xj0w")]
+[node name="Player" parent="." instance=ExtResource("3_b47wl")]
 position = Vector2(311, -395)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_5wiqr")]
+[node name="CanvasLayer" parent="." instance=ExtResource("4_uvw1w")]
 
 [node name="Button6" type="Button" parent="."]
 offset_left = 261.0
 offset_top = -529.0
 offset_right = 290.0
 offset_bottom = -501.0
-icon = ExtResource("8_020lw")
+icon = ExtResource("5_ukiiy")
 flat = true
 
-[node name="level_portal_6" parent="." instance=ExtResource("10_i0ye7")]
+[node name="level_portal_6" parent="." instance=ExtResource("6_magy8")]
 position = Vector2(-51, -456)
 
-[node name="passthrou" parent="." instance=ExtResource("12_f6drw")]
+[node name="passthrou" parent="." instance=ExtResource("7_h8e35")]
 position = Vector2(588, -296.75)
 scale = Vector2(0.9375, 1.1875)
 
 [node name="movin" type="CanvasGroup" parent="."]
 
-[node name="Straight3" parent="movin" instance=ExtResource("6_q5363")]
+[node name="Straight3" parent="movin" instance=ExtResource("8_pqs6h")]
 position = Vector2(210, -53)
 scale = Vector2(1.01963, 1)
 curve = SubResource("Curve2D_u2ie5")
 loop = false
 
-[node name="Straight" parent="movin" instance=ExtResource("6_q5363")]
+[node name="Straight" parent="movin" instance=ExtResource("8_pqs6h")]
 position = Vector2(-44, -87)
 curve = SubResource("Curve2D_mh8w5")
 loop = false
 
-[node name="Straight2" parent="movin" instance=ExtResource("6_q5363")]
+[node name="Straight2" parent="movin" instance=ExtResource("8_pqs6h")]
 position = Vector2(437, -218)
 curve = SubResource("Curve2D_kxw8o")
 loop = false
 
 [node name="breakable" type="CanvasGroup" parent="."]
 
-[node name="StaticBody2D4" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D4" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(60, -49)
 
-[node name="StaticBody2D5" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D5" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(147, -138)
 
-[node name="StaticBody2D6" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D6" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(225, -153)
 
-[node name="StaticBody2D7" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D7" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(299, -171)
 
-[node name="StaticBody2D8" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D8" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(370, -186)
 
-[node name="StaticBody2D9" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D9" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(131, -349)
 
-[node name="StaticBody2D10" parent="breakable" instance=ExtResource("9_iedju")]
+[node name="StaticBody2D10" parent="breakable" instance=ExtResource("9_nw58v")]
 position = Vector2(232, -380)
 
 [node name="coins" type="CanvasGroup" parent="."]
 position = Vector2(232, -380)
 
-[node name="coin_1" parent="coins" instance=ExtResource("11_ut1oa")]
+[node name="coin_1" parent="coins" instance=ExtResource("10_b61b6")]
 position = Vector2(-144, 245)
 
-[node name="coin_2" parent="coins" instance=ExtResource("11_ut1oa")]
+[node name="coin_2" parent="coins" instance=ExtResource("10_b61b6")]
 position = Vector2(46, -28)
 
-[node name="coin_3" parent="coins" instance=ExtResource("11_ut1oa")]
+[node name="coin_3" parent="coins" instance=ExtResource("10_b61b6")]
 position = Vector2(-232, 203)
 
-[node name="coin_4" parent="coins" instance=ExtResource("11_ut1oa")]
+[node name="coin_4" parent="coins" instance=ExtResource("10_b61b6")]
 position = Vector2(288, -60)
 
-[node name="coin_5" parent="coins" instance=ExtResource("11_ut1oa")]
+[node name="coin_5" parent="coins" instance=ExtResource("10_b61b6")]
 position = Vector2(-33, 324)
 
 [node name="fakeplat" type="CanvasGroup" parent="."]
 position = Vector2(-1, -160)
 rotation = -3.14159
 
-[node name="Sprite2D9" parent="fakeplat" instance=ExtResource("5_a1qiq")]
+[node name="Sprite2D9" parent="fakeplat" instance=ExtResource("11_migid")]
 position = Vector2(-388, -135.999)
 rotation = 0.0
 
-[node name="Sprite2D11" parent="fakeplat" instance=ExtResource("5_a1qiq")]
+[node name="Sprite2D11" parent="fakeplat" instance=ExtResource("11_migid")]
 position = Vector2(0, 0)
 rotation = 0.0
 
 [node name="fire" type="CanvasGroup" parent="."]
 
-[node name="RigidBody2D13" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D13" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(237, 74)
 
-[node name="RigidBody2D15" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D15" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(267, 74)
 
-[node name="RigidBody2D16" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D16" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(297, 74)
 
-[node name="RigidBody2D17" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D17" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(326, 74)
 
-[node name="RigidBody2D18" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D18" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(355, 74)
 
-[node name="RigidBody2D19" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D19" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(385, 74)
 
-[node name="RigidBody2D20" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D20" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(415, 74)
 
-[node name="RigidBody2D21" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D21" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(445, 74)
 
-[node name="RigidBody2D22" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D22" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(475, 74)
 
-[node name="RigidBody2D23" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D23" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(505, 74)
 
-[node name="RigidBody2D24" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D24" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(535, 74)
 
-[node name="RigidBody2D25" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D25" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(563, 74)
 
-[node name="RigidBody2D12" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D12" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(207, 74)
 
-[node name="RigidBody2D11" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D11" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(178, 74)
 
-[node name="RigidBody2D10" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D10" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(148, 74)
 
-[node name="RigidBody2D9" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D9" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(119, 74)
 
-[node name="RigidBody2D8" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D8" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(90, 74)
 
-[node name="RigidBody2D7" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D7" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(61, 74)
 
-[node name="RigidBody2D5" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D5" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(31, 74)
 
-[node name="RigidBody2D4" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D4" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(2, 74)
 
-[node name="RigidBody2D3" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D3" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(-28, 73)
 
-[node name="RigidBody2D2" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D2" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(-57, 74)
 
-[node name="RigidBody2D" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(-85, 74)
 
-[node name="RigidBody2D26" parent="fire" instance=ExtResource("4_c2uw5")]
+[node name="RigidBody2D26" parent="fire" instance=ExtResource("12_xisoo")]
 position = Vector2(441, -326)
 
 [node name="mobs" type="CanvasGroup" parent="."]
 
-[node name="mob4" parent="mobs" instance=ExtResource("13_un4t8")]
+[node name="mob4" parent="mobs" instance=ExtResource("13_2ewl7")]
 position = Vector2(442, -372)
 
-[node name="mob5" parent="mobs" instance=ExtResource("13_un4t8")]
+[node name="mob5" parent="mobs" instance=ExtResource("13_2ewl7")]
 position = Vector2(-20, -222)
 
 [node name="spikes" type="CanvasGroup" parent="."]
 
-[node name="spiketrap5" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap5" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(-45, -417)
 rotation = -3.14159
 
-[node name="spiketrap6" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap6" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(-57.9989, -417)
 rotation = -3.14159
 
-[node name="spiketrap7" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap7" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(-71, -417)
 rotation = -3.14159
 
-[node name="spiketrap8" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap8" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(-19, -417)
 rotation = -3.14159
 
-[node name="spiketrap9" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap9" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(-32, -417)
 rotation = -3.14159
 
-[node name="spiketrap10" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap10" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(-6, -417)
 rotation = -3.14159
 
-[node name="spiketrap11" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap11" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(7, -417)
 rotation = -3.14159
 
-[node name="spiketrap12" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap12" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(586, -368)
 rotation = -3.14159
 
-[node name="spiketrap13" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap13" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(600, -368)
 rotation = -3.14159
 
-[node name="spiketrap14" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap14" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(586, -241)
 rotation = -3.14159
 
-[node name="spiketrap15" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap15" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(600, -241)
 rotation = -3.14159
 
-[node name="spiketrap16" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap16" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(266, -273)
 rotation = -3.14159
 
-[node name="spiketrap17" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap17" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(281, -273)
 rotation = -3.14159
 
-[node name="spiketrap18" parent="spikes" instance=ExtResource("14_2rul2")]
+[node name="spiketrap18" parent="spikes" instance=ExtResource("14_txfgk")]
 position = Vector2(297, -273)
 rotation = -3.14159
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("9_iedju")]
+[node name="StaticBody2D6" parent="." instance=ExtResource("9_nw58v")]
 position = Vector2(70, -387)
 
 [node name="movin_mob" type="CanvasGroup" parent="."]
 
-[node name="Straight" parent="movin_mob" instance=ExtResource("15_50xja")]
+[node name="Straight" parent="movin_mob" instance=ExtResource("15_wnkgk")]
 position = Vector2(-63.125, -354)
 scale = Vector2(1.42188, 1)
 loop = false
 
-[node name="Straight3" parent="movin_mob" instance=ExtResource("15_50xja")]
+[node name="Straight3" parent="movin_mob" instance=ExtResource("15_wnkgk")]
 position = Vector2(355, -137)
 loop = false
 
-[node name="Straight4" parent="movin_mob" instance=ExtResource("15_50xja")]
+[node name="Straight4" parent="movin_mob" instance=ExtResource("15_wnkgk")]
 position = Vector2(472, -97)
 loop = false
 
