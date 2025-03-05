@@ -1,4 +1,4 @@
-[gd_scene load_steps=230 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=231 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_2ubww"]
 [ext_resource type="Texture2D" uid="uid://cgq86ww6oq4dg" path="res://assets/sheets/spr_Idle_strip.png" id="1_dbfoi"]
@@ -1576,6 +1576,9 @@ size = Vector2(15, 32.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_278y1"]
 size = Vector2(13, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyurs"]
+size = Vector2(29, 20)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_2ubww")
 
@@ -1585,6 +1588,8 @@ scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
 animation = &"pierce_attack"
 autoplay = "idle"
+frame = 13
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-32, -17)
@@ -1601,6 +1606,13 @@ shape = SubResource("RectangleShape2D_278y1")
 [node name="mobilecont" parent="." instance=ExtResource("11_jghyx")]
 visible = false
 position = Vector2(-106, -4)
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="Pierce" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0.5, -11)
+shape = SubResource("RectangleShape2D_uyurs")
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

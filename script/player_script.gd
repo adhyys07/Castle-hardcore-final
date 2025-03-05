@@ -39,7 +39,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("pierce_attack"):
 		sprite.play("pierce_attack")
+		$AttackArea/Pierce.disabled = false
 		isAttacking = true
+		if direction > 0:
+			$AttackArea/Pierce.position.x *= -1
 	
 	#Apply movement
 		
@@ -65,13 +68,8 @@ func mob_entered(body: Node2D) -> void:
 func _input(event: InputEvent):
 	if(event.is_action_pressed("ui_down")):
 		position.y += 1
-		
-		
 	
-	
-	
-
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "pierce_attack":
+		$AttackArea/Pierce.disabled = true
 		isAttacking = false
