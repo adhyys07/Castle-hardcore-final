@@ -188,10 +188,10 @@ root_node = NodePath("")
 [node name="CanvasLayer" parent="." instance=ExtResource("3_5wiqr")]
 
 [node name="Button6" type="Button" parent="."]
-offset_left = 264.0
-offset_top = -530.0
-offset_right = 293.0
-offset_bottom = -502.0
+offset_left = 261.0
+offset_top = -529.0
+offset_right = 290.0
+offset_bottom = -501.0
 icon = ExtResource("8_020lw")
 flat = true
 

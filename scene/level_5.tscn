@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7ntxag07kmqe"]
+[gd_scene load_steps=10 format=3 uid="uid://7ntxag07kmqe"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_e1p3s"]
 [ext_resource type="Script" path="res://script/level_5.gd" id="1_ki7lv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="3_5q35b"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="4_02nka"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="6_5ljqp"]
+[ext_resource type="PackedScene" uid="uid://04ac0cr730ya" path="res://scene/spiketrap.tscn" id="7_aqakv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i4qu"]
 texture = ExtResource("2_fob37")
@@ -172,6 +173,9 @@ offset_right = 103.0
 offset_bottom = -219.0
 icon = ExtResource("6_5ljqp")
 flat = true
+
+[node name="spiketrap" parent="." instance=ExtResource("7_aqakv")]
+position = Vector2(84, 94)
 
 [connection signal="body_entered" from="level_portal_5" to="." method="_on_level_portal_5_body_entered"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

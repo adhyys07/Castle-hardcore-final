@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://04ac0cr730ya"]
+
+[ext_resource type="Script" path="res://scene/spiketrap.gd" id="1_1n4ap"]
+[ext_resource type="Texture2D" uid="uid://bxp17jfugs0yn" path="res://assets/handmade/spike1.png" id="1_ef0ew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl5ol"]
+size = Vector2(7, 7)
+
+[node name="spiketrap" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_1n4ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1.5, -5.75)
+scale = Vector2(0.565217, 0.5)
+texture = ExtResource("1_ef0ew")
+region_enabled = true
+region_rect = Rect2(4, 9, 23, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.5, -4.5)
+shape = SubResource("RectangleShape2D_tl5ol")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -29)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-5, 29, -5, 27, -4, 26, -3, 25, -3, 24, -2, 23, -1, 22, 1, 18, 2, 17, 3, 18, 5, 21, 7, 26, 8, 26, 8, 29)
+
+[connection signal="body_entered" from="Area2D" to="StaticBody2D" method="_on_area_2d_body_entered"]

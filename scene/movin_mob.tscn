@@ -95,16 +95,17 @@ script = ExtResource("1_bcqn3")
 loop = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(54.1128, -1)
-progress = 54.1111
+position = Vector2(76.8245, -1)
+progress = 76.824
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(54.1128, -1)
+position = Vector2(76.8245, -1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
+position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_xw1r8")
 autoplay = "default"
 frame_progress = 0.273587
