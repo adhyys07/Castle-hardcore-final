@@ -184,7 +184,7 @@ layer_0/tile_data = PackedInt32Array(327674, 393216, 1, 327675, 393216, 1, 32767
 [node name="Player" parent="." instance=ExtResource("2_0xj0w")]
 position = Vector2(311, -395)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_5wiqr")]

@@ -8,11 +8,14 @@ const JUMP_VELOCITY = -315.0
 @export var speed: float = 200.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var attack = false
-var attacking: bool = false
+@export var isAttacking = false
 
 func _ready():
-	add_to_group("player")
-func _process(delta: float) -> void:
+	#Gamemanager.player = self
+	pass
+	
+
+func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -21,33 +24,27 @@ func _process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if attacking:
-		move_and_slide()
-		return  # Prevent movement & animation changes while attacking
+
 		
 	if direction:
-		velocity.x = direction * speed
-		sprite.flip_h = direction < 0
-		sprite.play("walk")
+		if isAttacking == false:
+			velocity.x = direction * speed
+			sprite.flip_h = direction < 0
+			sprite.play("walk")
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		if is_on_floor():
-			sprite.play("idle")
-
-	if Input.is_action_just_pressed("attack"):
-		sprite.play("attack")
-		attacking = true
-		
-		sprite.animation_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
-
+		if isAttacking == false:
+			velocity.x = move_toward(velocity.x, 0, speed)
+			if is_on_floor():
+				sprite.play("idle")
+	
+	if Input.is_action_just_pressed("pierce_attack"):
+		sprite.play("pierce_attack")
+		isAttacking = true
 	
 	#Apply movement
 		
 	move_and_slide()
-	
-func _on_attack_finished():
-	attacking = false  # Allow other animations after attack ends
-	sprite.play("idle")
+
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
@@ -69,12 +66,12 @@ func _input(event: InputEvent):
 	if(event.is_action_pressed("ui_down")):
 		position.y += 1
 		
-func emote():
-	if Input.is_action_just_released("emote"):
-		animated_sprite.play("taunt")
 		
+	
+	
+	
 
-	
-	
-	
-	
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "pierce_attack":
+		isAttacking = false

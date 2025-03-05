@@ -153,7 +153,7 @@ zoom = Vector2(2.3, 3)
 [node name="Player" parent="." instance=ExtResource("1_e1p3s")]
 position = Vector2(3, 88)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="."]
