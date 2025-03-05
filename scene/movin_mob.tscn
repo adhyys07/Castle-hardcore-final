@@ -96,15 +96,14 @@ loop = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(24, 0)
-rotation = -0.0156237
+rotation = -0.0214987
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(24, 0)
-rotation = -0.0156237
-scale = Vector2(1, 1)
+rotation = -0.0214987
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 position = Vector2(0, -7)
