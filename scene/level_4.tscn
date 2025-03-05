@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpfn5bokdjt74"]
+[gd_scene load_steps=19 format=3 uid="uid://cpfn5bokdjt74"]
 
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_5fu1s"]
 [ext_resource type="Script" path="res://script/level_4.gd" id="1_ec6bn"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/level_portal.tscn" id="10_x3asf"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/coin_ui.tscn" id="11_xo4x8"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="13_hdfhm"]
+[ext_resource type="PackedScene" uid="uid://04ac0cr730ya" path="res://scene/spiketrap.tscn" id="14_8b17n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quq1h"]
 texture = ExtResource("1_5fu1s")
@@ -348,6 +349,82 @@ offset_right = 14.0
 offset_bottom = -385.0
 icon = ExtResource("13_hdfhm")
 flat = true
+
+[node name="spiketrap2" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(170, -146)
+rotation = -3.14159
+
+[node name="spiketrap3" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(186, -146)
+rotation = -3.14159
+
+[node name="spiketrap4" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-22, -66)
+rotation = -3.14159
+
+[node name="spiketrap5" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-7, -66)
+rotation = -3.14159
+
+[node name="spiketrap6" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-55, -274)
+rotation = -3.14159
+
+[node name="spiketrap7" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-42, -274)
+rotation = -3.14159
+
+[node name="spiketrap8" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(21, -274)
+rotation = -3.14159
+
+[node name="spiketrap9" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(9, -274)
+rotation = -3.14159
+
+[node name="spiketrap10" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-3, -274)
+rotation = -3.14159
+
+[node name="spiketrap11" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-16, -274)
+rotation = -3.14159
+
+[node name="spiketrap12" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-29, -274)
+rotation = -3.14159
+
+[node name="spiketrap13" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(33, -274)
+rotation = -3.14159
+
+[node name="spiketrap14" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(82, -274)
+rotation = -3.14159
+
+[node name="spiketrap15" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(71, -274)
+rotation = -3.14159
+
+[node name="spiketrap16" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(58, -274)
+rotation = -3.14159
+
+[node name="spiketrap17" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(45, -274)
+rotation = -3.14159
+
+[node name="spiketrap18" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(95, -274)
+rotation = -3.14159
+
+[node name="spiketrap19" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(106, -274)
+rotation = -3.14159
+
+[node name="spiketrap20" parent="." instance=ExtResource("14_8b17n")]
+position = Vector2(-135, -145)
+rotation = -3.14159
 
 [connection signal="body_entered" from="level_portal_4" to="." method="_on_level_portal_3_body_entered"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

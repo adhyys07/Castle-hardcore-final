@@ -4,7 +4,7 @@ class_name Player extends CharacterBody2D
 var sprite = $AnimatedSprite2D
 
 const JUMP_VELOCITY = -315.0
-@export var jump_force: float = -300.0
+@export var jump_force: float = -315.0
 @export var speed: float = 200.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var attack = false

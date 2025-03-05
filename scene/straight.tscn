@@ -61,7 +61,6 @@ region_rect = Rect2(16, 16, 32, 9)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(1.13296, 2.4387)
 rotation = -0.0349066
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5tyy2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
