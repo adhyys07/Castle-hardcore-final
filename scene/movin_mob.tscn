@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_vlh2j"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 100, -1, 0, 0, 0, 0, 101, -1)
+"points": PackedVector2Array(0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 88, -1)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_toqr7"]
 atlas = ExtResource("2_0fn8m")
@@ -95,14 +95,17 @@ script = ExtResource("1_bcqn3")
 loop = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(76.8245, -1)
-progress = 76.824
+position = Vector2(32.1746, -0.127728)
+rotation = -0.0156237
+progress = 8.27665
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(76.8245, -1)
+position = Vector2(32.1746, -0.127728)
+rotation = -0.0156237
+scale = Vector2(1, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 position = Vector2(0, -7)

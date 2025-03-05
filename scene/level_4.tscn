@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpfn5bokdjt74"]
+[gd_scene load_steps=20 format=3 uid="uid://cpfn5bokdjt74"]
 
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_5fu1s"]
 [ext_resource type="Script" path="res://script/level_4.gd" id="1_ec6bn"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/Player.tscn" id="1_xyx8n"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/fire.tscn" id="3_aa72k"]
+[ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/movin_mob.tscn" id="3_gu8oi"]
 [ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/fake.tscn" id="4_0iu42"]
 [ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/straight.tscn" id="5_rwoxm"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/coin.tscn" id="6_b8gmm"]
@@ -170,7 +171,7 @@ position = Vector2(8, -142)
 zoom = Vector2(2.92, 2)
 
 [node name="Player" parent="." instance=ExtResource("1_xyx8n")]
-position = Vector2(316, 98)
+position = Vector2(328, 112)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -1)
@@ -277,7 +278,7 @@ position = Vector2(-317, 27)
 position = Vector2(-136, -60)
 
 [node name="StaticBody2D" parent="break" instance=ExtResource("7_fc5c4")]
-position = Vector2(-76, 12)
+position = Vector2(-88, 20)
 
 [node name="StaticBody2D2" parent="break" instance=ExtResource("7_fc5c4")]
 
@@ -299,9 +300,6 @@ position = Vector2(-136, -170)
 [node name="Area2D" parent="coin" instance=ExtResource("6_b8gmm")]
 position = Vector2(-37, 209)
 
-[node name="Area2D2" parent="coin/Area2D" instance=ExtResource("6_b8gmm")]
-position = Vector2(260, -143)
-
 [node name="Area2D4" parent="coin" instance=ExtResource("6_b8gmm")]
 
 [node name="Area2D2" parent="coin" instance=ExtResource("6_b8gmm")]
@@ -315,6 +313,9 @@ position = Vector2(201, -37)
 
 [node name="Area2D6" parent="coin" instance=ExtResource("6_b8gmm")]
 position = Vector2(429, -128)
+
+[node name="Area2D7" parent="coin" instance=ExtResource("6_b8gmm")]
+position = Vector2(223, 66)
 
 [node name="mobs" type="CanvasGroup" parent="."]
 position = Vector2(-166, 41)
@@ -350,81 +351,88 @@ offset_bottom = -385.0
 icon = ExtResource("13_hdfhm")
 flat = true
 
-[node name="spiketrap2" parent="." instance=ExtResource("14_8b17n")]
+[node name="spikes" type="CanvasGroup" parent="."]
+
+[node name="spiketrap2" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(170, -146)
 rotation = -3.14159
 
-[node name="spiketrap3" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap3" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(186, -146)
 rotation = -3.14159
 
-[node name="spiketrap4" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap4" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-22, -66)
 rotation = -3.14159
 
-[node name="spiketrap5" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap5" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-7, -66)
 rotation = -3.14159
 
-[node name="spiketrap6" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap6" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-55, -274)
 rotation = -3.14159
 
-[node name="spiketrap7" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap7" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-42, -274)
 rotation = -3.14159
 
-[node name="spiketrap8" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap8" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(21, -274)
 rotation = -3.14159
 
-[node name="spiketrap9" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap9" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(9, -274)
 rotation = -3.14159
 
-[node name="spiketrap10" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap10" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-3, -274)
 rotation = -3.14159
 
-[node name="spiketrap11" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap11" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-16, -274)
 rotation = -3.14159
 
-[node name="spiketrap12" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap12" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-29, -274)
 rotation = -3.14159
 
-[node name="spiketrap13" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap13" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(33, -274)
 rotation = -3.14159
 
-[node name="spiketrap14" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap14" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(82, -274)
 rotation = -3.14159
 
-[node name="spiketrap15" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap15" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(71, -274)
 rotation = -3.14159
 
-[node name="spiketrap16" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap16" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(58, -274)
 rotation = -3.14159
 
-[node name="spiketrap17" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap17" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(45, -274)
 rotation = -3.14159
 
-[node name="spiketrap18" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap18" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(95, -274)
 rotation = -3.14159
 
-[node name="spiketrap19" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap19" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(106, -274)
 rotation = -3.14159
 
-[node name="spiketrap20" parent="." instance=ExtResource("14_8b17n")]
+[node name="spiketrap20" parent="spikes" instance=ExtResource("14_8b17n")]
 position = Vector2(-135, -145)
 rotation = -3.14159
+
+[node name="movin_mob" parent="." instance=ExtResource("3_gu8oi")]
+position = Vector2(196.875, 98)
+scale = Vector2(0.671875, 1)
+loop = false
 
 [connection signal="body_entered" from="level_portal_4" to="." method="_on_level_portal_3_body_entered"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
