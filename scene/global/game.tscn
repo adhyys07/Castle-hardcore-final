@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c670a5netct3d"]
+[gd_scene load_steps=11 format=3 uid="uid://c670a5netct3d"]
 
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="1_r0wub"]
 [ext_resource type="PackedScene" uid="uid://6d0h0p15nx0x" path="res://scene/World 1/level_1.tscn" id="2_vuj1d"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://7ntxag07kmqe" path="res://scene/World 1/level_6.tscn" id="6_k68oa"]
 [ext_resource type="PackedScene" uid="uid://glwp8ypt7i1m" path="res://scene/World 1/level_7.tscn" id="7_8htir"]
 [ext_resource type="PackedScene" uid="uid://du4xvssa6ues3" path="res://scene/World 2/w_2_level_1.tscn" id="8_bfure"]
+[ext_resource type="PackedScene" uid="uid://cuw2sssgmhtb5" path="res://scene/World 2/w_2_level_3.tscn" id="9_gu2ei"]
+[ext_resource type="PackedScene" uid="uid://crv6b572g55eb" path="res://scene/World 2/w_2_level_2.tscn" id="10_g4d58"]
 
 [node name="Game" type="Node2D"]
 
@@ -16,7 +18,7 @@
 [node name="world_1" type="Node2D" parent="."]
 
 [node name="level_7" parent="world_1" instance=ExtResource("7_8htir")]
-position = Vector2(265, -618)
+position = Vector2(241, -530)
 
 [node name="level_1" parent="world_1" instance=ExtResource("2_vuj1d")]
 position = Vector2(-184, -95)
@@ -37,6 +39,16 @@ position = Vector2(738, -308)
 position = Vector2(751, 293)
 
 [node name="world_2" type="Node2D" parent="."]
+position = Vector2(-22, 28)
 
-[node name="w2_level1" parent="world_2" instance=ExtResource("8_bfure")]
-position = Vector2(1682, -200)
+[node name="w_2_level_1" parent="world_2" instance=ExtResource("8_bfure")]
+position = Vector2(1554, -279)
+
+[node name="w_2_level_2" parent="world_2" instance=ExtResource("10_g4d58")]
+position = Vector2(2086, 354)
+
+[node name="w_2_level_3" parent="world_2" instance=ExtResource("9_gu2ei")]
+position = Vector2(2530, 320)
+
+[node name="world_3" type="Node2D" parent="."]
+position = Vector2(-544, 848)
