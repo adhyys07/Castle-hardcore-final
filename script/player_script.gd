@@ -73,3 +73,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "pierce_attack":
 		$AttackArea/Pierce.disabled = true
 		isAttacking = false
+
+
+func _on_button_7_pressed() -> void:
+	pass # Replace with function body.

@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://8ms87mq81cuk"]
 
-[ext_resource type="Script" path="res://script/main_menu.gd" id="1_a6jqb"]
-[ext_resource type="Texture2D" uid="uid://cqb4veq8mcrjb" path="res://assets/bgi.png" id="2_5xsr3"]
-[ext_resource type="Texture2D" uid="uid://40x27pxccd81" path="res://assets/faaltu/icons8-circled-play-100.png" id="3_15hnw"]
-[ext_resource type="AudioStream" uid="uid://1ko0f077hk51" path="res://assets/sounds/edited.wav" id="4_5h10a"]
+[ext_resource type="Script" path="res://script/main_menu.gd" id="1_u6vg6"]
+[ext_resource type="Texture2D" uid="uid://cqb4veq8mcrjb" path="res://assets/bgi.png" id="2_8h8nf"]
+[ext_resource type="Texture2D" uid="uid://40x27pxccd81" path="res://assets/faaltu/icons8-circled-play-100.png" id="3_wmf0c"]
+[ext_resource type="AudioStream" uid="uid://1ko0f077hk51" path="res://assets/sounds/edited.wav" id="4_petql"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jp8b6"]
-texture = ExtResource("2_5xsr3")
+texture = ExtResource("2_8h8nf")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fah2"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a6jqb")
+script = ExtResource("1_u6vg6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -46,10 +46,10 @@ offset_bottom = 50.52
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_1fah2")
-icon = ExtResource("3_15hnw")
+icon = ExtResource("3_wmf0c")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_5h10a")
+stream = ExtResource("4_petql")
 autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

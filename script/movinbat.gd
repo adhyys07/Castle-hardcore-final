@@ -36,4 +36,4 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Player):
 	print("You died! bitch") # Replace with function body.
 	body.queue_free()
-	get_tree().change_scene_to_file("res://scene/try_again.tscn")
+	get_tree().change_scene_to_file("res://scene/global/try_again.tscn")

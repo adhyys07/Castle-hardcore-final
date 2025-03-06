@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	if Gamemanager.current_level_path != "":
-		get_tree().change_scene_to_file(Gamemanager.current_level_path)
+	Gamemanager.restart_level()

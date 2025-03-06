@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://iqygawkck4l1"]
 
-[ext_resource type="Script" path="res://script/path_2d.gd" id="1_b1i0x"]
-[ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="2_ihhgr"]
+[ext_resource type="Script" path="res://script/path_2d.gd" id="1_cl53o"]
+[ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="2_cy0cx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
 size = Vector2(120.814, 126.131)
@@ -44,14 +44,14 @@ _data = {
 }
 
 [node name="Straight" type="Path2D"]
-script = ExtResource("1_b1i0x")
+script = ExtResource("1_cl53o")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(371.769, 250.99)
 rotation = -0.0174807
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-texture = ExtResource("2_ihhgr")
+texture = ExtResource("2_cy0cx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0.499969, 0.00875854)

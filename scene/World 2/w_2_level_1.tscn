@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://du4xvssa6ues3"]
+[gd_scene load_steps=14 format=3 uid="uid://du4xvssa6ues3"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_1n1qt"]
 [ext_resource type="Script" path="res://script/w_2_level_1.gd" id="1_emd4p"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_3cpsc"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="5_v5qe2"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="7_rolv8"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="8_x3md3"]
+[ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="9_1ypjl"]
+[ext_resource type="PackedScene" uid="uid://busc6tswoyesa" path="res://scene/mobs/mob.tscn" id="10_2dh3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awdi6"]
 texture = ExtResource("2_i4k7c")
@@ -598,6 +601,20 @@ position = Vector2(143, -10)
 position = Vector2(295, -5)
 
 [node name="level_portal_8" parent="." instance=ExtResource("7_rolv8")]
-position = Vector2(27, -198)
+position = Vector2(61, -268)
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 235.0
+offset_top = -409.0
+offset_right = 264.0
+offset_bottom = -381.0
+icon = ExtResource("8_x3md3")
+flat = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("9_1ypjl")]
+position = Vector2(70, -23)
+
+[node name="mob" parent="." instance=ExtResource("10_2dh3b")]
 
 [connection signal="body_entered" from="level_portal_8" to="." method="_on_level_portal_8_body_entered"]
+[connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
