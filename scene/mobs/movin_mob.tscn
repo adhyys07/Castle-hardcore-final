@@ -89,7 +89,7 @@ _data = {
 "move": SubResource("Animation_wtac6")
 }
 
-[node name="Straight" type="Path2D"]
+[node name="Straight" type="Path2D" groups=["mob"]]
 curve = SubResource("Curve2D_vlh2j")
 script = ExtResource("1_bcqn3")
 loop = true
