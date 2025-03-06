@@ -329,7 +329,7 @@ curve = SubResource("Curve2D_60ln7")
 loop = false
 
 [node name="Straight3" parent="movin platform" instance=ExtResource("7_x7d6v")]
-position = Vector2(-561, -72)
+position = Vector2(-560, -70)
 rotation = 3.14159
 curve = SubResource("Curve2D_tifag")
 loop = false
