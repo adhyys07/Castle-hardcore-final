@@ -6,7 +6,8 @@ var inverse = -1
 
 func _ready():
 	pass
-
+	
+	
 func enemy_gravity(delta : float):
 	if not is_on_floor():
 		velocity += delta * get_gravity()
@@ -15,7 +16,6 @@ func rayc():
 	if not $RayCast2D.is_colliding():
 		direction = -direction
 		$RayCast2D.position.x *= -1
-
 
 func move_enemy():
 	velocity.x = SPEED * direction 
