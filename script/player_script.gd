@@ -56,7 +56,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
-		animated_sprite.play("death")
+		sprite.play("death")
 
 			#print("youre gay")
 		
