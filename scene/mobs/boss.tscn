@@ -455,12 +455,12 @@ animations = [{
 script = ExtResource("1_pdnr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(128.5, -122.625)
-scale = Vector2(1.30903, 1.61719)
+position = Vector2(170, -122.625)
+scale = Vector2(1.59722, 1.61719)
 sprite_frames = SubResource("SpriteFrames_u2aob")
-animation = &"attack"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.89769
+frame_progress = 0.0997667
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -65.0

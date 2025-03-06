@@ -828,9 +828,9 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_vl7pv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, 3, 0, 0, 0, 0, -15, 2.99997, 0, 0, 0, 0, -55.0001, 40.9999, 0, 0, 0, 0, -97, 2.99976, 0, 0, 0, 0, -98, 1, 0, 0, 0, 0, -158, -0.000396729, 0, 0, 0, 0, -186, 40.9995, 0, 0, 0, 0, -231, 41.9994, 0, 0, 0, 0, -273, -0.000671387)
+"points": PackedVector2Array(0, 0, 0, 0, 54.3339, -1, 0, 0, 0, 0, 88.91, -31, 0, 0, 0, 0, 96.8131, -38, 0, 0, 0, 0, 145.22, 2, 0, 0, 0, 0, 201.529, 1, 0, 0, 0, 0, 246.972, -38, 0, 0, 0, 0, 288.463, 2, 0, 0, 0, 0, 336.87, 0)
 }
-point_count = 9
+point_count = 8
 
 [node name="w2_level1" type="Node2D"]
 script = ExtResource("1_emd4p")
@@ -840,7 +840,7 @@ position = Vector2(247, -240)
 zoom = Vector2(3.01, 2.1)
 
 [node name="Player" parent="." instance=ExtResource("1_1n1qt")]
-position = Vector2(18, 1)
+position = Vector2(-16, -328)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_200ek")]
 
@@ -894,29 +894,28 @@ position = Vector2(150, -196)
 [node name="Sprite2D8" parent="." instance=ExtResource("12_slp38")]
 position = Vector2(119, -252)
 
-[node name="Straight4" parent="." instance=ExtResource("10_q4e7e")]
-position = Vector2(20, -341)
-rotation = 3.14159
+[node name="StaticBody2D7" parent="." instance=ExtResource("11_bbemd")]
+position = Vector2(28, -282)
+
+[node name="Area2D10" parent="." instance=ExtResource("5_v5qe2")]
+position = Vector2(80, -389)
+
+[node name="mob" parent="." instance=ExtResource("13_ck75v")]
+position = Vector2(131, -379)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("11_bbemd")]
+position = Vector2(406, -387)
+
+[node name="Sprite2D9" parent="." instance=ExtResource("12_slp38")]
+position = Vector2(9, -175)
+
+[node name="Straight5" parent="." instance=ExtResource("10_q4e7e")]
+position = Vector2(-20, -352)
 scale = Vector2(1.01226, 1)
 curve = SubResource("Curve2D_vl7pv")
 loop = false
 speed = 0.35
 speed_scale = 0.35
-
-[node name="StaticBody2D7" parent="." instance=ExtResource("11_bbemd")]
-position = Vector2(28, -282)
-
-[node name="Area2D10" parent="." instance=ExtResource("5_v5qe2")]
-position = Vector2(74, -380)
-
-[node name="mob" parent="." instance=ExtResource("13_ck75v")]
-position = Vector2(131, -374)
-
-[node name="StaticBody2D8" parent="." instance=ExtResource("11_bbemd")]
-position = Vector2(381, -385)
-
-[node name="Sprite2D9" parent="." instance=ExtResource("12_slp38")]
-position = Vector2(9, -175)
 
 [connection signal="body_entered" from="level_portal_8" to="." method="_on_level_portal_8_body_entered"]
 [connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
