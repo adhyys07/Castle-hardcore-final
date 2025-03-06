@@ -1,7 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmyyp2bcj2oip"]
+[gd_scene load_steps=18 format=3 uid="uid://bmyyp2bcj2oip"]
 
 [ext_resource type="Script" path="res://script/movinbat.gd" id="1_wjplk"]
 [ext_resource type="Texture2D" uid="uid://4rpj8g04qbqt" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_xhkjf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_438op"]
+atlas = ExtResource("2_xhkjf")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0mvc"]
+atlas = ExtResource("2_xhkjf")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p64p"]
+atlas = ExtResource("2_xhkjf")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1tpb"]
+atlas = ExtResource("2_xhkjf")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b0ff"]
+atlas = ExtResource("2_xhkjf")
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4o0qm"]
 atlas = ExtResource("2_xhkjf")
@@ -35,6 +55,26 @@ region = Rect2(0, 48, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_438op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0mvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p64p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1tpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b0ff")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4o0qm")
 }, {
 "duration": 1.0,
@@ -64,7 +104,7 @@ animations = [{
 size = Vector2(12, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68lvb"]
-size = Vector2(14, 12)
+size = Vector2(20, 14)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_wjplk")
@@ -72,9 +112,10 @@ script = ExtResource("1_wjplk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_1vtn8")
-animation = &"walk"
+animation = &"death"
 autoplay = "walk"
-frame_progress = 0.0704636
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -91,4 +132,6 @@ collide_with_areas = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_68lvb")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

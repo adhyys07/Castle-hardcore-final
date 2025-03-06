@@ -40,10 +40,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pierce_attack"):
 		sprite.play("pierce_attack")
 		$AttackArea/Pierce.disabled = false
+		$AttackArea/Pierce2.disabled = false
 		isAttacking = true
-		if direction > 0:
-			$AttackArea/Pierce.position.x *= -1
-	
 	#Apply movement
 		
 	move_and_slide()
@@ -72,6 +70,7 @@ func _input(event: InputEvent):
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "pierce_attack":
 		$AttackArea/Pierce.disabled = true
+		$AttackArea/Pierce2.disabled = true
 		isAttacking = false
 
 

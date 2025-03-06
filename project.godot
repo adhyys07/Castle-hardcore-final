@@ -33,6 +33,7 @@ window/stretch/aspect="ignore"
 [global_group]
 
 mob=""
+Attacks=""
 
 [importer_defaults]
 
