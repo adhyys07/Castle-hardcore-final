@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://crv6b572g55eb"]
+[gd_scene load_steps=3 format=3 uid="uid://crv6b572g55eb"]
+
+[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_ojtgd"]
+[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_gxv2q"]
 
 [node name="w_2_level_2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ojtgd")]
+position = Vector2(1, -282)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_gxv2q")]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="5_ukiiy"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="6_magy8"]
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="7_h8e35"]
-[ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/traps+platforms/straight.tscn" id="8_pqs6h"]
+[ext_resource type="PackedScene" uid="uid://jjaeijduxkyo" path="res://scene/traps+platforms/straight.tscn" id="8_pqs6h"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="9_nw58v"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="10_b61b6"]
 [ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/traps+platforms/fake.tscn" id="11_migid"]

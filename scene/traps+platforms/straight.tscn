@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6oje38rv3gh6"]
+[gd_scene load_steps=7 format=3 uid="uid://jjaeijduxkyo"]
 
 [ext_resource type="Script" path="res://script/path_2d.gd" id="1_cie0f"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="2_bh0t7"]

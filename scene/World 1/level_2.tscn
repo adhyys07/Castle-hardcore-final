@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="2_jv5ba"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="6_miude"]
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="7_eoivx"]
-[ext_resource type="PackedScene" uid="uid://6oje38rv3gh6" path="res://scene/traps+platforms/straight.tscn" id="7_x7d6v"]
+[ext_resource type="PackedScene" uid="uid://jjaeijduxkyo" path="res://scene/traps+platforms/straight.tscn" id="7_x7d6v"]
 [ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/traps+platforms/fake.tscn" id="9_1tly8"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/traps+platforms/fire.tscn" id="9_lffid"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="10_d5g4b"]

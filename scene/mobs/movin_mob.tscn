@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_vlh2j"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 117.013, -1.99997)
+"points": PackedVector2Array(0, 0, 0, 0, 23.0836, -4, 0, 0, 0, 0, 104.114, -4)
 }
 point_count = 2
 
@@ -95,15 +95,13 @@ script = ExtResource("1_bcqn3")
 loop = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(24, 0)
-rotation = -0.0214987
+position = Vector2(23.0836, -4)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(24, 0)
-rotation = -0.0214987
+position = Vector2(23.0836, -4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 position = Vector2(0, -7)
