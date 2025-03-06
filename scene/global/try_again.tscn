@@ -296,7 +296,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 17.0
+"speed": 12.0
 }]
 
 [node name="Control" type="Control"]
@@ -341,8 +341,8 @@ stream = ExtResource("6_5hb3b")
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(120, 953)
-scale = Vector2(4.14706, 4.39583)
+position = Vector2(120, 974)
+scale = Vector2(4.14706, 3.95833)
 sprite_frames = SubResource("SpriteFrames_1plr0")
 autoplay = "default"
 frame = 39
