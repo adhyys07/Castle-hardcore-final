@@ -15,6 +15,9 @@
 
 [node name="world_1" type="Node2D" parent="."]
 
+[node name="level_7" parent="world_1" instance=ExtResource("7_8htir")]
+position = Vector2(265, -618)
+
 [node name="level_1" parent="world_1" instance=ExtResource("2_vuj1d")]
 position = Vector2(-184, -95)
 
@@ -32,9 +35,6 @@ position = Vector2(738, -308)
 
 [node name="level_6" parent="world_1" instance=ExtResource("6_k68oa")]
 position = Vector2(751, 293)
-
-[node name="level_7" parent="world_1" instance=ExtResource("7_8htir")]
-position = Vector2(162, 847)
 
 [node name="world_2" type="Node2D" parent="."]
 
