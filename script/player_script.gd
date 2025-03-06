@@ -57,7 +57,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
 		animated_sprite.play("death")
-		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+
 			#print("youre gay")
 		
 		#OS.delay_msec(1000)
@@ -72,7 +72,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		$AttackArea/Pierce.disabled = true
 		$AttackArea/Pierce2.disabled = true
 		isAttacking = false
-
+	if $AnimatedSprite2D.animation == "death":
+		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 
 func _on_button_7_pressed() -> void:
 	pass # Replace with function body.

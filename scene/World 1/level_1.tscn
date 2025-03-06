@@ -204,7 +204,7 @@ position = Vector2(-142, -113)
 zoom = Vector2(3, 2.6)
 
 [node name="Player" parent="." instance=ExtResource("2_4v5uf")]
-position = Vector2(-380, -67)
+position = Vector2(-402, 79)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
@@ -267,6 +267,12 @@ loop = false
 position = Vector2(-280, -62)
 curve = SubResource("Curve2D_q7efj")
 loop = false
+
+[node name="coin2" parent="." instance=ExtResource("8_fh5km")]
+position = Vector2(51, -168)
+
+[node name="coin3" parent="." instance=ExtResource("8_fh5km")]
+position = Vector2(105, -214)
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_pressed"]
