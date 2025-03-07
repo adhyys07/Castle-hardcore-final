@@ -1577,7 +1577,7 @@ size = Vector2(15, 32.5)
 size = Vector2(20, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyurs"]
-size = Vector2(29, 20)
+size = Vector2(26, 20)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_c4chy")
@@ -1607,7 +1607,7 @@ position = Vector2(-106, -4)
 [node name="AttackArea" type="Area2D" parent="." groups=["Attacks"]]
 
 [node name="Pierce" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(0.5, -11)
+position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_uyurs")
 disabled = true
 
