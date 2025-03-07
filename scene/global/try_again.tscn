@@ -1,8 +1,9 @@
-[gd_scene load_steps=50 format=3 uid="uid://bg744t3l86c1w"]
+[gd_scene load_steps=51 format=3 uid="uid://bg744t3l86c1w"]
 
 [ext_resource type="Script" path="res://script/try_again.gd" id="1_7v6is"]
 [ext_resource type="Texture2D" uid="uid://cqb4veq8mcrjb" path="res://assets/bgi.png" id="2_n4xw5"]
 [ext_resource type="Texture2D" uid="uid://40x27pxccd81" path="res://assets/faaltu/icons8-circled-play-100.png" id="3_ib5mj"]
+[ext_resource type="Texture2D" uid="uid://bopa2fhm5elp1" path="res://assets/hud/Home.png" id="4_nwgdl"]
 [ext_resource type="Texture2D" uid="uid://blm5un4q34q6x" path="res://assets/faaltu/question mark.png" id="4_yaquc"]
 [ext_resource type="Texture2D" uid="uid://dsic1cvi23rcs" path="res://assets/arrow_corr.png" id="5_brn1e"]
 [ext_resource type="AudioStream" uid="uid://1ko0f077hk51" path="res://assets/sounds/edited.wav" id="6_5hb3b"]
@@ -322,6 +323,14 @@ offset_right = 1010.0
 offset_bottom = 1000.0
 icon = ExtResource("3_ib5mj")
 
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 96.0
+offset_bottom = 104.0
+icon = ExtResource("4_nwgdl")
+
 [node name="QuestionMark" type="Sprite2D" parent="."]
 position = Vector2(1088.25, 686)
 scale = Vector2(7.60526, 7.63637)
@@ -349,3 +358,4 @@ frame = 5
 frame_progress = 0.394378
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	Gamemanager.restart_level()
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/global/main_menu.tscn")# Replace with function body.
