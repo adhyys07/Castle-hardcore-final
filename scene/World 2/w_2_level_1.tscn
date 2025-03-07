@@ -840,7 +840,7 @@ position = Vector2(247, -240)
 zoom = Vector2(3.01, 2.1)
 
 [node name="Player" parent="." instance=ExtResource("1_1n1qt")]
-position = Vector2(-16, -328)
+position = Vector2(8, -11)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_200ek")]
 

@@ -206,7 +206,15 @@ flat = true
 position = Vector2(163, 127)
 
 [node name="MovingEnemy" parent="." instance=ExtResource("9_3wxwb")]
-position = Vector2(-135, 122)
+position = Vector2(-136, 155)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -151.0
+offset_top = -98.0
+offset_right = 189.0
+offset_bottom = -37.0
+text = "STILL IN PROGRESS(MOVE TO NEXT LEVEL)
+                     MINI BOSS FIGHT HERE"
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="body_entered" from="level_portal_3" to="." method="_on_level_portal_3_body_entered"]

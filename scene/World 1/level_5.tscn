@@ -177,5 +177,13 @@ flat = true
 [node name="spiketrap" parent="." instance=ExtResource("7_aqakv")]
 position = Vector2(84, 94)
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -59.0
+offset_top = -182.0
+offset_right = 281.0
+offset_bottom = -121.0
+text = "STILL IN PROGRESS(MOVE TO NEXT LEVEL)
+                     MINI BOSS FIGHT HERE"
+
 [connection signal="body_entered" from="level_portal_5" to="." method="_on_level_portal_5_body_entered"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

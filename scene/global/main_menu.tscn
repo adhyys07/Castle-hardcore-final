@@ -194,4 +194,12 @@ sprite_frames = SubResource("SpriteFrames_kwqi4")
 autoplay = "default"
 frame_progress = 0.803154
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1792, 996)
+scale = Vector2(3.23676, 2.91667)
+sprite_frames = SubResource("SpriteFrames_kwqi4")
+autoplay = "default"
+frame_progress = 0.803154
+flip_h = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
