@@ -35,6 +35,7 @@ window/stretch/aspect="ignore"
 mob=""
 Attacks=""
 player=""
+damage=""
 
 [importer_defaults]
 

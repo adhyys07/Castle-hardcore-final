@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @onready
 var sprite = $AnimatedSprite2D
+@onready var healthbar = $Healthbar
 
 const JUMP_VELOCITY = -315.0
 @export var jump_force: float = -315.0
@@ -9,10 +10,22 @@ const JUMP_VELOCITY = -315.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var attack = false
 @export var isAttacking = false
+@onready var hurtbox = $Area2D
 
+var health = 20
 func _ready():
 	#Gamemanager.player = self
-	pass
+	healthbar.init_health(health)
+	hurtbox.area_entered.connect(_on_area_2d_body_entered)
+	
+func take_damage(amount):
+	health -= amount
+	health =  max(health,0)
+	
+	healthbar._set_health(health)
+	
+	if health<=0:
+		die()
 	
 
 func _physics_process(delta: float) -> void:
@@ -48,6 +61,8 @@ func _physics_process(delta: float) -> void:
 
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	
+	
 	if body.is_in_group("Collectible"):
 		body.Collect()
 		
@@ -56,6 +71,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
+		take_damage(5)
 		animated_sprite.play("death")
 
 			#print("youre gay")
@@ -77,3 +93,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_button_7_pressed() -> void:
 	pass # Replace with function body.
+	
+func die ():
+	queue_free()

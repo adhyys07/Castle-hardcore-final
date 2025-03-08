@@ -1,4 +1,4 @@
-[gd_scene load_steps=231 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=232 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_c4chy"]
 [ext_resource type="Texture2D" uid="uid://c00dimk6e4xwm" path="res://assets/sheets/spr_Dash_strip.png" id="2_r3yp4"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://8okd7phknyc" path="res://assets/sheets/spr_Taunt_strip.png" id="9_gbk2k"]
 [ext_resource type="Texture2D" uid="uid://c7v2fx2btphvq" path="res://assets/sheets/spr_Walk_strip.png" id="10_2gdju"]
 [ext_resource type="PackedScene" uid="uid://bu8cktq8dpdaq" path="res://scene/mobilecont.tscn" id="11_38vjx"]
+[ext_resource type="PackedScene" uid="uid://caf2e24erkf4u" path="res://scene/global/healthbar.tscn" id="12_4i342"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiln3"]
 atlas = ExtResource("2_r3yp4")
@@ -1615,6 +1616,12 @@ disabled = true
 position = Vector2(-55.5, -11)
 shape = SubResource("RectangleShape2D_uyurs")
 disabled = true
+
+[node name="Healthbar" parent="." instance=ExtResource("12_4i342")]
+offset_left = -48.0
+offset_top = -44.0
+offset_right = -8.0
+offset_bottom = -40.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
