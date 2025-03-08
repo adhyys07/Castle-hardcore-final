@@ -12,6 +12,9 @@ const JUMP_VELOCITY = -315.0
 @export var isAttacking = false
 @onready var hurtbox = $Area2D
 
+var coyote_time = 0.4
+var can_jump = false
+
 var health = 20
 func _ready():
 	#Gamemanager.player = self
@@ -33,8 +36,14 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if is_on_floor() and can_jump == false:
+		can_jump = true
+	elif can_jump == true and $coyote_timer.is_stopped():
+		$coyote_timer.start(coyote_time)
+	
+	if can_jump:
+		if Input.is_action_just_pressed("ui_up"):
+			velocity.y = JUMP_VELOCITY
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 
@@ -96,3 +105,8 @@ func _on_button_7_pressed() -> void:
 	
 func die ():
 	queue_free()
+
+
+func _on_coyote_timer_timeout() -> void:
+	can_jump = false
+	pass # Replace with function body.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://5x1ujxfajsp3"]
+[gd_scene load_steps=8 format=3 uid="uid://5x1ujxfajsp3"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_akaxv"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="2_d4ank"]
 [ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="3_jua5y"]
 [ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/mobs/movin_mob.tscn" id="4_d0fdr"]
+[ext_resource type="PackedScene" uid="uid://clmfafvgxfd5t" path="res://scene/traps+platforms/platform .tscn" id="5_imhgp"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hueuh"]
 
@@ -40,3 +41,6 @@ shape = SubResource("WorldBoundaryShape2D_3vttj")
 [node name="Straight" parent="." instance=ExtResource("4_d0fdr")]
 position = Vector2(282, 245)
 loop = false
+
+[node name="platform" parent="." instance=ExtResource("5_imhgp")]
+position = Vector2(-140, 233)
