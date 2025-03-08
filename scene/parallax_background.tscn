@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://op28rjubdckq"]
+
+[ext_resource type="Texture2D" uid="uid://c70oxjwjwwgm5" path="res://assets/faaltu/Background.png" id="1_hmuly"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(48, 32)
+motion_mirroring = Vector2(224, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-455, -305)
+scale = Vector2(1.01339, 1.14583)
+texture = ExtResource("1_hmuly")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(48, 32)
+motion_mirroring = Vector2(224, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(-7, -303)
+scale = Vector2(1.01339, 1.14583)
+texture = ExtResource("1_hmuly")
+centered = false

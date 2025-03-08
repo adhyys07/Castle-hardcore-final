@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://6d0h0p15nx0x"]
+[gd_scene load_steps=20 format=4 uid="uid://6d0h0p15nx0x"]
 
 [ext_resource type="Script" path="res://script/level_1.gd" id="1_icvv3"]
 [ext_resource type="PackedScene" uid="uid://jjaeijduxkyo" path="res://scene/traps+platforms/straight.tscn" id="2_4sxqk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="8_fh5km"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="8_n1pka"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="9_vd1iu"]
+[ext_resource type="PackedScene" uid="uid://op28rjubdckq" path="res://scene/parallax_background.tscn" id="11_me5uc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u2lvr"]
 
@@ -273,6 +274,8 @@ position = Vector2(51, -168)
 
 [node name="coin3" parent="." instance=ExtResource("8_fh5km")]
 position = Vector2(105, -214)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("11_me5uc")]
 
 [connection signal="body_entered" from="level_portal1" to="." method="_on_level_portal_1_body_entered"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_pressed"]

@@ -19,21 +19,12 @@ var JumpBufferTimer = 0.0
 var coyote_time = 0.3
 var can_jump = false
 var health = 20
+var knockback_force = 200
 
 func _ready():
 	#Gamemanager.player = self
 	healthbar.init_health(health)
 	hurtbox.area_entered.connect(_on_area_2d_body_entered)
-	
-func take_damage(amount):
-	health -= amount
-	health =  max(health,0)
-	
-	healthbar._set_health(health)
-	
-	if health<=0:
-		die()
-	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -92,14 +83,22 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Collectible"):
 		body.Collect()
-		
 
-
+func take_damage(amount,knockdown_direction):
+	health -= amount
+	health =  max(health,0)
+	
+	healthbar._set_health(health)
+	velocity= knockback_force* knockdown_direction
+	move_and_slide()
+	
+	if health<=0:
+		die()		
 			
 func mob_entered(body: Node2D) -> void:
 	if body.is_in_group("mob"):
-		take_damage(5)
-		animated_sprite.play("death")
+		var knockdown_direction = (global_position - body.global_position).normalized()
+		take_damage(5,knockdown_direction)
 
 			#print("youre gay")
 		$Timer/coyote_timer
@@ -121,7 +120,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_button_7_pressed() -> void:
 	pass # Replace with function body.
 	
-func die ():
+func die():
 	queue_free()
 
 
