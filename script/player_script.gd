@@ -12,10 +12,14 @@ const JUMP_VELOCITY = -315.0
 @export var isAttacking = false
 @onready var hurtbox = $Area2D
 
-var coyote_time = 0.4
-var can_jump = false
+var JumpBuffer: bool = false
+@export var JumpBufferTime = 0.3
+var JumpBufferTimer = 0.0
 
+var coyote_time = 0.3
+var can_jump = false
 var health = 20
+
 func _ready():
 	#Gamemanager.player = self
 	healthbar.init_health(health)
@@ -38,12 +42,26 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if is_on_floor() and can_jump == false:
 		can_jump = true
-	elif can_jump == true and $coyote_timer.is_stopped():
-		$coyote_timer.start(coyote_time)
+	elif can_jump == true and $Timer/coyote_timer.is_stopped():
+		$Timer/coyote_timer.start(coyote_time)
+	else:
+		JumpBuffer = true
+		JumpBufferTimer = JumpBufferTime
+		
+	if JumpBuffer:
+		JumpBufferTimer -= delta
+		if JumpBufferTimer <= 0:
+			JumpBuffer = false
+			
+	if JumpBuffer and is_on_floor():
+		if Input.is_action_just_pressed("ui_up"):
+			velocity.y = JUMP_VELOCITY
+		JumpBuffer = false	
 	
 	if can_jump:
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_VELOCITY
+
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 
@@ -84,7 +102,7 @@ func mob_entered(body: Node2D) -> void:
 		animated_sprite.play("death")
 
 			#print("youre gay")
-		
+		$Timer/coyote_timer
 		#OS.delay_msec(1000)
 		#get_tree().change_scene_to
 		
@@ -110,3 +128,5 @@ func die ():
 func _on_coyote_timer_timeout() -> void:
 	can_jump = false
 	pass # Replace with function body.
+	
+	
