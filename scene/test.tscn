@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://5x1ujxfajsp3"]
+[gd_scene load_steps=9 format=3 uid="uid://5x1ujxfajsp3"]
 
+[ext_resource type="PackedScene" uid="uid://cef07b48jd82y" path="res://scene/global/background1.tscn" id="1_880et"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_akaxv"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="2_d4ank"]
 [ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="3_jua5y"]
@@ -13,6 +14,10 @@ normal = Vector2(1, 0)
 distance = -70.0
 
 [node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" parent="." instance=ExtResource("1_880et")]
+
+[node name="Node" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 267)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://glwp8ypt7i1m"]
+[gd_scene load_steps=10 format=3 uid="uid://glwp8ypt7i1m"]
 
 [ext_resource type="Script" path="res://script/level_7.gd" id="1_62tl2"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_qpg1j"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="2_6i4sf"]
+[ext_resource type="PackedScene" uid="uid://cef07b48jd82y" path="res://scene/global/background1.tscn" id="2_xfhr3"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="3_bddyi"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="5_g62a3"]
 [ext_resource type="PackedScene" uid="uid://t12edx00l8gi" path="res://scene/mobs/boss.tscn" id="6_fdn04"]
@@ -144,6 +145,12 @@ sources/0 = SubResource("TileSetAtlasSource_5f3fi")
 
 [node name="level_7" type="Node2D"]
 script = ExtResource("1_62tl2")
+
+[node name="TextureRect" parent="." instance=ExtResource("2_xfhr3")]
+offset_left = -254.0
+offset_top = -256.0
+offset_right = 401.0
+offset_bottom = 80.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_eb7qa")

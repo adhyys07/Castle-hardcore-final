@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cpfn5bokdjt74"]
+[gd_scene load_steps=21 format=3 uid="uid://cpfn5bokdjt74"]
 
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_5fu1s"]
 [ext_resource type="Script" path="res://script/level_4.gd" id="1_ec6bn"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_xyx8n"]
+[ext_resource type="PackedScene" uid="uid://cef07b48jd82y" path="res://scene/global/background1.tscn" id="2_1lrkx"]
 [ext_resource type="PackedScene" uid="uid://d3xoksx21et5d" path="res://scene/traps+platforms/fire.tscn" id="3_aa72k"]
 [ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/mobs/movin_mob.tscn" id="3_gu8oi"]
 [ext_resource type="PackedScene" uid="uid://cqnhg1omya3xd" path="res://scene/traps+platforms/fake.tscn" id="4_0iu42"]
@@ -165,6 +166,12 @@ point_count = 2
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_ec6bn")
+
+[node name="TextureRect" parent="." instance=ExtResource("2_1lrkx")]
+offset_left = -320.0
+offset_top = -414.0
+offset_right = 331.0
+offset_bottom = 123.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(8, -142)

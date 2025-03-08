@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cef07b48jd82y"]
+
+[ext_resource type="Texture2D" uid="uid://c55u4uthcmb0y" path="res://assets/faaltu/Web_Photo_Editor.jpg" id="1_it3sn"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = -480.0
+offset_top = -268.0
+offset_right = 477.0
+offset_bottom = 270.0
+texture = ExtResource("1_it3sn")
