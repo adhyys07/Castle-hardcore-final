@@ -11,9 +11,10 @@ const JUMP_VELOCITY = -315.0
 @export var attack = false
 @export var isAttacking = false
 @onready var hurtbox = $Area2D
+@onready var floor_ray_cast: RayCast2D = $RayCast2D
 
 var JumpBuffer: bool = false
-@export var JumpBufferTime = 0.3
+@export var JumpBufferTime = 0.2
 var JumpBufferTimer = 0.0
 
 var coyote_time = 0.3
@@ -75,6 +76,21 @@ func _physics_process(delta: float) -> void:
 		isAttacking = true
 	#Apply movement
 		
+	if _is_on_ice():
+		_movement_on_ice(direction)
+	else:
+		_normal_movement(direction)
+		
+func _movement_on_ice(direction):
+	pass
+		
+func _normal_movement(direction):
+	if direction:
+		velocity.x = direction * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed) 
+		
+		
 	move_and_slide()
 
 	
@@ -128,4 +144,7 @@ func _on_coyote_timer_timeout() -> void:
 	can_jump = false
 	pass # Replace with function body.
 	
-	
+func _is_on_ice():
+	var collider = floor_ray_cast.get_collider()
+	if not collider: return false
+	return collider.name == "iceBlocks"
