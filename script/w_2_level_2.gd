@@ -16,4 +16,4 @@ func _on_button_9_pressed() -> void:
 
 
 func _on_level_portal_9_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scene/World 2/w_2_level_2.tscn") 
+	get_tree().change_scene_to_file("res://scene/World 2/w_2_level_3.tscn") 
