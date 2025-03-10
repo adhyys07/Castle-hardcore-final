@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://du4xvssa6ues3"]
+[gd_scene load_steps=20 format=3 uid="uid://du4xvssa6ues3"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_1n1qt"]
 [ext_resource type="Script" path="res://script/w_2_level_1.gd" id="1_emd4p"]
+[ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="2_5ssy7"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_200ek"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_i4k7c"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_3cpsc"]
@@ -834,6 +835,12 @@ point_count = 8
 
 [node name="w2_level1" type="Node2D"]
 script = ExtResource("1_emd4p")
+
+[node name="TextureRect" parent="." instance=ExtResource("2_5ssy7")]
+offset_left = -69.0
+offset_top = -501.0
+offset_right = 725.0
+offset_bottom = -2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(247, -240)
