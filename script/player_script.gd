@@ -75,6 +75,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("pierce_attack"):
 		sprite.play("pierce_attack")
+		Input.start_joy_vibration(0,0.2,0.09,0.7)
 		$AttackArea/Pierce.disabled = false
 		$AttackArea/Pierce2.disabled = false
 		isAttacking = true
