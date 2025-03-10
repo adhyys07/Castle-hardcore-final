@@ -505,6 +505,7 @@ offset_left = -480.0
 offset_top = -272.0
 offset_right = 478.0
 offset_bottom = 268.0
+stretch_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
