@@ -52,7 +52,7 @@ position = Vector2(2086, 354)
 position = Vector2(2530, 320)
 
 [node name="w_2_level_4" parent="world_2" instance=ExtResource("11_egqcd")]
-position = Vector2(2612, -311)
+position = Vector2(2616, -278)
 
 [node name="world_3" type="Node2D" parent="."]
 position = Vector2(-544, 848)

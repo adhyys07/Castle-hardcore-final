@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7ntxag07kmqe"]
+[gd_scene load_steps=10 format=3 uid="uid://7ntxag07kmqe"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_e1p3s"]
 [ext_resource type="Script" path="res://script/level_5.gd" id="1_ki7lv"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="3_5q35b"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="4_02nka"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="6_5ljqp"]
-[ext_resource type="PackedScene" uid="uid://04ac0cr730ya" path="res://scene/traps+platforms/spiketrap.tscn" id="7_aqakv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i4qu"]
 texture = ExtResource("2_fob37")
@@ -158,7 +157,7 @@ position = Vector2(100, -72)
 zoom = Vector2(2.3, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_e1p3s")]
-position = Vector2(3, 88)
+position = Vector2(-175, 88)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
 root_node = NodePath("")
@@ -181,9 +180,6 @@ offset_bottom = -219.0
 icon = ExtResource("6_5ljqp")
 flat = true
 
-[node name="spiketrap" parent="." instance=ExtResource("7_aqakv")]
-position = Vector2(84, 94)
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -59.0
 offset_top = -182.0
@@ -191,6 +187,8 @@ offset_right = 281.0
 offset_bottom = -121.0
 text = "STILL IN PROGRESS(MOVE TO NEXT LEVEL)
                      MINI BOSS FIGHT HERE"
+
+[node name="boss" type="CharacterBody2D" parent="."]
 
 [connection signal="body_entered" from="level_portal_5" to="." method="_on_level_portal_5_body_entered"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
