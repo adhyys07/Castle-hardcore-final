@@ -13,8 +13,12 @@ const JUMP_VELOCITY = -315.0
 @onready var hurtbox = $Area2D
 @onready var floor_ray_cast: RayCast2D = $RayCast2D
 
+@export var accelerationValue = 0.1 
+@export var slideValue = 0.01
+@export var FullStopValue = 15
+
 var JumpBuffer: bool = false
-@export var JumpBufferTime = 0.2
+@export var JumpBufferTime = 0.1
 var JumpBufferTimer = 0.0
 
 var coyote_time = 0.3
@@ -81,8 +85,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		_normal_movement(direction)
 		
+	move_and_slide()
+
+		
 func _movement_on_ice(direction):
-	pass
+	if direction:
+		velocity.x = lerp(velocity.x, direction * speed, accelerationValue)
+	else:
+		velocity.x = lerp(velocity.x, 0.0, slideValue)
+		
+		if velocity.x < FullStopValue and velocity.x > -FullStopValue:
+			velocity.x = 0
 		
 func _normal_movement(direction):
 	if direction:
@@ -91,7 +104,6 @@ func _normal_movement(direction):
 		velocity.x = move_toward(velocity.x, 0, speed) 
 		
 		
-	move_and_slide()
 
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
