@@ -532,10 +532,11 @@ point_count = 2
 script = ExtResource("1_xv3ex")
 
 [node name="TextureRect" parent="." instance=ExtResource("2_20rox")]
-offset_left = -741.0
-offset_top = -416.0
-offset_right = 53.0
-offset_bottom = 51.0
+offset_left = -712.0
+offset_top = -433.0
+offset_right = 5.0
+offset_bottom = -2.0
+expand_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-353, -218)
