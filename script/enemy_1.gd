@@ -15,6 +15,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
 		print("You died! bitch") # Replace with function body.
 		body.queue_free()
+		Input.start_joy_vibration(0,0.5,1.0,1.0)
 		get_tree().change_scene_to_file("res://scene/global/try_again.tscn")
 
 
