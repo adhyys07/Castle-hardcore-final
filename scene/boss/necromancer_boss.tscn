@@ -276,5 +276,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="boss"]
 sprite_frames = SubResource("SpriteFrames_0bwsw")
-animation = &"sneer"
-frame_progress = 0.0233193
+animation = &"walk"
+frame_progress = 0.285579

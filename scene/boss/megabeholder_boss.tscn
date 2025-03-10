@@ -344,5 +344,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="megabeholder"]
 sprite_frames = SubResource("SpriteFrames_jth0f")
-animation = &"walk"
-frame_progress = 0.577476
+animation = &"attack1"
+frame_progress = 0.119731

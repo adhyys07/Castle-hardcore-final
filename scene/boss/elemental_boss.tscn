@@ -345,4 +345,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_emq18")
 animation = &"walk"
-frame_progress = 0.733237
+frame_progress = 0.181734

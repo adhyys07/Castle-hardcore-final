@@ -18,7 +18,7 @@ const JUMP_VELOCITY = -315.0
 @export var FullStopValue = 15
 
 var JumpBuffer: bool = false
-@export var JumpBufferTime = 0.1
+@export var JumpBufferTime = 0.05
 var JumpBufferTimer = 0.0
 
 var coyote_time = 0.3

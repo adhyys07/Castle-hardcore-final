@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvphj2gkd02lv"]
+[gd_scene load_steps=6 format=4 uid="uid://cvphj2gkd02lv"]
 
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_71j5b"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="2_svrac"]
+[ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="3_mil1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i01gq"]
 texture = ExtResource("2_svrac")
@@ -224,9 +225,11 @@ texture = ExtResource("2_svrac")
 5:9/0 = 0
 5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:9/0 = 0
 15:9/0 = 0
 16:9/0 = 0
+16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:9/0 = 0
 19:9/0 = 0
 20:9/0 = 0
@@ -247,9 +250,11 @@ texture = ExtResource("2_svrac")
 10:10/0 = 0
 11:10/0 = 0
 13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:10/0 = 0
 15:10/0 = 0
 16:10/0 = 0
+16:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:10/0 = 0
 19:10/0 = 0
 20:10/0 = 0
@@ -270,9 +275,11 @@ texture = ExtResource("2_svrac")
 10:11/0 = 0
 11:11/0 = 0
 13:11/0 = 0
+13:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:11/0 = 0
 15:11/0 = 0
 16:11/0 = 0
+16:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:11/0 = 0
 28:11/0 = 0
 29:11/0 = 0
@@ -283,9 +290,11 @@ texture = ExtResource("2_svrac")
 4:12/0 = 0
 5:12/0 = 0
 13:12/0 = 0
+13:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:12/0 = 0
 15:12/0 = 0
 16:12/0 = 0
+16:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:12/0 = 0
 19:12/0 = 0
 20:12/0 = 0
@@ -306,9 +315,11 @@ texture = ExtResource("2_svrac")
 10:13/0 = 0
 11:13/0 = 0
 13:13/0 = 0
+13:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:13/0 = 0
 15:13/0 = 0
 16:13/0 = 0
+16:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:13/0 = 0
 19:13/0 = 0
 20:13/0 = 0
@@ -325,9 +336,11 @@ texture = ExtResource("2_svrac")
 10:14/0 = 0
 11:14/0 = 0
 13:14/0 = 0
+13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:14/0 = 0
 15:14/0 = 0
 16:14/0 = 0
+16:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:14/0 = 0
 28:14/0 = 0
 29:14/0 = 0
@@ -344,9 +357,11 @@ texture = ExtResource("2_svrac")
 5:15/0 = 0
 5:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:15/0 = 0
+13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:15/0 = 0
 15:15/0 = 0
 16:15/0 = 0
+16:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:15/0 = 0
 19:15/0 = 0
 20:15/0 = 0
@@ -367,9 +382,11 @@ texture = ExtResource("2_svrac")
 10:16/0 = 0
 11:16/0 = 0
 13:16/0 = 0
+13:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:16/0 = 0
 15:16/0 = 0
 16:16/0 = 0
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:16/0 = 0
 19:16/0 = 0
 20:16/0 = 0
@@ -493,4 +510,8 @@ offset_bottom = 268.0
 zoom = Vector2(2, 2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADk/xAAAAACAAAAAADl/xAAAAACAAAAAADm/xAAAAACAAAAAADn/xAAAAACAAAAAADo/xAAAAACAAAAAADp/xAAAAACAAAAAADq/xAAAAACAAAAAADr/xAAAAACAAAAAADs/xAAAAACAAAAAADt/xAAAAACAAAAAADu/xAAAAACAAAAAADv/xAAAAACAAAAAADw/xAAAAACAAAAAADx/xAAAAACAAAAAADy/xAAAAACAAAAAADz/xAAAAACAAAAAAD0/xAAAAACAAAAAAD1/xAAAAACAAAAAAD2/xAAAAACAAAAAAD3/xAAAAACAAAAAAD4/xAAAAACAAAAAAD5/xAAAAACAAAAAAD6/xAAAAACAAAAAAD7/xAAAAACAAAAAAD8/xAAAAACAAAAAAD9/xAAAAACAAAAAAD+/xAAAAACAAAAAAD//xAAAAACAAAAAAAAABAAAAACAAAAAAABABAAAAACAAAAAAACABAAAAACAAAAAAADABAAAAACAAAAAAAEABAAAAACAAAAAAAFABAAAAACAAAAAAAGABAAAAACAAAAAAAHABAAAAACAAAAAAAIABAAAAACAAAAAAAJABAAAAACAAAAAAAKABAAAAACAAAAAAALABAAAAACAAAAAAAMABAAAAACAAAAAAANABAAAAACAAAAAAAOABAAAAACAAAAAAAPABAAAAACAAAAAADj/xAAAAACAAAAAADi/xAAAAANAA4AAADi/w8AAAANAA4AAADi/w4AAAANAA4AAADi/w0AAAANAA4AAADi/wwAAAANAA4AAADi/wsAAAANAA4AAADi/woAAAANAA4AAADi/wkAAAANAA4AAADi/wgAAAANAA4AAADi/wcAAAANAA4AAADi/wYAAAANAA4AAADi/wUAAAANAA4AAADi/wQAAAANAA4AAADi/wMAAAANAA4AAADi/wIAAAANAA4AAADi/wEAAAANAA4AAADi/wAAAAANAA4AAADi//b/AAANAA4AAADi//f/AAANAA4AAADi//j/AAANAA4AAADi//n/AAANAA4AAADi//r/AAANAA4AAADi//v/AAANAA4AAADi//z/AAANAA4AAADi//3/AAANAA4AAADi//7/AAANAA4AAADi////AAANAA4AAAAQABAAAAADAAAAAAARABAAAAADAAAAAAASABAAAAAQAA8AAAASAA8AAAAQAA8AAAASAA4AAAAQAA8AAAASAA0AAAAQAA8AAAASAAwAAAAQAA8AAAASAAsAAAAQAA8AAAASAAoAAAAQAA8AAAASAAkAAAAQAA8AAAASAAgAAAAQAA8AAAASAAcAAAAQAA8AAAASAAYAAAAQAA8AAAASAAUAAAAQAA8AAAASAAQAAAAQAA8AAAASAAMAAAAQAA8AAAASAAIAAAAQAA8AAAASAAEAAAAQAA8AAAASAAAAAAAQAA8AAAASAP//AAAQAA8AAAASAP7/AAAQAA8AAAASAP3/AAAQAA8AAAASAPz/AAAQAA8AAAASAPv/AAAQAA8AAAASAPr/AAAQAA8AAAASAPn/AAAQAA8AAAA=")
 tile_set = SubResource("TileSet_rxwmv")
+
+[node name="Player" parent="." instance=ExtResource("3_mil1x")]
+position = Vector2(-350, 226)
