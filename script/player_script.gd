@@ -33,7 +33,6 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor() and floor_ray_cast.is_colliding():
-		if !$falling.playing:
 			$falling.play()
 	# Add the gravity.
 	if not is_on_floor():
@@ -60,8 +59,7 @@ func _physics_process(delta: float) -> void:
 	if can_jump:
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_VELOCITY
-			if !$jump.playing:
-				$jump.play()
+			$jump.play()
 
 	
 	var direction := Input.get_axis("ui_left", "ui_right")

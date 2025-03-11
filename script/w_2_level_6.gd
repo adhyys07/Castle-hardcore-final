@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 func _on_button_13_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/World 2/w_2_level_6.tscn")
 
-
-func _on_level_portal_12_body_entered(body: Node2D) -> void:
+	
+func _on_level_portal_13_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scene/World 2/w_2_level_7.tscn")

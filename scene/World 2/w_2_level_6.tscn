@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="13_idxxq"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="14_n1658"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_omd6d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_agy0r"]
 texture = ExtResource("1_c1b4k")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -485,7 +485,7 @@ texture = ExtResource("1_c1b4k")
 
 [sub_resource type="TileSet" id="TileSet_p6fiw"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_omd6d")
+sources/0 = SubResource("TileSetAtlasSource_agy0r")
 
 [sub_resource type="Curve2D" id="Curve2D_8jl28"]
 _data = {
@@ -538,7 +538,7 @@ offset_bottom = -564.0
 icon = ExtResource("11_hs5up")
 flat = true
 
-[node name="level_portal_12" parent="." instance=ExtResource("13_idxxq")]
+[node name="level_portal_13" parent="." instance=ExtResource("13_idxxq")]
 position = Vector2(-401, -546)
 
 [node name="fallingspikes" type="CanvasGroup" parent="."]
@@ -778,4 +778,4 @@ position = Vector2(-163, -450)
 position = Vector2(5, -329)
 
 [connection signal="pressed" from="Button13" to="." method="_on_button_13_pressed"]
-[connection signal="body_entered" from="level_portal_12" to="." method="_on_level_portal_12_body_entered"]
+[connection signal="body_entered" from="level_portal_13" to="." method="_on_level_portal_13_body_entered"]

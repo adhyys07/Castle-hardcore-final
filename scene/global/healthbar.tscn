@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://caf2e24erkf4u"]
 
-[ext_resource type="Script" path="res://damagebar.gd" id="1_hr4pt"]
-[ext_resource type="Script" path="res://scene/global/healthbar.gd" id="1_oqwyn"]
+[ext_resource type="Script" path="res://script/damagebar.gd" id="1_hr4pt"]
+[ext_resource type="Script" path="res://script/healthbar.gd" id="1_oqwyn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jja2j"]
 

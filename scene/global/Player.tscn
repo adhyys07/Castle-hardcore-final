@@ -1652,8 +1652,8 @@ pitch_scale = 0.8
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_q1ulm")
-volume_db = -10.0
-pitch_scale = 0.9
+volume_db = -15.0
+pitch_scale = 0.75
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

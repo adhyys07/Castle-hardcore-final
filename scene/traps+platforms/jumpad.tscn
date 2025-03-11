@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fmtpau3gdydy"]
+[gd_scene load_steps=5 format=3 uid="uid://fmtpau3gdydy"]
 
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="1_irpuf"]
-[ext_resource type="Script" path="res://scene/traps+platforms/jumpad.gd" id="1_xl0fq"]
+[ext_resource type="Script" path="res://script/jumpad.gd" id="1_xl0fq"]
+[ext_resource type="AudioStream" uid="uid://8oiu23hgoyaa" path="res://assets/sounds/jump_10.wav" id="3_thvyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryf74"]
 size = Vector2(32, 8)
@@ -18,5 +19,10 @@ region_rect = Rect2(296, 144, 32, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -1)
 shape = SubResource("RectangleShape2D_ryf74")
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_thvyi")
+volume_db = -15.0
+pitch_scale = 0.75
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

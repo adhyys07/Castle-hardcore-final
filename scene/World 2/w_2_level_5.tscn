@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cvphj2gkd02lv"]
+[gd_scene load_steps=18 format=4 uid="uid://cvphj2gkd02lv"]
 
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_71j5b"]
 [ext_resource type="Script" path="res://script/w_2_level_5.gd" id="1_pf0wd"]
@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="3_lf4ke"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="3_mil1x"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="4_q3rr7"]
+[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="6_qd65y"]
 [ext_resource type="PackedScene" uid="uid://jjaeijduxkyo" path="res://scene/traps+platforms/straight.tscn" id="6_xd22l"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="8_653kb"]
 [ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="9_r5fxh"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="10_7q618"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="11_10de8"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="12_2sluy"]
+[ext_resource type="PackedScene" uid="uid://cfduloukdnjxn" path="res://scene/traps+platforms/fallingspike.tscn" id="14_ldekk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i01gq"]
 texture = ExtResource("2_svrac")
@@ -535,28 +537,14 @@ offset_right = 478.0
 offset_bottom = 268.0
 stretch_mode = 0
 
-[node name="Sprite2D2" type="Sprite2D" parent="BG"]
-position = Vector2(467, 95)
-rotation = 3.14159
-texture = ExtResource("2_svrac")
-region_enabled = true
-region_rect = Rect2(152, 0, 16, 16)
-
-[node name="StaticBody2D4" parent="BG" instance=ExtResource("8_653kb")]
-position = Vector2(598, 164)
-
-[node name="StaticBody2D5" parent="BG" instance=ExtResource("8_653kb")]
-position = Vector2(661, 134)
-
-[node name="Area2D12" parent="BG" instance=ExtResource("11_10de8")]
-position = Vector2(290, 364)
+[node name="CanvasLayer" parent="." instance=ExtResource("6_qd65y")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADk/xAAAAACAAAAAADl/xAAAAACAAAAAADm/xAAAAACAAAAAADn/xAAAAACAAAAAADo/xAAAAACAAAAAADp/xAAAAACAAAAAADq/xAAAAACAAAAAADr/xAAAAACAAAAAADs/xAAAAACAAAAAADt/xAAAAACAAAAAADu/xAAAAACAAAAAADv/xAAAAACAAAAAADw/xAAAAACAAAAAADx/xAAAAACAAAAAADy/xAAAAACAAAAAADz/xAAAAACAAAAAAD0/xAAAAACAAAAAAD1/xAAAAACAAAAAAD2/xAAAAACAAAAAAD3/xAAAAACAAAAAAD4/xAAAAACAAAAAAD5/xAAAAACAAAAAAD6/xAAAAACAAAAAAD7/xAAAAACAAAAAAD8/xAAAAACAAAAAAD9/xAAAAACAAAAAAD+/xAAAAACAAAAAAD//xAAAAACAAAAAAAAABAAAAACAAAAAAABABAAAAACAAAAAAACABAAAAACAAAAAAADABAAAAACAAAAAAAEABAAAAACAAAAAAAFABAAAAACAAAAAAAGABAAAAACAAAAAAAHABAAAAACAAAAAAAIABAAAAACAAAAAAAJABAAAAACAAAAAAAKABAAAAACAAAAAAALABAAAAACAAAAAAAMABAAAAACAAAAAAANABAAAAACAAAAAAAOABAAAAACAAAAAAAPABAAAAACAAAAAADj/xAAAAACAAAAAADi/xAAAAANAA4AAADi/w8AAAANAA4AAADi/w4AAAANAA4AAADi/w0AAAANAA4AAADi/wwAAAANAA4AAADi/wsAAAANAA4AAADi/woAAAANAA4AAADi/wkAAAANAA4AAADi/wgAAAANAA4AAADi/wcAAAANAA4AAADi/wYAAAANAA4AAADi/wUAAAANAA4AAADi/wQAAAANAA4AAADi/wMAAAANAA4AAADi/wIAAAANAA4AAADi/wEAAAANAA4AAADi/wAAAAANAA4AAADi//b/AAANAA4AAADi//f/AAANAA4AAADi//j/AAANAA4AAADi//n/AAANAA4AAADi//r/AAANAA4AAADi//v/AAANAA4AAADi//z/AAANAA4AAADi//3/AAANAA4AAADi//7/AAANAA4AAADi////AAANAA4AAAAQABAAAAADAAAAAAARABAAAAADAAAAAAASABAAAAAQAA8AAAASAA8AAAAQAA8AAAASAA4AAAAQAA8AAAASAA0AAAAQAA8AAAASAAwAAAAQAA8AAAASAAsAAAAQAA8AAAASAAoAAAAQAA8AAAASAAkAAAAQAA8AAAASAAgAAAAQAA8AAAASAAcAAAAQAA8AAAASAAYAAAAQAA8AAAASAAUAAAAQAA8AAAASAAQAAAAQAA8AAAASAAMAAAAQAA8AAAASAAIAAAAQAA8AAAASAAEAAAAQAA8AAAASAAAAAAAQAA8AAAASAP//AAAQAA8AAAASAP7/AAAQAA8AAAASAP3/AAAQAA8AAAASAPz/AAAQAA8AAAASAPv/AAAQAA8AAAASAPr/AAAQAA8AAAASAPn/AAAQAA8AAADq/wsAAAALAAoAAADr/wsAAAALAAoAAADs/wsAAAALAAoAAADv/wsAAAALAAoAAADw/wsAAAALAAoAAADx/wsAAAALAAoAAAD0/wsAAAALAAoAAAD1/wsAAAALAAoAAAD2/wsAAAALAAoAAAD5/wsAAAALAAoAAAD6/wsAAAALAAoAAAD7/wsAAAALAAoAAAD+/wsAAAALAAoAAAD//wsAAAALAAoAAAAAAAsAAAALAAoAAAADAAsAAAALAAoAAAAEAAsAAAALAAoAAAAFAAsAAAALAAoAAAAIAAsAAAALAAoAAAAJAAsAAAALAAoAAAAKAAsAAAALAAoAAAAOAA0AAAATAA8AAAAPAA0AAAATAA8AAAAQAA0AAAATAA8AAAARAA0AAAATAA8AAAAGAAsAAAALAAoAAAAHAAsAAAALAAoAAAABAAsAAAALAAoAAAD9/wsAAAALAAoAAAD8/wsAAAALAAoAAAACAAsAAAALAAoAAADt/wsAAAALAAoAAADu/wsAAAALAAoAAADy/wsAAAALAAoAAADz/wsAAAALAAoAAAD3/wsAAAALAAoAAAD4/wsAAAALAAoAAAD6/wUAAAATAA8AAAD5/wUAAAATAA8AAADj/wIAAAATAA8AAADk/wIAAAATAA8AAADl/wIAAAATAA8AAADm/wIAAAATAA8AAADn/wIAAAATAA8AAADo/wIAAAATAA8AAADp/wIAAAATAA8AAADq/wIAAAATAA8AAADr/wIAAAATAA8AAADs/wIAAAATAA8AAADk////AAATAA8AAADj////AAATAA8AAADl////AAATAA8AAADw//j/AAATAA8AAADx//j/AAATAA8AAADy//j/AAATAA8AAAD1//r/AAATAA8AAAD6//r/AAATAA8AAAD///r/AAATAA8AAAAEAPr/AAATAA8AAAD4//f/AAATAA8AAAASAPj/AAAQAA8AAAASAPf/AAAQAA8AAAASAPb/AAAQAA8AAAASAPX/AAAQAA8AAAASAPT/AAAQAA8AAAASAPP/AAAQAA8AAAASAPL/AAAQAA8AAAASAPH/AAAQAA8AAAASAPD/AAAQAA8AAAASAO//AAAQAA8AAADi//X/AAANAA4AAADi//T/AAANAA4AAADi//P/AAANAA4AAADi//L/AAANAA4AAADi//H/AAANAA4AAADi//D/AAANAA4AAADi/+//AAANAA4AAADi/+7/AAANAA4AAAAOAPX/AAAJAAoAAAAPAPX/AAAJAAoAAAAQAPX/AAAJAAoAAAARAPX/AAAJAAoAAADj/+3/AAAJAAoAAADk/+3/AAAJAAoAAADl/+3/AAAJAAoAAADm/+3/AAAJAAoAAADn/+3/AAAJAAoAAADo/+3/AAAJAAoAAADp/+3/AAAJAAoAAADq/+3/AAAJAAoAAADr/+3/AAAJAAoAAADs/+3/AAAJAAoAAADt/+3/AAAJAAoAAADu/+3/AAAJAAoAAADv/+3/AAAJAAoAAADw/+3/AAAJAAoAAADx/+3/AAAJAAoAAADy/+3/AAAJAAoAAADz/+3/AAAJAAoAAAD0/+3/AAAJAAoAAAD1/+3/AAAJAAoAAAD2/+3/AAAJAAoAAAD3/+3/AAAJAAoAAAD4/+3/AAAJAAoAAAD5/+3/AAAJAAoAAAD6/+3/AAAJAAoAAAD7/+3/AAAJAAoAAAD8/+3/AAAJAAoAAAD9/+3/AAAJAAoAAAD+/+3/AAAJAAoAAAD//+3/AAAJAAoAAAAAAO3/AAAJAAoAAAABAO3/AAAJAAoAAAACAO3/AAAJAAoAAAADAO3/AAAJAAoAAAAEAO3/AAAJAAoAAAAFAO3/AAAJAAoAAAAGAO3/AAAJAAoAAAAHAO3/AAAJAAoAAAAIAO3/AAAJAAoAAAAJAO3/AAAJAAoAAAAKAO3/AAAJAAoAAAALAO3/AAAJAAoAAAAMAO3/AAAJAAoAAAANAO3/AAAJAAoAAAAOAO3/AAAJAAoAAAAPAO3/AAAJAAoAAAAQAO3/AAAJAAoAAAARAO3/AAAJAAoAAAASAO3/AAAJAAoAAAATAO3/AAAJAAoAAAASAO7/AAAQAA0AAAA=")
 tile_set = SubResource("TileSet_rxwmv")
 
 [node name="Player" parent="." instance=ExtResource("3_mil1x")]
-position = Vector2(-215, 256)
+position = Vector2(-364, 251)
 
 [node name="Button12" type="Button" parent="."]
 offset_left = -17.0
@@ -600,6 +588,9 @@ position = Vector2(140, -5)
 
 [node name="Area2D13" parent="coin" instance=ExtResource("11_10de8")]
 
+[node name="Area2D14" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(-116, 212)
+
 [node name="fake" type="CanvasGroup" parent="."]
 position = Vector2(-166, -176)
 rotation = 3.14159
@@ -617,6 +608,12 @@ region_rect = Rect2(152, 0, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="fake"]
 position = Vector2(-221, -0.000564575)
+texture = ExtResource("2_svrac")
+region_enabled = true
+region_rect = Rect2(152, 0, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="fake"]
+position = Vector2(-153, 0.999603)
 texture = ExtResource("2_svrac")
 region_enabled = true
 region_rect = Rect2(152, 0, 16, 16)
@@ -665,6 +662,116 @@ position = Vector2(-336, -57)
 
 [node name="StaticBody2D5" parent="breakable" instance=ExtResource("8_653kb")]
 position = Vector2(-366, -57)
+
+[node name="StaticBody2D6" parent="breakable" instance=ExtResource("8_653kb")]
+position = Vector2(118, -108)
+
+[node name="StaticBody2D7" parent="breakable" instance=ExtResource("8_653kb")]
+position = Vector2(181, -138)
+
+[node name="fallingspikes" type="CanvasGroup" parent="."]
+
+[node name="fallingspike" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-330, 203)
+
+[node name="fallingspike2" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-314, 203)
+
+[node name="fallingspike3" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-298, 203)
+
+[node name="fallingspike4" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-283, 203)
+
+[node name="fallingspike5" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-268, 203)
+
+[node name="fallingspike6" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-253, 203)
+
+[node name="fallingspike7" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-238, 203)
+
+[node name="fallingspike8" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-223, 203)
+
+[node name="fallingspike9" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-346, 203)
+
+[node name="fallingspike10" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-191, 203)
+
+[node name="fallingspike11" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-175, 203)
+
+[node name="fallingspike12" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-159, 203)
+
+[node name="fallingspike13" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-144, 203)
+
+[node name="fallingspike14" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-129, 203)
+
+[node name="fallingspike15" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-114, 203)
+
+[node name="fallingspike16" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-99, 203)
+
+[node name="fallingspike17" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-84, 203)
+
+[node name="fallingspike18" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-207, 203)
+
+[node name="fallingspike19" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-52, 203)
+
+[node name="fallingspike20" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-36, 203)
+
+[node name="fallingspike21" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-20, 203)
+
+[node name="fallingspike22" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-5, 203)
+
+[node name="fallingspike23" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(10, 203)
+
+[node name="fallingspike24" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(25, 203)
+
+[node name="fallingspike25" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(40, 203)
+
+[node name="fallingspike26" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(55, 203)
+
+[node name="fallingspike27" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(-68, 203)
+
+[node name="fallingspike28" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(86, 203)
+
+[node name="fallingspike29" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(102, 203)
+
+[node name="fallingspike30" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(118, 203)
+
+[node name="fallingspike31" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(133, 203)
+
+[node name="fallingspike32" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(148, 203)
+
+[node name="fallingspike33" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(163, 203)
+
+[node name="fallingspike36" parent="fallingspikes" instance=ExtResource("14_ldekk")]
+position = Vector2(70, 203)
 
 [connection signal="pressed" from="Button12" to="." method="_on_button_12_pressed"]
 [connection signal="body_entered" from="level_portal_12" to="." method="_on_level_portal_12_body_entered"]
