@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="10_7q618"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="11_10de8"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="12_2sluy"]
-[ext_resource type="PackedScene" uid="uid://cfduloukdnjxn" path="res://scene/traps+platforms/fallingspike.tscn" id="14_ldekk"]
+[ext_resource type="PackedScene" uid="uid://mpnenm2ade6p" path="res://scene/traps+platforms/fallingspike.tscn" id="14_ldekk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i01gq"]
 texture = ExtResource("2_svrac")
@@ -673,105 +673,139 @@ position = Vector2(181, -138)
 
 [node name="fallingspike" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-330, 203)
+fall_speed = 147.5
 
 [node name="fallingspike2" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-314, 203)
+fall_speed = 147.5
 
 [node name="fallingspike3" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-298, 203)
+fall_speed = 147.5
 
 [node name="fallingspike4" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-283, 203)
+fall_speed = 147.5
 
 [node name="fallingspike5" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-268, 203)
+fall_speed = 147.5
 
 [node name="fallingspike6" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-253, 203)
+fall_speed = 147.5
 
 [node name="fallingspike7" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-238, 203)
+fall_speed = 147.5
 
 [node name="fallingspike8" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-223, 203)
+fall_speed = 147.5
 
 [node name="fallingspike9" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-346, 203)
+fall_speed = 147.5
 
 [node name="fallingspike10" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-191, 203)
+fall_speed = 147.5
 
 [node name="fallingspike11" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-175, 203)
+fall_speed = 147.5
 
 [node name="fallingspike12" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-159, 203)
+fall_speed = 147.5
 
 [node name="fallingspike13" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-144, 203)
+fall_speed = 147.5
 
 [node name="fallingspike14" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-129, 203)
+fall_speed = 147.5
 
 [node name="fallingspike15" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-114, 203)
+fall_speed = 147.5
 
 [node name="fallingspike16" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-99, 203)
+fall_speed = 147.5
 
 [node name="fallingspike17" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-84, 203)
+fall_speed = 147.5
 
 [node name="fallingspike18" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-207, 203)
+fall_speed = 147.5
 
 [node name="fallingspike19" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-52, 203)
+fall_speed = 147.5
 
 [node name="fallingspike20" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-36, 203)
+fall_speed = 147.5
 
 [node name="fallingspike21" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-20, 203)
+fall_speed = 147.5
 
 [node name="fallingspike22" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-5, 203)
+fall_speed = 147.5
 
 [node name="fallingspike23" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(10, 203)
+fall_speed = 147.5
 
 [node name="fallingspike24" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(25, 203)
+fall_speed = 147.5
 
 [node name="fallingspike25" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(40, 203)
+fall_speed = 147.5
 
 [node name="fallingspike26" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(55, 203)
+fall_speed = 147.5
 
 [node name="fallingspike27" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(-68, 203)
+fall_speed = 147.5
 
 [node name="fallingspike28" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(86, 203)
+fall_speed = 147.5
 
 [node name="fallingspike29" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(102, 203)
+fall_speed = 147.5
 
 [node name="fallingspike30" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(118, 203)
+fall_speed = 147.5
 
 [node name="fallingspike31" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(133, 203)
+fall_speed = 147.5
 
 [node name="fallingspike32" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(148, 203)
+fall_speed = 147.5
 
 [node name="fallingspike33" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(163, 203)
+fall_speed = 147.5
 
 [node name="fallingspike36" parent="fallingspikes" instance=ExtResource("14_ldekk")]
 position = Vector2(70, 203)
+fall_speed = 147.5
 
 [connection signal="pressed" from="Button12" to="." method="_on_button_12_pressed"]
 [connection signal="body_entered" from="level_portal_12" to="." method="_on_level_portal_12_body_entered"]

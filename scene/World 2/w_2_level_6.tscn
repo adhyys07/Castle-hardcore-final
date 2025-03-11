@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_w8vdy"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_abygi"]
 [ext_resource type="PackedScene" uid="uid://fmtpau3gdydy" path="res://scene/traps+platforms/jumpad.tscn" id="5_arx40"]
-[ext_resource type="PackedScene" uid="uid://cfduloukdnjxn" path="res://scene/traps+platforms/fallingspike.tscn" id="6_p4p5r"]
+[ext_resource type="PackedScene" uid="uid://mpnenm2ade6p" path="res://scene/traps+platforms/fallingspike.tscn" id="6_p4p5r"]
 [ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/mobs/movin_mob.tscn" id="7_c4uma"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="8_gvyvb"]
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="9_i8kxc"]
@@ -551,6 +551,7 @@ position = Vector2(-314, -87)
 
 [node name="fallingspike3" parent="fallingspikes" instance=ExtResource("6_p4p5r")]
 position = Vector2(-298, -87)
+fall_speed = 230.0
 
 [node name="fallingspike4" parent="fallingspikes" instance=ExtResource("6_p4p5r")]
 position = Vector2(-283, -87)

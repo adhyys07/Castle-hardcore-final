@@ -1,23 +1,22 @@
-@onready var area = $Area2D
-@onready var body = $RigidBody2D
+extends Area2D
 
+@export var fall_speed: float = 300.0
+var is_falling = false
 
 func _ready():
-	area = $Area2D
-	body = $RigidBody2D
-	body.gravity_scale = 0  # Keep it floating initially
+	# Connect signals
+	body_entered.connect(_on_body_entered)
 
-func _on_Area2D_body_entered(body):
-	if body.name == "Player":
-		fall()
-
-func fall():
-	body.gravity_scale = 1  # Enable gravity to make it fall
+func _process(delta):
+	if is_falling:
+		position.y += fall_speed * delta
 
 func _on_body_entered(body):
-	if body.name == "Ground" or body.name == "Player":
-		queue_free()  # Remove spike after impact
+	if body.name == "Player":
+		is_falling = true
 
 
-func _on_playerdetect_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://scene/global/try_again.tscn")
