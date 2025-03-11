@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfduloukdnjxn"]
 
 [ext_resource type="Texture2D" uid="uid://bxp17jfugs0yn" path="res://assets/handmade/spike1.png" id="1_1nk2j"]
-[ext_resource type="Script" path="res://scene/traps+platforms/fallingspike.gd" id="1_npugx"]
+[ext_resource type="Script" path="res://script/fallingspike.gd" id="1_npugx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1h3te"]
 size = Vector2(18, 48)
