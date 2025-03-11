@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://crv6b572g55eb"]
+[gd_scene load_steps=19 format=3 uid="uid://crv6b572g55eb"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_ojtgd"]
 [ext_resource type="Script" path="res://script/w_2_level_2.gd" id="1_xv3ex"]
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="2_20rox"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_gxv2q"]
+[ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="3_jl8c5"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_oiau2"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="4_tajve"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="6_6757w"]
@@ -543,17 +544,17 @@ point_count = 24
 [node name="w_2_level_2" type="Node2D"]
 script = ExtResource("1_xv3ex")
 
-[node name="TextureRect" parent="." instance=ExtResource("2_20rox")]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-353, -299)
+zoom = Vector2(2.67, 1.8)
+
+[node name="BG" parent="." instance=ExtResource("2_20rox")]
 offset_left = -712.0
 offset_top = -596.0
 offset_right = 253.0
 offset_bottom = -2.0
 expand_mode = 1
 stretch_mode = 0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-353, -299)
-zoom = Vector2(2.67, 1.8)
 
 [node name="Player" parent="." instance=ExtResource("1_ojtgd")]
 position = Vector2(-272, -414)
@@ -576,83 +577,111 @@ flat = true
 [node name="level_portal_9" parent="." instance=ExtResource("6_6757w")]
 position = Vector2(-36, -527)
 
-[node name="CharacterBody2D13" parent="." instance=ExtResource("7_l2aqa")]
-position = Vector2(-347, -22)
+[node name="mob" parent="." instance=ExtResource("11_ruexd")]
+position = Vector2(-669, -217)
+
+[node name="breakable" type="CanvasGroup" parent="."]
+
+[node name="StaticBody2D11" parent="breakable" instance=ExtResource("12_mof0e")]
+position = Vector2(-207, -442)
+
+[node name="StaticBody2D12" parent="breakable" instance=ExtResource("12_mof0e")]
+position = Vector2(-144, -465)
+
+[node name="slime" type="CanvasGroup" parent="."]
+position = Vector2(-207, -442)
+
+[node name="CharacterBody2D13" parent="slime" instance=ExtResource("7_l2aqa")]
+position = Vector2(-140, 420)
 up_direction = Vector2(0, 1)
 speed = 90.0
 
-[node name="Straight3" parent="." instance=ExtResource("8_5g2fc")]
-position = Vector2(-182, -43)
-curve = SubResource("Curve2D_dmxlb")
-loop = false
-speed = 0.75
-speed_scale = 0.75
-
-[node name="Sprite2D8" parent="." instance=ExtResource("9_0kg5j")]
-position = Vector2(-30, -121)
-
-[node name="Sprite2D9" parent="." instance=ExtResource("9_0kg5j")]
-position = Vector2(-30, -171)
-
-[node name="CharacterBody2D14" parent="." instance=ExtResource("7_l2aqa")]
-position = Vector2(-212, -198)
+[node name="CharacterBody2D14" parent="slime" instance=ExtResource("7_l2aqa")]
+position = Vector2(-5, 244)
 up_direction = Vector2(0, 1)
 speed = 90.0
 
-[node name="CharacterBody2D15" parent="." instance=ExtResource("7_l2aqa")]
-position = Vector2(-156, -198)
+[node name="CharacterBody2D15" parent="slime" instance=ExtResource("7_l2aqa")]
+position = Vector2(51, 244)
 up_direction = Vector2(0, 1)
 speed = 90.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="fake" type="CanvasGroup" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="fake"]
 position = Vector2(-548, -209)
 rotation = 3.14159
 texture = ExtResource("3_oiau2")
 region_enabled = true
 region_rect = Rect2(152, 0, 16, 16)
 
-[node name="mob" parent="." instance=ExtResource("11_ruexd")]
-position = Vector2(-669, -217)
-
-[node name="Straight4" parent="." instance=ExtResource("8_5g2fc")]
-position = Vector2(-637, -300)
-curve = SubResource("Curve2D_uglal")
-loop = false
-speed_scale = 1.25
-
-[node name="Straight5" parent="." instance=ExtResource("8_5g2fc")]
-position = Vector2(-553, -385)
-scale = Vector2(1.01963, 1)
-curve = SubResource("Curve2D_4maj5")
-speed = 1.3
-speed_scale = 1.3
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="fake"]
 position = Vector2(-400, -473)
 rotation = 3.14159
 texture = ExtResource("3_oiau2")
 region_enabled = true
 region_rect = Rect2(152, 0, 16, 16)
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="fake"]
 position = Vector2(-342, -474)
 rotation = 3.14159
 texture = ExtResource("3_oiau2")
 region_enabled = true
 region_rect = Rect2(152, 0, 16, 16)
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
+[node name="Sprite2D4" type="Sprite2D" parent="fake"]
 position = Vector2(-400, -438)
 rotation = 3.14159
 texture = ExtResource("3_oiau2")
 region_enabled = true
 region_rect = Rect2(152, 0, 16, 16)
 
-[node name="StaticBody2D11" parent="." instance=ExtResource("12_mof0e")]
-position = Vector2(-207, -442)
+[node name="movin" type="CanvasGroup" parent="."]
 
-[node name="StaticBody2D12" parent="." instance=ExtResource("12_mof0e")]
-position = Vector2(-144, -465)
+[node name="Straight3" parent="movin" instance=ExtResource("8_5g2fc")]
+position = Vector2(-182, -43)
+curve = SubResource("Curve2D_dmxlb")
+loop = false
+speed = 0.75
+speed_scale = 0.75
+
+[node name="Straight4" parent="movin" instance=ExtResource("8_5g2fc")]
+position = Vector2(-637, -300)
+curve = SubResource("Curve2D_uglal")
+loop = false
+speed_scale = 1.25
+
+[node name="Straight5" parent="movin" instance=ExtResource("8_5g2fc")]
+position = Vector2(-553, -385)
+scale = Vector2(1.01963, 1)
+curve = SubResource("Curve2D_4maj5")
+speed = 1.3
+speed_scale = 1.3
+
+[node name="passthrou" type="CanvasGroup" parent="."]
+position = Vector2(-30, -171)
+
+[node name="Sprite2D8" parent="passthrou" instance=ExtResource("9_0kg5j")]
+position = Vector2(0, 50)
+
+[node name="Sprite2D9" parent="passthrou" instance=ExtResource("9_0kg5j")]
+
+[node name="coins" type="CanvasGroup" parent="."]
+
+[node name="Area2D10" parent="coins" instance=ExtResource("3_jl8c5")]
+position = Vector2(-471, -224)
+
+[node name="Area2D11" parent="coins" instance=ExtResource("3_jl8c5")]
+position = Vector2(-320, -265)
+
+[node name="Area2D12" parent="coins" instance=ExtResource("3_jl8c5")]
+position = Vector2(-649, -276)
+
+[node name="Area2D13" parent="coins" instance=ExtResource("3_jl8c5")]
+position = Vector2(-558, -387)
+
+[node name="Area2D14" parent="coins" instance=ExtResource("3_jl8c5")]
+position = Vector2(-279, -426)
 
 [connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]
 [connection signal="body_entered" from="level_portal_9" to="." method="_on_level_portal_9_body_entered"]

@@ -528,27 +528,27 @@ script = ExtResource("1_pf0wd")
 position = Vector2(-84, 0)
 zoom = Vector2(2.47, 2)
 
-[node name="TextureRect" parent="." instance=ExtResource("1_71j5b")]
+[node name="BG" parent="." instance=ExtResource("1_71j5b")]
 offset_left = -480.0
 offset_top = -272.0
 offset_right = 478.0
 offset_bottom = 268.0
 stretch_mode = 0
 
-[node name="Sprite2D2" type="Sprite2D" parent="TextureRect"]
+[node name="Sprite2D2" type="Sprite2D" parent="BG"]
 position = Vector2(467, 95)
 rotation = 3.14159
 texture = ExtResource("2_svrac")
 region_enabled = true
 region_rect = Rect2(152, 0, 16, 16)
 
-[node name="StaticBody2D4" parent="TextureRect" instance=ExtResource("8_653kb")]
+[node name="StaticBody2D4" parent="BG" instance=ExtResource("8_653kb")]
 position = Vector2(598, 164)
 
-[node name="StaticBody2D5" parent="TextureRect" instance=ExtResource("8_653kb")]
+[node name="StaticBody2D5" parent="BG" instance=ExtResource("8_653kb")]
 position = Vector2(661, 134)
 
-[node name="Area2D12" parent="TextureRect" instance=ExtResource("11_10de8")]
+[node name="Area2D12" parent="BG" instance=ExtResource("11_10de8")]
 position = Vector2(290, 364)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -566,7 +566,7 @@ offset_bottom = -228.0
 icon = ExtResource("4_q3rr7")
 flat = true
 
-[node name="Straight3" parent="." instance=ExtResource("6_xd22l")]
+[node name="Movin" parent="." instance=ExtResource("6_xd22l")]
 position = Vector2(262, 110)
 scale = Vector2(1.01963, 1)
 curve = SubResource("Curve2D_hbpru")
@@ -574,89 +574,97 @@ loop = false
 speed = 0.7
 speed_scale = 0.7
 
-[node name="Sprite2D8" parent="." instance=ExtResource("3_lf4ke")]
+[node name="level_portal_12" parent="." instance=ExtResource("10_7q618")]
+position = Vector2(255, -195)
+
+[node name="coin" type="CanvasGroup" parent="."]
+position = Vector2(-85, -192)
+
+[node name="Area2D7" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(180, 362)
+
+[node name="Area2D8" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(-219, 362)
+
+[node name="Area2D9" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(345, 298)
+
+[node name="Area2D10" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(-265, 69)
+
+[node name="Area2D11" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(-80, -1)
+
+[node name="Area2D12" parent="coin" instance=ExtResource("11_10de8")]
+position = Vector2(140, -5)
+
+[node name="Area2D13" parent="coin" instance=ExtResource("11_10de8")]
+
+[node name="fake" type="CanvasGroup" parent="."]
+position = Vector2(-166, -176)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="fake"]
+texture = ExtResource("2_svrac")
+region_enabled = true
+region_rect = Rect2(152, 0, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="fake"]
+position = Vector2(-80, 0.999786)
+texture = ExtResource("2_svrac")
+region_enabled = true
+region_rect = Rect2(152, 0, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="fake"]
+position = Vector2(-221, -0.000564575)
+texture = ExtResource("2_svrac")
+region_enabled = true
+region_rect = Rect2(152, 0, 16, 16)
+
+[node name="mob" type="CanvasGroup" parent="."]
+position = Vector2(50, -88)
+
+[node name="RigidBody2D" parent="mob" instance=ExtResource("12_2sluy")]
+position = Vector2(123, 137)
+
+[node name="RigidBody2D2" parent="mob" instance=ExtResource("12_2sluy")]
+position = Vector2(-157, -1)
+
+[node name="RigidBody2D3" parent="mob" instance=ExtResource("12_2sluy")]
+
+[node name="CharacterBody2D" parent="mob" instance=ExtResource("9_r5fxh")]
+position = Vector2(-503, 114)
+up_direction = Vector2(0, 1)
+speed = 90.0
+
+[node name="passthrough" type="CanvasGroup" parent="."]
+
+[node name="Sprite2D8" parent="passthrough" instance=ExtResource("3_lf4ke")]
 position = Vector2(256, 162)
 scale = Vector2(1.40625, 1.5)
 region_rect = Rect2(16, 16, 32, 8)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("8_653kb")]
-position = Vector2(-170, 61)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("8_653kb")]
-position = Vector2(-241, 50)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("9_r5fxh")]
-position = Vector2(-453, 26)
-up_direction = Vector2(0, 1)
-speed = 90.0
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("8_653kb")]
-position = Vector2(-351, -57)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("8_653kb")]
-position = Vector2(-336, -57)
-
-[node name="Sprite2D9" parent="." instance=ExtResource("3_lf4ke")]
+[node name="Sprite2D9" parent="passthrough" instance=ExtResource("3_lf4ke")]
 position = Vector2(-351, -109)
 scale = Vector2(1.40625, 1.5)
 region_rect = Rect2(16, 16, 32, 8)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-166, -176)
-rotation = 3.14159
-texture = ExtResource("2_svrac")
-region_enabled = true
-region_rect = Rect2(152, 0, 16, 16)
+[node name="breakable" type="CanvasGroup" parent="."]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-86, -177)
-rotation = 3.14159
-texture = ExtResource("2_svrac")
-region_enabled = true
-region_rect = Rect2(152, 0, 16, 16)
+[node name="StaticBody2D" parent="breakable" instance=ExtResource("8_653kb")]
+position = Vector2(-170, 61)
 
-[node name="StaticBody2D5" parent="." instance=ExtResource("8_653kb")]
+[node name="StaticBody2D2" parent="breakable" instance=ExtResource("8_653kb")]
+position = Vector2(-241, 50)
+
+[node name="StaticBody2D3" parent="breakable" instance=ExtResource("8_653kb")]
+position = Vector2(-351, -57)
+
+[node name="StaticBody2D4" parent="breakable" instance=ExtResource("8_653kb")]
+position = Vector2(-336, -57)
+
+[node name="StaticBody2D5" parent="breakable" instance=ExtResource("8_653kb")]
 position = Vector2(-366, -57)
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(55, -176)
-rotation = 3.14159
-texture = ExtResource("2_svrac")
-region_enabled = true
-region_rect = Rect2(152, 0, 16, 16)
-
-[node name="level_portal_12" parent="." instance=ExtResource("10_7q618")]
-position = Vector2(255, -195)
-
-[node name="Area2D7" parent="." instance=ExtResource("11_10de8")]
-position = Vector2(95, 170)
-
-[node name="Area2D8" parent="." instance=ExtResource("11_10de8")]
-position = Vector2(-304, 170)
-
-[node name="Area2D9" parent="." instance=ExtResource("11_10de8")]
-position = Vector2(260, 106)
-
-[node name="Area2D10" parent="." instance=ExtResource("11_10de8")]
-position = Vector2(-350, -123)
-
-[node name="Area2D11" parent="." instance=ExtResource("11_10de8")]
-position = Vector2(-165, -193)
-
-[node name="Area2D7" parent="Area2D11" instance=ExtResource("11_10de8")]
-position = Vector2(80, 1)
-
-[node name="Area2D12" parent="." instance=ExtResource("11_10de8")]
-position = Vector2(55, -197)
-
-[node name="RigidBody2D" parent="." instance=ExtResource("12_2sluy")]
-position = Vector2(173, 49)
-
-[node name="RigidBody2D2" parent="." instance=ExtResource("12_2sluy")]
-position = Vector2(-107, -89)
-
-[node name="RigidBody2D3" parent="." instance=ExtResource("12_2sluy")]
-position = Vector2(50, -88)
 
 [connection signal="pressed" from="Button12" to="." method="_on_button_12_pressed"]
 [connection signal="body_entered" from="level_portal_12" to="." method="_on_level_portal_12_body_entered"]
