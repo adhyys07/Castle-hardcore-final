@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://5x1ujxfajsp3"]
+[gd_scene load_steps=13 format=4 uid="uid://5x1ujxfajsp3"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_akaxv"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="2_d4ank"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://clmfafvgxfd5t" path="res://scene/traps+platforms/platform .tscn" id="5_imhgp"]
 [ext_resource type="Texture2D" uid="uid://dmwf18ltq42ra" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="6_5vo4q"]
 [ext_resource type="PackedScene" uid="uid://cfduloukdnjxn" path="res://scene/traps+platforms/fallingspike.tscn" id="7_vblsh"]
+[ext_resource type="PackedScene" uid="uid://fmtpau3gdydy" path="res://scene/traps+platforms/jumpad.tscn" id="8_r8yat"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hueuh"]
 
@@ -78,3 +79,6 @@ tile_set = SubResource("TileSet_miwii")
 
 [node name="fallingspike" parent="." instance=ExtResource("7_vblsh")]
 position = Vector2(-125, 197)
+
+[node name="jumpad" parent="." instance=ExtResource("8_r8yat")]
+position = Vector2(-427, 268)
