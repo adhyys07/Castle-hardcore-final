@@ -1,6 +1,5 @@
 [gd_scene load_steps=16 format=3 uid="uid://c670a5netct3d"]
 
-[ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="1_r0wub"]
 [ext_resource type="PackedScene" uid="uid://6d0h0p15nx0x" path="res://scene/World 1/level_1.tscn" id="2_vuj1d"]
 [ext_resource type="PackedScene" uid="uid://cysxdwxs7s0nm" path="res://scene/World 1/level_2.tscn" id="3_ggqqs"]
 [ext_resource type="PackedScene" uid="uid://c053ub4jan1b7" path="res://scene/World 1/level_3.tscn" id="4_juble"]
@@ -15,10 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://i5igc1drqqet" path="res://scene/World 2/w_2_level_6.tscn" id="13_yn8rw"]
 [ext_resource type="PackedScene" uid="uid://cuxvxola0ym15" path="res://scene/World 2/w_2_level_7.tscn" id="14_rtcge"]
 [ext_resource type="PackedScene" uid="uid://ccj1eb7krnwa" path="res://scene/World 2/w_2_level_8.tscn" id="15_sjbqd"]
+[ext_resource type="PackedScene" uid="uid://ddhncviastxjo" path="res://scene/bonus/bonus_level.tscn" id="16_3hpi7"]
 
 [node name="Game" type="Node2D"]
-
-[node name="CanvasLayer" parent="." instance=ExtResource("1_r0wub")]
 
 [node name="world_1" type="Node2D" parent="."]
 
@@ -68,7 +66,12 @@ position = Vector2(3582, 445)
 position = Vector2(4409, -179)
 
 [node name="w_2_level_8" parent="world_2" instance=ExtResource("15_sjbqd")]
-position = Vector2(4587, 132)
+position = Vector2(4554, 420)
 
 [node name="world_3" type="Node2D" parent="."]
-position = Vector2(-544, 848)
+position = Vector2(-465, 1023)
+
+[node name="bonus" type="Node2D" parent="."]
+
+[node name="bonus_level" parent="bonus" instance=ExtResource("16_3hpi7")]
+position = Vector2(1816, -2159)

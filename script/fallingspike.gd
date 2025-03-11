@@ -1,23 +1,23 @@
-extends Node2D
+@onready var area = $Area2D
+@onready var body = $RigidBody2D
 
-@export var speed = 160.0
-var current_speed = 0.0	
 
-func _physics_process(delta: float):
-	position.y += current_speed * delta
+func _ready():
+	area = $Area2D
+	body = $RigidBody2D
+	body.gravity_scale = 0  # Keep it floating initially
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player:
-		get_tree().change_scene_to_file("res://scene/global/try_again.tscn")
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		fall()
+
+func fall():
+	body.gravity_scale = 1  # Enable gravity to make it fall
+
+func _on_body_entered(body):
+	if body.name == "Ground" or body.name == "Player":
+		queue_free()  # Remove spike after impact
 
 
 func _on_playerdetect_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player:
-		null
-		
-func fall():
-	current_speed = speed
-	await get_tree().create_timer(5).timeout
-	queue_free()
-		
-		
+	pass # Replace with function body.
