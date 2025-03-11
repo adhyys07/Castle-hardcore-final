@@ -50,13 +50,13 @@ position = Vector2(1446, -185)
 position = Vector2(2086, 354)
 
 [node name="w_2_level_3" parent="world_2" instance=ExtResource("9_gu2ei")]
-position = Vector2(2584, 458)
+position = Vector2(2569, 413)
 
 [node name="w_2_level_4" parent="world_2" instance=ExtResource("11_egqcd")]
-position = Vector2(2662, -431)
+position = Vector2(2594, -507)
 
 [node name="w_2_level_5" parent="world_2" instance=ExtResource("12_ol5sf")]
-position = Vector2(3591, -407)
+position = Vector2(3440, -427)
 
 [node name="world_3" type="Node2D" parent="."]
 position = Vector2(-544, 848)

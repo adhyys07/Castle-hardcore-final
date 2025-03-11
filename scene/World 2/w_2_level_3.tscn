@@ -443,7 +443,7 @@ point_count = 2
 [node name="w_2_level_3" type="Node2D"]
 script = ExtResource("1_mrwje")
 
-[node name="TextureRect" parent="." instance=ExtResource("2_cb5ix")]
+[node name="BG" parent="." instance=ExtResource("2_cb5ix")]
 offset_left = -432.0
 offset_top = -577.0
 offset_right = 450.0

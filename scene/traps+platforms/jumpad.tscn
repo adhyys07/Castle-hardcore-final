@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://fmtpau3gdydy"]
+
+[ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="1_irpuf"]
+[ext_resource type="Script" path="res://scene/traps+platforms/jumpad.gd" id="1_xl0fq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txnpp"]
+size = Vector2(21, 19)
+
+[node name="jumpad" type="Node2D"]
+script = ExtResource("1_xl0fq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, -12)
+texture = ExtResource("1_irpuf")
+region_enabled = true
+region_rect = Rect2(264, 72, 24, 24)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10.5, -11.5)
+shape = SubResource("RectangleShape2D_txnpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-12, -12)
+texture = ExtResource("1_irpuf")
+region_enabled = true
+region_rect = Rect2(216, 72, 24, 24)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Area2D"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_txnpp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Sprite2D2/Area2D" to="." method="_on_area_2d_area_entered"]
