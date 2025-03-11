@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cvphj2gkd02lv"]
+[gd_scene load_steps=16 format=4 uid="uid://cvphj2gkd02lv"]
 
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_71j5b"]
 [ext_resource type="Script" path="res://script/w_2_level_5.gd" id="1_pf0wd"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="10_7q618"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="11_10de8"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="12_2sluy"]
-[ext_resource type="PackedScene" uid="uid://fmtpau3gdydy" path="res://scene/traps+platforms/jumpad.tscn" id="13_ins0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i01gq"]
 texture = ExtResource("2_svrac")
@@ -518,7 +517,7 @@ sources/0 = SubResource("TileSetAtlasSource_i01gq")
 
 [sub_resource type="Curve2D" id="Curve2D_hbpru"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -7, 7, 0, 0, 0, 0, -64.7294, -38, 0, 0, 0, 0, -121.613, 7, 0, 0, 0, 0, -121.613, 7, 0, 0, 0, 0, -300.109, -85, 0, 0, 0, 0, -300.109, -51)
+"points": PackedVector2Array(0, 0, 0, 0, -7, 7, 0, 0, 0, 0, -64.7294, -38, 0, 0, 0, 0, -121.613, 7, 0, 0, 0, 0, -121.613, 7, 0, 0, 0, 0, -238.322, -79, 0, 0, 0, 0, -237.341, -43)
 }
 point_count = 6
 
@@ -568,7 +567,7 @@ icon = ExtResource("4_q3rr7")
 flat = true
 
 [node name="Movin" parent="." instance=ExtResource("6_xd22l")]
-position = Vector2(262, 110)
+position = Vector2(222, 116)
 scale = Vector2(1.01963, 1)
 curve = SubResource("Curve2D_hbpru")
 loop = false
@@ -666,9 +665,6 @@ position = Vector2(-336, -57)
 
 [node name="StaticBody2D5" parent="breakable" instance=ExtResource("8_653kb")]
 position = Vector2(-366, -57)
-
-[node name="jumpad" parent="." instance=ExtResource("13_ins0v")]
-position = Vector2(-445, 255)
 
 [connection signal="pressed" from="Button12" to="." method="_on_button_12_pressed"]
 [connection signal="body_entered" from="level_portal_12" to="." method="_on_level_portal_12_body_entered"]

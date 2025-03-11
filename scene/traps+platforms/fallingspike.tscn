@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://script/fallingspike.gd" id="1_npugx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1h3te"]
-size = Vector2(18, 48)
+size = Vector2(18, 66)
 
 [sub_resource type="Animation" id="Animation_plwbv"]
 length = 0.001
@@ -77,7 +77,7 @@ polygon = PackedVector2Array(-5, 29, -5, 27, -4, 26, -3, 25, -3, 24, -2, 23, -1,
 [node name="playerdetect" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerdetect"]
-position = Vector2(3, 12)
+position = Vector2(3, 21)
 shape = SubResource("RectangleShape2D_1h3te")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

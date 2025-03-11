@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=236 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_c4chy"]
 [ext_resource type="Texture2D" uid="uid://c00dimk6e4xwm" path="res://assets/sheets/spr_Dash_strip.png" id="2_r3yp4"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://c7v2fx2btphvq" path="res://assets/sheets/spr_Walk_strip.png" id="10_2gdju"]
 [ext_resource type="PackedScene" uid="uid://bu8cktq8dpdaq" path="res://scene/mobilecont.tscn" id="11_38vjx"]
 [ext_resource type="PackedScene" uid="uid://caf2e24erkf4u" path="res://scene/global/healthbar.tscn" id="12_4i342"]
+[ext_resource type="AudioStream" uid="uid://bwl3af2c002en" path="res://assets/sounds/pierce.wav" id="13_6a5fw"]
+[ext_resource type="AudioStream" uid="uid://ddwj2e4q5fplo" path="res://assets/sounds/hammer sound.wav" id="14_e6fkk"]
+[ext_resource type="AudioStream" uid="uid://brwox6gcblfwp" path="res://assets/sounds/Landing Sound Effect.wav" id="15_yda4h"]
+[ext_resource type="AudioStream" uid="uid://8oiu23hgoyaa" path="res://assets/sounds/jump_10.wav" id="16_q1ulm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiln3"]
 atlas = ExtResource("2_r3yp4")
@@ -1629,8 +1633,27 @@ offset_bottom = -40.0
 one_shot = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-30, -29)
+position = Vector2(-30, -28)
 target_position = Vector2(0, 31)
+
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 0.01
+
+[node name="pierce_effect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_6a5fw")
+
+[node name="hammer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_e6fkk")
+
+[node name="falling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_yda4h")
+volume_db = -15.0
+pitch_scale = 0.8
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_q1ulm")
+volume_db = -10.0
+pitch_scale = 0.9
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

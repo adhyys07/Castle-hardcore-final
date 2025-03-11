@@ -1,7 +1,10 @@
-extends Node2D
+extends Area2D
 
-@export var force = -500
+@export var jump_force: float = 600.0
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player:
-		area.get_parent().velocity.y = force
+func _ready():
+	connect("body_entered", _on_body_entered)
+
+func _on_body_entered(body):
+	if body is CharacterBody2D:
+		body.velocity.y = -jump_force

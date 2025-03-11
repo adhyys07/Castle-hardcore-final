@@ -32,6 +32,9 @@ func _ready():
 	hurtbox.area_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta: float) -> void:
+	if !is_on_floor() and floor_ray_cast.is_colliding():
+		if !$falling.playing:
+			$falling.play()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -57,6 +60,8 @@ func _physics_process(delta: float) -> void:
 	if can_jump:
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_VELOCITY
+			if !$jump.playing:
+				$jump.play()
 
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -78,6 +83,8 @@ func _physics_process(delta: float) -> void:
 		Input.start_joy_vibration(0,0.2,0.09,0.7)
 		$AttackArea/Pierce.disabled = false
 		$AttackArea/Pierce2.disabled = false
+		$cooldown.start()
+		$pierce_effect.play()
 		isAttacking = true
 	#Apply movement
 		
@@ -146,8 +153,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "death":
 		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 
-func _on_button_7_pressed() -> void:
-	pass # Replace with function body.
 	
 func die():
 	queue_free()
