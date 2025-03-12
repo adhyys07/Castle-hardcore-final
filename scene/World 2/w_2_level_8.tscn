@@ -533,6 +533,6 @@ speed_scale = 0.4
 
 [node name="megabeholder_boss" parent="." instance=ExtResource("9_o7lm0")]
 position = Vector2(130, -343)
-scale = Vector2(2.4, 2.4)
+scale = Vector2(2.4, 2)
 
 [connection signal="pressed" from="Button14" to="." method="_on_button_14_pressed"]

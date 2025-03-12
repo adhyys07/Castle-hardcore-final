@@ -515,7 +515,7 @@ position = Vector2(16, -282)
 zoom = Vector2(2.26, 1.9)
 
 [node name="Player" parent="." instance=ExtResource("4_g3ulj")]
-position = Vector2(-322, -18)
+position = Vector2(-334, -420)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -18)
@@ -559,9 +559,6 @@ position = Vector2(247, -406)
 
 [node name="Area2D20" parent="coin" instance=ExtResource("8_mncey")]
 position = Vector2(377, -324)
-
-[node name="Area2D21" parent="coin" instance=ExtResource("8_mncey")]
-position = Vector2(-344, -432)
 
 [node name="breakable" type="CanvasGroup" parent="."]
 
