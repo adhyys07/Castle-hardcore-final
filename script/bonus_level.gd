@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_bonus_portal_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scene/World 2/w_2_lvl_7_rbonus.tscn")
+
+
+func _on_bonus_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/bonus/bonus_level.tscn")

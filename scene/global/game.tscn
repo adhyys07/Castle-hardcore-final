@@ -74,4 +74,4 @@ position = Vector2(-465, 1023)
 [node name="bonus" type="Node2D" parent="."]
 
 [node name="bonus_level" parent="bonus" instance=ExtResource("16_3hpi7")]
-position = Vector2(1816, -2159)
+position = Vector2(2523, -718)
