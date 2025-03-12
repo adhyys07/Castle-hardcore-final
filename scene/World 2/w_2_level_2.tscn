@@ -553,7 +553,6 @@ offset_left = -712.0
 offset_top = -596.0
 offset_right = 253.0
 offset_bottom = -2.0
-stretch_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("1_ojtgd")]
 position = Vector2(-622, -16)

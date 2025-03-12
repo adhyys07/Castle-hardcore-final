@@ -501,7 +501,6 @@ offset_left = -461.0
 offset_top = -600.0
 offset_right = 504.0
 offset_bottom = -6.0
-stretch_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(16, -297)
