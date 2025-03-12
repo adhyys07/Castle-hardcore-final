@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="11_ae8jb"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="12_a0g4k"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2juy3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pdoa"]
 texture = ExtResource("2_6oe0r")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -484,7 +484,7 @@ texture = ExtResource("2_6oe0r")
 
 [sub_resource type="TileSet" id="TileSet_nfy11"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_2juy3")
+sources/0 = SubResource("TileSetAtlasSource_8pdoa")
 
 [sub_resource type="Curve2D" id="Curve2D_djmk6"]
 _data = {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccj1eb7krnwa"]
+[gd_scene load_steps=14 format=3 uid="uid://ccj1eb7krnwa"]
 
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_qi8ev"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_rokx2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://fmtpau3gdydy" path="res://scene/traps+platforms/jumpad.tscn" id="5_gl5xf"]
 [ext_resource type="PackedScene" uid="uid://jjaeijduxkyo" path="res://scene/traps+platforms/straight.tscn" id="6_lpfb1"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="7_8d1ta"]
+[ext_resource type="PackedScene" uid="uid://b82ccufglb4to" path="res://scene/boss/megabeholder_boss.tscn" id="9_o7lm0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r85n3"]
 texture = ExtResource("2_xmtgl")
@@ -480,44 +481,6 @@ layer_0/tile_data = PackedInt32Array(-14, 131072, 0, -13, 131072, 0, -12, 131072
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_nk4kh")]
 
-[node name="Area2D" parent="." instance=ExtResource("5_gl5xf")]
-position = Vector2(-192, -19)
-jump_force = 850.0
-
-[node name="Area2D2" parent="." instance=ExtResource("5_gl5xf")]
-position = Vector2(-160, -19)
-jump_force = 850.0
-
-[node name="Area2D3" parent="." instance=ExtResource("5_gl5xf")]
-position = Vector2(115, -19)
-jump_force = 850.0
-
-[node name="Area2D4" parent="." instance=ExtResource("5_gl5xf")]
-position = Vector2(148, -19)
-jump_force = 850.0
-
-[node name="Movin" parent="." instance=ExtResource("6_lpfb1")]
-position = Vector2(267, -345)
-scale = Vector2(1.01963, 1)
-curve = SubResource("Curve2D_wfqad")
-loop = false
-speed = 1.0
-
-[node name="Movin2" parent="." instance=ExtResource("6_lpfb1")]
-position = Vector2(-272, -345)
-scale = Vector2(1.01963, 1)
-curve = SubResource("Curve2D_wfqad")
-loop = false
-speed = 1.0
-
-[node name="Straight5" parent="." instance=ExtResource("6_lpfb1")]
-position = Vector2(-250, -507)
-scale = Vector2(1.01963, 1)
-curve = SubResource("Curve2D_56vgp")
-loop = false
-speed = 0.4
-speed_scale = 0.4
-
 [node name="Button14" type="Button" parent="."]
 offset_left = -13.0
 offset_top = -632.0
@@ -525,5 +488,51 @@ offset_right = 16.0
 offset_bottom = -604.0
 icon = ExtResource("7_8d1ta")
 flat = true
+
+[node name="jumppad" type="CanvasGroup" parent="."]
+
+[node name="Area2D" parent="jumppad" instance=ExtResource("5_gl5xf")]
+position = Vector2(-192, -19)
+jump_force = 850.0
+
+[node name="Area2D2" parent="jumppad" instance=ExtResource("5_gl5xf")]
+position = Vector2(-160, -19)
+jump_force = 850.0
+
+[node name="Area2D3" parent="jumppad" instance=ExtResource("5_gl5xf")]
+position = Vector2(115, -19)
+jump_force = 850.0
+
+[node name="Area2D4" parent="jumppad" instance=ExtResource("5_gl5xf")]
+position = Vector2(148, -19)
+jump_force = 850.0
+
+[node name="movinplat" type="CanvasGroup" parent="."]
+
+[node name="Movin" parent="movinplat" instance=ExtResource("6_lpfb1")]
+position = Vector2(267, -345)
+scale = Vector2(1.01963, 1)
+curve = SubResource("Curve2D_wfqad")
+loop = false
+speed = 1.0
+
+[node name="Movin2" parent="movinplat" instance=ExtResource("6_lpfb1")]
+position = Vector2(-272, -345)
+scale = Vector2(1.01963, 1)
+curve = SubResource("Curve2D_wfqad")
+loop = false
+speed = 1.0
+
+[node name="Straight5" parent="movinplat" instance=ExtResource("6_lpfb1")]
+position = Vector2(-250, -507)
+scale = Vector2(1.01963, 1)
+curve = SubResource("Curve2D_56vgp")
+loop = false
+speed = 0.4
+speed_scale = 0.4
+
+[node name="megabeholder_boss" parent="." instance=ExtResource("9_o7lm0")]
+position = Vector2(130, -343)
+scale = Vector2(2.4, 2.4)
 
 [connection signal="pressed" from="Button14" to="." method="_on_button_14_pressed"]

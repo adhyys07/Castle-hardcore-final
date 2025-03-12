@@ -1,20 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddhncviastxjo"]
+[gd_scene load_steps=11 format=3 uid="uid://ddhncviastxjo"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_aux80"]
-[ext_resource type="Script" path="res://scene/bonus/bonus_level.gd" id="1_bnyg2"]
+[ext_resource type="Script" path="res://script/bonus_level.gd" id="1_bnyg2"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_b1wlg"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_fvja2"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_qap6i"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="6_1mou2"]
+[ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="7_hjh47"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsoe2"]
 texture = ExtResource("3_fvja2")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:0/0 = 0
 8:0/0 = 0
 9:0/0 = 0
@@ -167,9 +174,11 @@ texture = ExtResource("3_fvja2")
 4:9/0 = 0
 5:9/0 = 0
 13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:9/0 = 0
 15:9/0 = 0
 16:9/0 = 0
+16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:9/0 = 0
 19:9/0 = 0
 20:9/0 = 0
@@ -190,9 +199,11 @@ texture = ExtResource("3_fvja2")
 10:10/0 = 0
 11:10/0 = 0
 13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:10/0 = 0
 15:10/0 = 0
 16:10/0 = 0
+16:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:10/0 = 0
 19:10/0 = 0
 20:10/0 = 0
@@ -213,9 +224,11 @@ texture = ExtResource("3_fvja2")
 10:11/0 = 0
 11:11/0 = 0
 13:11/0 = 0
+13:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:11/0 = 0
 15:11/0 = 0
 16:11/0 = 0
+16:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:11/0 = 0
 28:11/0 = 0
 29:11/0 = 0
@@ -226,12 +239,17 @@ texture = ExtResource("3_fvja2")
 4:12/0 = 0
 5:12/0 = 0
 13:12/0 = 0
+13:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:12/0 = 0
 15:12/0 = 0
 16:12/0 = 0
+16:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:12/0 = 0
+18:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:12/0 = 0
+19:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:12/0 = 0
+20:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:12/0 = 0
 23:12/0 = 0
 24:12/0 = 0
@@ -249,9 +267,11 @@ texture = ExtResource("3_fvja2")
 10:13/0 = 0
 11:13/0 = 0
 13:13/0 = 0
+13:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:13/0 = 0
 15:13/0 = 0
 16:13/0 = 0
+16:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:13/0 = 0
 19:13/0 = 0
 20:13/0 = 0
@@ -268,9 +288,11 @@ texture = ExtResource("3_fvja2")
 10:14/0 = 0
 11:14/0 = 0
 13:14/0 = 0
+13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:14/0 = 0
 15:14/0 = 0
 16:14/0 = 0
+16:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:14/0 = 0
 28:14/0 = 0
 29:14/0 = 0
@@ -281,9 +303,11 @@ texture = ExtResource("3_fvja2")
 4:15/0 = 0
 5:15/0 = 0
 13:15/0 = 0
+13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:15/0 = 0
 15:15/0 = 0
 16:15/0 = 0
+16:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:15/0 = 0
 19:15/0 = 0
 20:15/0 = 0
@@ -304,9 +328,13 @@ texture = ExtResource("3_fvja2")
 10:16/0 = 0
 11:16/0 = 0
 13:16/0 = 0
+13:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:16/0 = 0
+14:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:16/0 = 0
+15:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:16/0 = 0
+16:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:16/0 = 0
 19:16/0 = 0
 20:16/0 = 0
@@ -545,6 +573,7 @@ texture = ExtResource("4_qap6i")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2p3uo"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dsoe2")
 sources/1 = SubResource("TileSetAtlasSource_3wnfu")
 
@@ -552,15 +581,25 @@ sources/1 = SubResource("TileSetAtlasSource_3wnfu")
 script = ExtResource("1_bnyg2")
 
 [node name="Player" parent="." instance=ExtResource("1_aux80")]
-position = Vector2(-1, -42)
+position = Vector2(-1, -18)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_b1wlg")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2p3uo")
 format = 2
+layer_0/tile_data = PackedInt32Array(-8, 1179648, 15, -7, 1179648, 15, -6, 1179648, 15, -5, 1179648, 15, -4, 1179648, 15, -3, 1179648, 15, -2, 1179648, 15, -1, 1179648, 15, -65536, 1179648, 15, -65535, 1179648, 15, -65534, 1179648, 15, -65533, 1179648, 15, -65520, 1179648, 15, -65521, 1179648, 15, -65522, 1179648, 15, -65523, 1179648, 15, -65524, 1179648, 15, -65525, 1179648, 15, -65526, 1179648, 15, -65527, 1179648, 15, -65528, 1179648, 15, -65529, 1179648, 15, -65530, 1179648, 15, -65531, 1179648, 15, -65532, 1179648, 15, -9, 1179648, 15, -10, 1179648, 15, -11, 1179648, 15, -12, 1179648, 15, -13, 1179648, 15, -14, 1179648, 15, -15, 1179648, 15, -16, 1179648, 15, -17, 1179648, 15, -18, 1179648, 15, -19, 1179648, 15, -20, 1179648, 15, -23, 1179648, 15, -22, 1179648, 15, -21, 1179648, 15, -65519, 1245184, 15, -65518, 1245184, 15, -65517, 1245184, 15, -65516, 1245184, 15, -24, 851968, 13, -65560, 851968, 13, -131096, 851968, 13, -196632, 851968, 13, -262168, 851968, 13, -327704, 851968, 13, -393240, 851968, 13, -458776, 851968, 13, -524312, 851968, 13, -589848, 851968, 13, -655384, 851968, 13, -720920, 851968, 13, -1048600, 851968, 13, -983064, 851968, 13, -917528, 851968, 13, -851992, 851968, 13, -786456, 851968, 13, -65515, 1048576, 13, -131051, 1048576, 13, -196587, 1048576, 13, -262123, 1048576, 13, -327659, 1048576, 13, -393195, 1048576, 13, -458731, 1048576, 13, -524267, 1048576, 13, -589803, 1048576, 13, -720875, 1048576, 13, -655339, 1048576, 13, -786411, 1048576, 13, -851947, 1048576, 13, -917483, 1048576, 13, -983019, 1048576, 13, -1048555, 1048576, 13, -1114091, 1048576, 13, -1179627, 1048576, 13, -1245163, 1048576, 13, -1310699, 1048576, 13, -1376235, 1048576, 13, -1441771, 1048576, 13, -1507307, 1048576, 13, -1572843, 1048576, 13, -1638379, 1048576, 13, -1703915, 1048576, 13, -1769451, 1048576, 13, -1114136, 851968, 13, -1179672, 851968, 13, -1245208, 851968, 13, -1310744, 851968, 13, -1376280, 851968, 13, -1441816, 851968, 13, -1507352, 851968, 13, -1572888, 851968, 13, -1638424, 851968, 13, -1703960, 851968, 13)
 
 [node name="bonus_portal" parent="." instance=ExtResource("6_1mou2")]
-position = Vector2(162, -240)
+position = Vector2(169, -302)
+
+[node name="Bonus_Button" type="Button" parent="."]
+offset_left = -13.0
+offset_top = -608.0
+offset_right = 16.0
+offset_bottom = -580.0
+icon = ExtResource("7_hjh47")
+flat = true
 
 [connection signal="body_entered" from="bonus_portal" to="." method="_on_bonus_portal_body_entered"]
+[connection signal="pressed" from="Bonus_Button" to="." method="_on_bonus_button_pressed"]
