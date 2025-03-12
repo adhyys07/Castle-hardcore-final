@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccm2v7p8by5s"]
 
-[ext_resource type="Texture2D" uid="uid://cmew7co7vdj5a" path="res://assets/faaltu/WhatsApp Image 2025-03-10 at 23.49.32.jpeg" id="1_iqw2f"]
+[ext_resource type="Texture2D" uid="uid://crx2evqq0prsq" path="res://assets/bg.jpg" id="1_jkpyr"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 794.0
 offset_bottom = 467.0
-texture = ExtResource("1_iqw2f")
-stretch_mode = 1
+texture = ExtResource("1_jkpyr")
