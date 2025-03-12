@@ -16,6 +16,7 @@ const JUMP_VELOCITY = -315.0
 @export var accelerationValue = 0.1 
 @export var slideValue = 0.01
 @export var FullStopValue = 15
+var direction := Input.get_axis("ui_left", "ui_right")
 
 var JumpBuffer: bool = false
 @export var JumpBufferTime = 0.05
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
-
+	
 		
 	if direction:
 		if isAttacking == false:
@@ -92,8 +93,7 @@ func _physics_process(delta: float) -> void:
 		_normal_movement(direction)
 		
 	move_and_slide()
-
-		
+	
 func _movement_on_ice(direction):
 	if direction:
 		velocity.x = lerp(velocity.x, direction * speed, accelerationValue)
@@ -110,7 +110,6 @@ func _normal_movement(direction):
 		velocity.x = move_toward(velocity.x, 0, speed) 
 		
 		
-
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
@@ -142,16 +141,34 @@ func mob_entered(body: Node2D) -> void:
 func _input(event: InputEvent):
 	if(event.is_action_pressed("ui_down")):
 		position.y += 1
+	if Input.is_action_just_pressed("emote"):
+		_play_emote()
+	if Input.is_action_just_released("emote"):
+		_stop_emote()
+		
+func _play_emote():
+	if not isAttacking and is_on_floor():
+		sprite.play("taunt")
+		isAttacking = true
+
+func _stop_emote():
+	if sprite.animation == "taunt":
+		sprite.play("idle")  # Go back to idle or walking state
+		isAttacking = false
+		
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "pierce_attack":
 		$AttackArea/Pierce.disabled = true
 		$AttackArea/Pierce2.disabled = true
 		isAttacking = false
+	elif sprite.animation == "taunt":
+		isAttacking = false
 	if $AnimatedSprite2D.animation == "death":
-		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
-
+		get_tree().change_scene_to_file("res://scene/global/main_menu.tscn")
 	
+
+
 func die():
 	queue_free()
 

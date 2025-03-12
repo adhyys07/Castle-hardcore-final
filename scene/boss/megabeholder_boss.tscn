@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b82ccufglb4to"]
+[gd_scene load_steps=53 format=3 uid="uid://b82ccufglb4to"]
 
 [ext_resource type="Texture2D" uid="uid://dljaup8dov26r" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_idle.png" id="1_nkb06"]
 [ext_resource type="Texture2D" uid="uid://bgultlw16qig7" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_attack1.png" id="2_h4ycf"]
@@ -338,6 +338,14 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_btj86"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nin6q"]
+_data = {
+"walk": SubResource("Animation_btj86")
+}
+
 [node name="megabeholder_boss" type="Node2D"]
 
 [node name="megabeholder" type="CharacterBody2D" parent="."]
@@ -346,3 +354,8 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_jth0f")
 animation = &"attack1"
 frame_progress = 0.119731
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nin6q")
+}
