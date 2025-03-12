@@ -533,9 +533,8 @@ zoom = Vector2(2.47, 2)
 [node name="BG" parent="." instance=ExtResource("1_71j5b")]
 offset_left = -480.0
 offset_top = -272.0
-offset_right = 478.0
+offset_right = 480.0
 offset_bottom = 268.0
-stretch_mode = 0
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_qd65y")]
 
