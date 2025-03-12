@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://ddhncviastxjo"]
+[gd_scene load_steps=25 format=3 uid="uid://ddhncviastxjo"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_aux80"]
 [ext_resource type="Script" path="res://script/bonus_level.gd" id="1_bnyg2"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_b1wlg"]
+[ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="2_y4bhy"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_fvja2"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_qap6i"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="6_1mou2"]
@@ -597,24 +598,30 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dsoe2")
 sources/1 = SubResource("TileSetAtlasSource_3wnfu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2wjx"]
+size = Vector2(135, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xlfn"]
+size = Vector2(114, 94)
+
 [sub_resource type="Curve2D" id="Curve2D_1iv7g"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -7, 7, 0, 0, 0, 0, -4.90373, -111)
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2wjx"]
-size = Vector2(119, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xlfn"]
-size = Vector2(114, 94)
-
 [node name="bonus_level" type="Node2D"]
 script = ExtResource("1_bnyg2")
 
+[node name="BG" parent="." instance=ExtResource("2_y4bhy")]
+offset_left = -461.0
+offset_top = -600.0
+offset_right = 504.0
+offset_bottom = -6.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -225)
-zoom = Vector2(2, 2)
+position = Vector2(-17, -274)
+zoom = Vector2(2.67, 2)
 
 [node name="Direction" type="Sprite2D" parent="."]
 position = Vector2(78, -21)
@@ -635,116 +642,126 @@ layer_0/tile_data = PackedInt32Array(-8, 1179648, 15, -7, 1179648, 15, -6, 11796
 position = Vector2(-338, -416)
 
 [node name="Bonus_Button" type="Button" parent="."]
-offset_left = -13.0
-offset_top = -463.0
-offset_right = 16.0
-offset_bottom = -435.0
+offset_left = -12.0
+offset_top = -524.0
+offset_right = 17.0
+offset_bottom = -496.0
 icon = ExtResource("7_hjh47")
 flat = true
 
-[node name="Movin2" parent="." instance=ExtResource("10_4mmov")]
+[node name="SHOP" type="Area2D" parent="."]
+position = Vector2(141, -23)
+script = ExtResource("13_8haln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SHOP"]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_p2wjx")
+
+[node name="shop_button" type="Button" parent="SHOP"]
+offset_left = 65.0
+offset_top = -88.0
+offset_right = 183.0
+offset_bottom = 6.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SHOP/shop_button"]
+
+[node name="shop" type="Sprite2D" parent="SHOP/shop_button/StaticBody2D"]
+position = Vector2(59, 45.375)
+scale = Vector2(0.343023, 0.281586)
+texture = ExtResource("9_ksgp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SHOP/shop_button/StaticBody2D"]
+position = Vector2(61, 48)
+shape = SubResource("RectangleShape2D_8xlfn")
+
+[node name="passthrough" parent="." instance=ExtResource("14_vop4e")]
+position = Vector2(312, -333)
+scale = Vector2(1.17383, 1.3125)
+region_rect = Rect2(16, 16, 32, 8)
+
+[node name="coins" type="CanvasGroup" parent="."]
+
+[node name="Area2D18" parent="coins" instance=ExtResource("17_p6ed6")]
+position = Vector2(-152, -233)
+
+[node name="Area2D19" parent="coins" instance=ExtResource("17_p6ed6")]
+position = Vector2(211, -256)
+
+[node name="Area2D20" parent="coins" instance=ExtResource("17_p6ed6")]
+position = Vector2(177, -376)
+
+[node name="Area2D21" parent="coins" instance=ExtResource("17_p6ed6")]
+position = Vector2(60, -375)
+
+[node name="Area2D22" parent="coins" instance=ExtResource("17_p6ed6")]
+position = Vector2(-35, -375)
+
+[node name="Area2D23" parent="coins" instance=ExtResource("17_p6ed6")]
+position = Vector2(-218, -400)
+
+[node name="mobs" type="CanvasGroup" parent="."]
+
+[node name="RigidBody2D" parent="mobs" instance=ExtResource("16_1rh4w")]
+position = Vector2(219, -304)
+
+[node name="RigidBody2D4" parent="mobs" instance=ExtResource("16_1rh4w")]
+position = Vector2(43, -407)
+
+[node name="RigidBody2D2" parent="mobs" instance=ExtResource("16_1rh4w")]
+position = Vector2(147, -280)
+
+[node name="RigidBody2D3" parent="mobs" instance=ExtResource("16_1rh4w")]
+position = Vector2(160, -408)
+
+[node name="RigidBody2D5" parent="mobs" instance=ExtResource("16_1rh4w")]
+position = Vector2(-69, -408)
+
+[node name="slime" type="CanvasGroup" parent="."]
+position = Vector2(37, -374)
+
+[node name="CharacterBody2D2" parent="slime" instance=ExtResource("12_3ct7t")]
+up_direction = Vector2(0, 1)
+speed = 90.0
+
+[node name="CharacterBody2D3" parent="slime" instance=ExtResource("12_3ct7t")]
+position = Vector2(47, 0)
+up_direction = Vector2(0, 1)
+speed = 90.0
+
+[node name="CharacterBody2D" parent="slime" instance=ExtResource("12_3ct7t")]
+position = Vector2(102, 120)
+up_direction = Vector2(0, 1)
+speed = 90.0
+
+[node name="breakable" type="CanvasGroup" parent="."]
+
+[node name="StaticBody2D4" parent="breakable" instance=ExtResource("11_ah2i5")]
+position = Vector2(-43, -247)
+
+[node name="StaticBody2D5" parent="breakable" instance=ExtResource("11_ah2i5")]
+position = Vector2(31, -246)
+
+[node name="StaticBody2D6" parent="breakable" instance=ExtResource("11_ah2i5")]
+position = Vector2(-143, -364)
+
+[node name="StaticBody2D7" parent="breakable" instance=ExtResource("11_ah2i5")]
+position = Vector2(-218, -382)
+
+[node name="movin" type="CanvasGroup" parent="."]
+
+[node name="Movin2" parent="movin" instance=ExtResource("10_4mmov")]
 position = Vector2(-259, -65)
 scale = Vector2(1.01963, 1)
 curve = SubResource("Curve2D_1iv7g")
 loop = false
 speed = 1.0
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("11_ah2i5")]
-position = Vector2(-43, -247)
-
-[node name="StaticBody2D5" parent="." instance=ExtResource("11_ah2i5")]
-position = Vector2(31, -246)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("12_3ct7t")]
-position = Vector2(139, -254)
-up_direction = Vector2(0, 1)
-speed = 90.0
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(141, -23)
-script = ExtResource("13_8haln")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(9.5, 2.5)
-shape = SubResource("RectangleShape2D_p2wjx")
-
-[node name="shop_button" type="Button" parent="Area2D"]
-offset_left = 65.0
-offset_top = -88.0
-offset_right = 183.0
-offset_bottom = 6.0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Area2D/shop_button"]
-
-[node name="shop" type="Sprite2D" parent="Area2D/shop_button/StaticBody2D"]
-position = Vector2(59, 45.375)
-scale = Vector2(0.343023, 0.281586)
-texture = ExtResource("9_ksgp4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/shop_button/StaticBody2D"]
-position = Vector2(61, 48)
-shape = SubResource("RectangleShape2D_8xlfn")
-
-[node name="Sprite2D12" parent="." instance=ExtResource("14_vop4e")]
-position = Vector2(312, -333)
-scale = Vector2(1.17383, 1.3125)
-region_rect = Rect2(16, 16, 32, 8)
-
-[node name="StaticBody2D6" parent="." instance=ExtResource("11_ah2i5")]
-position = Vector2(-143, -364)
-
-[node name="StaticBody2D7" parent="." instance=ExtResource("11_ah2i5")]
-position = Vector2(-218, -382)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("12_3ct7t")]
-position = Vector2(37, -374)
-up_direction = Vector2(0, 1)
-speed = 90.0
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("12_3ct7t")]
-position = Vector2(84, -374)
-up_direction = Vector2(0, 1)
-speed = 90.0
-
-[node name="Straight" parent="." instance=ExtResource("15_3jr3u")]
+[node name="Straight" parent="movin" instance=ExtResource("15_3jr3u")]
 position = Vector2(-319, -302)
 loop = false
 
-[node name="RigidBody2D" parent="." instance=ExtResource("16_1rh4w")]
-position = Vector2(219, -304)
-
-[node name="RigidBody2D2" parent="." instance=ExtResource("16_1rh4w")]
-position = Vector2(147, -280)
-
-[node name="RigidBody2D3" parent="." instance=ExtResource("16_1rh4w")]
-position = Vector2(160, -408)
-
-[node name="RigidBody2D4" parent="." instance=ExtResource("16_1rh4w")]
-position = Vector2(43, -407)
-
-[node name="RigidBody2D5" parent="." instance=ExtResource("16_1rh4w")]
-position = Vector2(-69, -408)
-
-[node name="Area2D18" parent="." instance=ExtResource("17_p6ed6")]
-position = Vector2(-152, -233)
-
-[node name="Area2D19" parent="." instance=ExtResource("17_p6ed6")]
-position = Vector2(211, -256)
-
-[node name="Area2D20" parent="." instance=ExtResource("17_p6ed6")]
-position = Vector2(177, -376)
-
-[node name="Area2D21" parent="." instance=ExtResource("17_p6ed6")]
-position = Vector2(60, -375)
-
-[node name="Area2D22" parent="." instance=ExtResource("17_p6ed6")]
-position = Vector2(-35, -375)
-
-[node name="Area2D23" parent="." instance=ExtResource("17_p6ed6")]
-position = Vector2(-218, -400)
-
 [connection signal="body_entered" from="bonus_portal" to="." method="_on_bonus_portal_body_entered"]
 [connection signal="pressed" from="Bonus_Button" to="." method="_on_bonus_button_pressed"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
-[connection signal="pressed" from="Area2D/shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="body_entered" from="SHOP" to="SHOP" method="_on_body_entered"]
+[connection signal="body_exited" from="SHOP" to="SHOP" method="_on_body_exited"]
+[connection signal="pressed" from="SHOP/shop_button" to="." method="_on_shop_button_pressed"]
