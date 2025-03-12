@@ -204,12 +204,12 @@ autoplay = "default"
 frame_progress = 0.803154
 flip_h = true
 
-[node name="C2981d7225Cd89496b49d2Fdc9Fec527" type="Sprite2D" parent="."]
+[node name="Hardcore" type="Sprite2D" parent="."]
 position = Vector2(971, 461)
 scale = Vector2(1.14696, 1.27381)
 texture = ExtResource("6_lgnvr")
 
-[node name="E488502890e1Ccca7964Fcaa6a923Ab7" type="Sprite2D" parent="."]
+[node name="Castle" type="Sprite2D" parent="."]
 position = Vector2(963, 344)
 scale = Vector2(1.15611, 1.22619)
 texture = ExtResource("7_mwa0s")

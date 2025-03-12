@@ -1588,11 +1588,13 @@ size = Vector2(26, 20)
 script = ExtResource("1_c4chy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-25, -26)
+position = Vector2(-21, -26)
 scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
-animation = &"taunt"
+animation = &"walk"
 autoplay = "idle"
+frame = 7
+frame_progress = 0.91199
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-28, -17)

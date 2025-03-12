@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://sq854lsbmrwn"]
+[gd_scene load_steps=3 format=3 uid="uid://sq854lsbmrwn"]
+
+[ext_resource type="Script" path="res://scene/global/shop.gd" id="1_8ucre"]
+[ext_resource type="Texture2D" uid="uid://bxugqdvavlrwf" path="res://assets/shop/MediavelFree.png" id="2_wvdg4"]
 
 [node name="shop" type="Node2D"]
+script = ExtResource("1_8ucre")
+
+[node name="CloseButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MediavelFree" type="Sprite2D" parent="."]
+position = Vector2(944, 527)
+scale = Vector2(25.2308, 11.8984)
+texture = ExtResource("2_wvdg4")
+region_enabled = true
+region_rect = Rect2(-0.193268, 0, 78.4619, 95.4883)
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

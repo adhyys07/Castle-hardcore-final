@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://c670a5netct3d"]
+[gd_scene load_steps=17 format=3 uid="uid://c670a5netct3d"]
 
 [ext_resource type="PackedScene" uid="uid://6d0h0p15nx0x" path="res://scene/World 1/level_1.tscn" id="2_vuj1d"]
 [ext_resource type="PackedScene" uid="uid://cysxdwxs7s0nm" path="res://scene/World 1/level_2.tscn" id="3_ggqqs"]
 [ext_resource type="PackedScene" uid="uid://c053ub4jan1b7" path="res://scene/World 1/level_3.tscn" id="4_juble"]
 [ext_resource type="PackedScene" uid="uid://cpfn5bokdjt74" path="res://scene/World 1/level_4.tscn" id="5_6jqie"]
 [ext_resource type="PackedScene" uid="uid://7ntxag07kmqe" path="res://scene/World 1/level_6.tscn" id="6_k68oa"]
+[ext_resource type="AudioStream" uid="uid://rhj8q701u7da" path="res://assets/sounds/Jimmy Fontanez - Dub Hub ♫ NO COPYRIGHT 8-bit Music.wav" id="7_1l76v"]
 [ext_resource type="PackedScene" uid="uid://glwp8ypt7i1m" path="res://scene/World 1/level_7.tscn" id="7_8htir"]
 [ext_resource type="PackedScene" uid="uid://du4xvssa6ues3" path="res://scene/World 2/w_2_level_1.tscn" id="8_bfure"]
 [ext_resource type="PackedScene" uid="uid://cuw2sssgmhtb5" path="res://scene/World 2/w_2_level_3.tscn" id="9_gu2ei"]
@@ -40,6 +41,10 @@ position = Vector2(738, -308)
 
 [node name="level_6" parent="world_1" instance=ExtResource("6_k68oa")]
 position = Vector2(751, 293)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="world_1"]
+stream = ExtResource("7_1l76v")
+autoplay = true
 
 [node name="world_2" type="Node2D" parent="."]
 position = Vector2(-22, 28)
