@@ -544,7 +544,7 @@ tile_map_data = PackedByteArray("AADk/xAAAAACAAAAAADl/xAAAAACAAAAAADm/xAAAAACAAA
 tile_set = SubResource("TileSet_rxwmv")
 
 [node name="Player" parent="." instance=ExtResource("3_mil1x")]
-position = Vector2(27, -98)
+position = Vector2(-386, 250)
 
 [node name="Button12" type="Button" parent="."]
 offset_left = -17.0
