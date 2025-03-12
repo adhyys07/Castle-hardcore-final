@@ -347,6 +347,7 @@ region_rect = Rect2(10, 11, 17, 17)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5hb3b")
+volume_db = -10.0
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
