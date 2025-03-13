@@ -1,21 +1,30 @@
-[gd_scene load_steps=21 format=3 uid="uid://b82ccufglb4to"]
+[gd_scene load_steps=6 format=3 uid="uid://b82ccufglb4to"]
 
-[ext_resource type="Texture2D" uid="uid://dljaup8dov26r" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_idle.png" id="1_nkb06"]
-[ext_resource type="Texture2D" uid="uid://bgultlw16qig7" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_attack1.png" id="2_h4ycf"]
-[ext_resource type="Texture2D" uid="uid://bsxjjw6tskj5f" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_attack2.png" id="3_fn052"]
-[ext_resource type="Texture2D" uid="uid://eswed71ipxxm" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_attack3.png" id="3_l38yo"]
-[ext_resource type="Texture2D" uid="uid://bhnbdrunqiqgr" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_attack4.png" id="5_oeoj5"]
-[ext_resource type="Texture2D" uid="uid://h1dyqs8fyeqp" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_death.png" id="5_ydcr7"]
-[ext_resource type="Texture2D" uid="uid://dbqrw7yj7gp84" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_hurt.png" id="6_8w2pg"]
-[ext_resource type="Texture2D" uid="uid://bwnil15xnxuwy" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_sneer.png" id="8_qpftx"]
-[ext_resource type="Texture2D" uid="uid://di45dxj3ipi0m" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_walk.png" id="9_oqf2s"]
+[ext_resource type="Texture2D" uid="uid://cwr43k4ynjafi" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_combined_new.png" id="1_cjnjf"]
 
-[sub_resource type="Animation" id="Animation_y1fdu"]
+[sub_resource type="Animation" id="Animation_bsjt5"]
+resource_name = "attack1"
+loop_mode = 1
+step = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("megabeholder/SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0180188, 0.170333, 0.326108, 0.497767, 0.668149, 0.861337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 4]
+}
+
+[sub_resource type="Animation" id="Animation_pruct"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("megabeholder/idle:frame")
+tracks/0/path = NodePath("megabeholder/SpriteSheet:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,117 +34,27 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_sducy"]
-resource_name = "attack1"
-
-[sub_resource type="Animation" id="Animation_pfn2w"]
-resource_name = "attack2"
-
-[sub_resource type="Animation" id="Animation_juw7e"]
-resource_name = "attack3"
-
-[sub_resource type="Animation" id="Animation_bnchv"]
-resource_name = "attack4"
-
-[sub_resource type="Animation" id="Animation_icvfp"]
-resource_name = "death"
-
-[sub_resource type="Animation" id="Animation_rh4t3"]
-resource_name = "hurt"
-
-[sub_resource type="Animation" id="Animation_rv08r"]
+[sub_resource type="Animation" id="Animation_730wg"]
 resource_name = "idle"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("megabeholder/idle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.633333, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
+step = 2.0
 
-[sub_resource type="Animation" id="Animation_vdx71"]
-resource_name = "sneer"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("megabeholder/idle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.566667, 0.833333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_btj86"]
-resource_name = "walk"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nin6q"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3etpk"]
 _data = {
-&"RESET": SubResource("Animation_y1fdu"),
-&"attack1": SubResource("Animation_sducy"),
-&"attack2": SubResource("Animation_pfn2w"),
-&"attack3": SubResource("Animation_juw7e"),
-&"attack4": SubResource("Animation_bnchv"),
-&"death": SubResource("Animation_icvfp"),
-&"hurt": SubResource("Animation_rh4t3"),
-&"idle": SubResource("Animation_rv08r"),
-&"sneer": SubResource("Animation_vdx71"),
-&"walk": SubResource("Animation_btj86")
+"RESET": SubResource("Animation_pruct"),
+"attack1": SubResource("Animation_bsjt5"),
+"idle": SubResource("Animation_730wg")
 }
 
 [node name="megabeholder_boss" type="Node2D"]
 
 [node name="megabeholder" type="CharacterBody2D" parent="."]
 
-[node name="idle" type="Sprite2D" parent="megabeholder"]
-texture = ExtResource("1_nkb06")
-hframes = 4
-
-[node name="attack1" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("2_h4ycf")
-
-[node name="attack2" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("3_fn052")
-
-[node name="attack3" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("3_l38yo")
-
-[node name="attack4" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("5_oeoj5")
-
-[node name="walk" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("9_oqf2s")
-
-[node name="sneer" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("8_qpftx")
-
-[node name="death" type="Sprite2D" parent="megabeholder"]
-visible = false
-texture = ExtResource("5_ydcr7")
-
-[node name="hurt" type="Sprite2D" parent="megabeholder"]
-visible = false
-position = Vector2(30, 6)
-texture = ExtResource("6_8w2pg")
+[node name="SpriteSheet" type="Sprite2D" parent="megabeholder"]
+texture = ExtResource("1_cjnjf")
+hframes = 8
+vframes = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nin6q")
+"": SubResource("AnimationLibrary_3etpk")
 }
