@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://sq854lsbmrwn"]
+[gd_scene load_steps=10 format=3 uid="uid://sq854lsbmrwn"]
 
 [ext_resource type="Script" path="res://scene/global/shop.gd" id="1_8ucre"]
 [ext_resource type="Texture2D" uid="uid://h2sk87iyi1fy" path="res://assets/shop/hud.png" id="2_jvubp"]
+[ext_resource type="Texture2D" uid="uid://b1vubonhwhsfu" path="res://assets/coin.png" id="3_koqw1"]
 [ext_resource type="Texture2D" uid="uid://oulic2d3d3xv" path="res://assets/shop/SQUARE.png" id="3_yv46d"]
 [ext_resource type="Texture2D" uid="uid://1ot3x3lps5uw" path="res://assets/shop/diamondsword.png" id="4_62yjd"]
 [ext_resource type="Texture2D" uid="uid://c72rnnf540by6" path="res://assets/shop/diamondhammer.png" id="5_top3q"]
@@ -24,6 +25,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.695
@@ -35,10 +37,20 @@ offset_top = -365.92
 offset_right = 1143.8
 offset_bottom = -64.92
 
+[node name="Coin2" type="Sprite2D" parent="Control/Panel"]
+position = Vector2(828.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
 [node name="Hud" type="Sprite2D" parent="Control"]
 position = Vector2(814.531, 618.5)
 scale = Vector2(4.9994, 4.60714)
 texture = ExtResource("2_jvubp")
+
+[node name="Coin" type="Sprite2D" parent="Control"]
+position = Vector2(671.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
 
 [node name="shopitems" type="CanvasGroup" parent="."]
 
@@ -116,7 +128,7 @@ offset_right = 685.0
 offset_bottom = 625.0
 
 [node name="DSwordbox" type="Sprite2D" parent="shopitems/Dsword2"]
-position = Vector2(28, 26)
+position = Vector2(26, 26)
 scale = Vector2(1.14583, 1.10417)
 texture = ExtResource("3_yv46d")
 
@@ -126,5 +138,25 @@ rotation = -1.52371
 scale = Vector2(0.0696626, 0.128531)
 skew = -0.00335765
 texture = ExtResource("4_62yjd")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(747.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin2" type="Sprite2D" parent="."]
+position = Vector2(828.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin3" type="Sprite2D" parent="."]
+position = Vector2(912, 637)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin4" type="Sprite2D" parent="."]
+position = Vector2(992, 637)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

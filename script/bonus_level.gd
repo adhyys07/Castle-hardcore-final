@@ -1,5 +1,5 @@
 extends Node2D
-@onready var shop = $Bonus_Button/shop
+@onready var shop = $SHOP/shop
 
 
 

@@ -599,17 +599,17 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dsoe2")
 sources/1 = SubResource("TileSetAtlasSource_3wnfu")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2wjx"]
-size = Vector2(135, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xlfn"]
-size = Vector2(114, 94)
-
 [sub_resource type="Curve2D" id="Curve2D_1iv7g"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -7, 7, 0, 0, 0, 0, -4.90373, -111)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2wjx"]
+size = Vector2(135, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xlfn"]
+size = Vector2(114, 94)
 
 [node name="bonus_level" type="Node2D"]
 script = ExtResource("1_bnyg2")
@@ -641,31 +641,6 @@ layer_0/tile_data = PackedInt32Array(-8, 1179648, 15, -7, 1179648, 15, -6, 11796
 
 [node name="bonus_portal" parent="." instance=ExtResource("6_1mou2")]
 position = Vector2(-338, -416)
-
-[node name="SHOP" type="Area2D" parent="."]
-position = Vector2(141, -23)
-script = ExtResource("13_8haln")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SHOP"]
-position = Vector2(1.5, 2.5)
-shape = SubResource("RectangleShape2D_p2wjx")
-
-[node name="shop_button" type="Button" parent="SHOP"]
-offset_left = 65.0
-offset_top = -88.0
-offset_right = 183.0
-offset_bottom = 6.0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="SHOP/shop_button"]
-
-[node name="shop" type="Sprite2D" parent="SHOP/shop_button/StaticBody2D"]
-position = Vector2(59, 45.375)
-scale = Vector2(0.343023, 0.281586)
-texture = ExtResource("9_ksgp4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SHOP/shop_button/StaticBody2D"]
-position = Vector2(61, 48)
-shape = SubResource("RectangleShape2D_8xlfn")
 
 [node name="passthrough" parent="." instance=ExtResource("14_vop4e")]
 position = Vector2(312, -333)
@@ -754,19 +729,44 @@ position = Vector2(-319, -302)
 loop = false
 
 [node name="Bonus_Button" type="Button" parent="."]
-offset_left = -12.0
-offset_top = -524.0
-offset_right = 17.0
-offset_bottom = -496.0
+offset_left = -25.0
+offset_top = -521.0
+offset_right = 4.0
+offset_bottom = -493.0
 icon = ExtResource("7_hjh47")
 flat = true
 
-[node name="shop" parent="Bonus_Button" instance=ExtResource("10_gb2mm")]
-position = Vector2(-965, -555)
+[node name="SHOP" type="Area2D" parent="."]
+position = Vector2(141, -23)
+script = ExtResource("13_8haln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SHOP"]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_p2wjx")
+
+[node name="shop_button" type="Button" parent="SHOP"]
+offset_left = 65.0
+offset_top = -88.0
+offset_right = 183.0
+offset_bottom = 6.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SHOP/shop_button"]
+
+[node name="shop" type="Sprite2D" parent="SHOP/shop_button/StaticBody2D"]
+position = Vector2(59, 45.375)
+scale = Vector2(0.343023, 0.281586)
+texture = ExtResource("9_ksgp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SHOP/shop_button/StaticBody2D"]
+position = Vector2(61, 48)
+shape = SubResource("RectangleShape2D_8xlfn")
+
+[node name="shop" parent="SHOP" instance=ExtResource("10_gb2mm")]
+position = Vector2(-1118, -1053)
 scale = Vector2(1.17383, 1.3125)
 
 [connection signal="body_entered" from="bonus_portal" to="." method="_on_bonus_portal_body_entered"]
+[connection signal="pressed" from="Bonus_Button" to="." method="_on_bonus_button_pressed"]
 [connection signal="body_entered" from="SHOP" to="SHOP" method="_on_body_entered"]
 [connection signal="body_exited" from="SHOP" to="SHOP" method="_on_body_exited"]
 [connection signal="pressed" from="SHOP/shop_button" to="." method="_on_shop_button_pressed"]
-[connection signal="pressed" from="Bonus_Button" to="." method="_on_bonus_button_pressed"]
