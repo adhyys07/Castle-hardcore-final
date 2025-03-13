@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_qi8ev"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_rokx2"]
-[ext_resource type="Script" uid="uid://cgmlj2xftvfct" path="res://script/w_2_level_8.gd" id="1_yuswr"]
+[ext_resource type="Script" path="res://script/w_2_level_8.gd" id="1_yuswr"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_nk4kh"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="2_xmtgl"]
 [ext_resource type="PackedScene" uid="uid://fmtpau3gdydy" path="res://scene/traps+platforms/jumpad.tscn" id="5_gl5xf"]

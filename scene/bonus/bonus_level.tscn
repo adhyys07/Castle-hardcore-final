@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddhncviastxjo"]
+[gd_scene load_steps=26 format=3 uid="uid://ddhncviastxjo"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_aux80"]
-[ext_resource type="Script" uid="uid://bklpecvcbtc0p" path="res://script/bonus_level.gd" id="1_bnyg2"]
+[ext_resource type="Script" path="res://script/bonus_level.gd" id="1_bnyg2"]
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_b1wlg"]
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="2_y4bhy"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_fvja2"]
@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://b4v8nrbn00kla" path="res://assets/shop/direction.png" id="8_fgulo"]
 [ext_resource type="Texture2D" uid="uid://bjvhskt34flsg" path="res://assets/shop/Screenshot 2025-03-13 021647.png" id="9_ksgp4"]
 [ext_resource type="PackedScene" uid="uid://jjaeijduxkyo" path="res://scene/traps+platforms/straight.tscn" id="10_4mmov"]
+[ext_resource type="PackedScene" uid="uid://sq854lsbmrwn" path="res://scene/global/shop.tscn" id="10_gb2mm"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="11_ah2i5"]
 [ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="12_3ct7t"]
-[ext_resource type="Script" uid="uid://diup5p46q4k53" path="res://scene/bonus/limitarea.gd" id="13_8haln"]
+[ext_resource type="Script" path="res://scene/bonus/limitarea.gd" id="13_8haln"]
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="14_vop4e"]
 [ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/mobs/movin_mob.tscn" id="15_3jr3u"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="16_1rh4w"]
@@ -641,14 +642,6 @@ layer_0/tile_data = PackedInt32Array(-8, 1179648, 15, -7, 1179648, 15, -6, 11796
 [node name="bonus_portal" parent="." instance=ExtResource("6_1mou2")]
 position = Vector2(-338, -416)
 
-[node name="Bonus_Button" type="Button" parent="."]
-offset_left = -12.0
-offset_top = -524.0
-offset_right = 17.0
-offset_bottom = -496.0
-icon = ExtResource("7_hjh47")
-flat = true
-
 [node name="SHOP" type="Area2D" parent="."]
 position = Vector2(141, -23)
 script = ExtResource("13_8haln")
@@ -760,8 +753,20 @@ speed = 1.0
 position = Vector2(-319, -302)
 loop = false
 
+[node name="Bonus_Button" type="Button" parent="."]
+offset_left = -12.0
+offset_top = -524.0
+offset_right = 17.0
+offset_bottom = -496.0
+icon = ExtResource("7_hjh47")
+flat = true
+
+[node name="shop" parent="Bonus_Button" instance=ExtResource("10_gb2mm")]
+position = Vector2(-965, -555)
+scale = Vector2(1.17383, 1.3125)
+
 [connection signal="body_entered" from="bonus_portal" to="." method="_on_bonus_portal_body_entered"]
-[connection signal="pressed" from="Bonus_Button" to="." method="_on_bonus_button_pressed"]
 [connection signal="body_entered" from="SHOP" to="SHOP" method="_on_body_entered"]
 [connection signal="body_exited" from="SHOP" to="SHOP" method="_on_body_exited"]
 [connection signal="pressed" from="SHOP/shop_button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Bonus_Button" to="." method="_on_bonus_button_pressed"]
