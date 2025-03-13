@@ -37,20 +37,10 @@ offset_top = -365.92
 offset_right = 1143.8
 offset_bottom = -64.92
 
-[node name="Coin2" type="Sprite2D" parent="Control/Panel"]
-position = Vector2(828.5, 637.5)
-scale = Vector2(1.3125, 1.3125)
-texture = ExtResource("3_koqw1")
-
 [node name="Hud" type="Sprite2D" parent="Control"]
 position = Vector2(814.531, 618.5)
 scale = Vector2(4.9994, 4.60714)
 texture = ExtResource("2_jvubp")
-
-[node name="Coin" type="Sprite2D" parent="Control"]
-position = Vector2(671.5, 637.5)
-scale = Vector2(1.3125, 1.3125)
-texture = ExtResource("3_koqw1")
 
 [node name="shopitems" type="CanvasGroup" parent="."]
 
@@ -139,22 +129,29 @@ scale = Vector2(0.0696626, 0.128531)
 skew = -0.00335765
 texture = ExtResource("4_62yjd")
 
-[node name="Coin" type="Sprite2D" parent="."]
+[node name="coins" type="CanvasGroup" parent="."]
+
+[node name="Coin5" type="Sprite2D" parent="coins"]
+position = Vector2(671.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin" type="Sprite2D" parent="coins"]
 position = Vector2(747.5, 637.5)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("3_koqw1")
 
-[node name="Coin2" type="Sprite2D" parent="."]
+[node name="Coin2" type="Sprite2D" parent="coins"]
 position = Vector2(828.5, 637.5)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("3_koqw1")
 
-[node name="Coin3" type="Sprite2D" parent="."]
+[node name="Coin3" type="Sprite2D" parent="coins"]
 position = Vector2(912, 637)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("3_koqw1")
 
-[node name="Coin4" type="Sprite2D" parent="."]
+[node name="Coin4" type="Sprite2D" parent="coins"]
 position = Vector2(992, 637)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("3_koqw1")
