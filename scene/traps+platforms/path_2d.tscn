@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://iqygawkck4l1"]
 
-[ext_resource type="Script" path="res://script/path_2d.gd" id="1_cl53o"]
+[ext_resource type="Script" uid="uid://ci3cu1fc8hj5b" path="res://script/path_2d.gd" id="1_cl53o"]
 [ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="2_cy0cx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tyy2"]
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqx8y"]
 _data = {
-"RESET": SubResource("Animation_cu4j1"),
-"new_animation": SubResource("Animation_834ap")
+&"RESET": SubResource("Animation_cu4j1"),
+&"new_animation": SubResource("Animation_834ap")
 }
 
 [node name="Straight" type="Path2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cysxdwxs7s0nm"]
 
 [ext_resource type="Texture2D" uid="uid://dvclmjq6kt1c3" path="res://assets/handmade/pixil-frame-0 (8).png" id="1_1na3d"]
-[ext_resource type="Script" path="res://script/level_2.gd" id="1_lyjr5"]
+[ext_resource type="Script" uid="uid://co7o62atyjmj" path="res://script/level_2.gd" id="1_lyjr5"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_2a7h7"]
 [ext_resource type="PackedScene" uid="uid://cef07b48jd82y" path="res://scene/global/background1.tscn" id="2_hsp1d"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="2_jv5ba"]

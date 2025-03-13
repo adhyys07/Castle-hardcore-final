@@ -122,9 +122,9 @@ func take_damage(amount,knockdown_direction):
 	health =  max(health,0)
 	
 	healthbar._set_health(health)
-	velocity= knockback_force* knockdown_direction
+	velocity += knockback_force* knockdown_direction
 	move_and_slide()
-	
+	healthbar.value = health 
 	if health<=0:
 		die()		
 			
@@ -170,6 +170,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func die():
+	animated_sprite.play("death")
 	queue_free()
 
 

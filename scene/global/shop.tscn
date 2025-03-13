@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://sq854lsbmrwn"]
 
-[ext_resource type="Script" path="res://scene/global/shop.gd" id="1_8ucre"]
+[ext_resource type="Script" uid="uid://c4a7nhtteljyl" path="res://scene/global/shop.gd" id="1_8ucre"]
 [ext_resource type="Texture2D" uid="uid://bxugqdvavlrwf" path="res://assets/shop/MediavelFree.png" id="2_wvdg4"]
 
 [node name="shop" type="Node2D"]

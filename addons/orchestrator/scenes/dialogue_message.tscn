@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dg7kqpda74ttw"]
 
-[ext_resource type="Script" path="res://script/dialogue_message.gd" id="1_08qvw"]
+[ext_resource type="Script" uid="uid://d3prmhvd4jrxu" path="res://script/dialogue_message.gd" id="1_08qvw"]
 
 [node name="DialogueMessage" type="CanvasLayer"]
 layer = 100

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://i5igc1drqqet"]
 
-[ext_resource type="Script" path="res://script/w_2_level_6.gd" id="1_5suva"]
+[ext_resource type="Script" uid="uid://ddfs7dakes3eb" path="res://script/w_2_level_6.gd" id="1_5suva"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="1_c1b4k"]
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_umy30"]
 [ext_resource type="PackedScene" uid="uid://ccm2v7p8by5s" path="res://scene/global/Bacground2.tscn" id="1_w8vdy"]

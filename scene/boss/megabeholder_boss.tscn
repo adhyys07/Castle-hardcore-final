@@ -10,6 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://bwnil15xnxuwy" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_sneer.png" id="8_qpftx"]
 [ext_resource type="Texture2D" uid="uid://di45dxj3ipi0m" path="res://assets/hell-boss-sprite-sheets-pixel-art/2 Mega_Beholder/MegaBeholder_walk.png" id="9_oqf2s"]
 
+[sub_resource type="Animation" id="Animation_y1fdu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("megabeholder/idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_sducy"]
 resource_name = "attack1"
 
@@ -65,33 +80,18 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_btj86"]
 resource_name = "walk"
 
-[sub_resource type="Animation" id="Animation_y1fdu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("megabeholder/idle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nin6q"]
 _data = {
-"RESET": SubResource("Animation_y1fdu"),
-"attack1": SubResource("Animation_sducy"),
-"attack2": SubResource("Animation_pfn2w"),
-"attack3": SubResource("Animation_juw7e"),
-"attack4": SubResource("Animation_bnchv"),
-"death": SubResource("Animation_icvfp"),
-"hurt": SubResource("Animation_rh4t3"),
-"idle": SubResource("Animation_rv08r"),
-"sneer": SubResource("Animation_vdx71"),
-"walk": SubResource("Animation_btj86")
+&"RESET": SubResource("Animation_y1fdu"),
+&"attack1": SubResource("Animation_sducy"),
+&"attack2": SubResource("Animation_pfn2w"),
+&"attack3": SubResource("Animation_juw7e"),
+&"attack4": SubResource("Animation_bnchv"),
+&"death": SubResource("Animation_icvfp"),
+&"hurt": SubResource("Animation_rh4t3"),
+&"idle": SubResource("Animation_rv08r"),
+&"sneer": SubResource("Animation_vdx71"),
+&"walk": SubResource("Animation_btj86")
 }
 
 [node name="megabeholder_boss" type="Node2D"]

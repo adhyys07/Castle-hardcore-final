@@ -27,4 +27,4 @@ func init_health(_health):
 	damage_bar.value = health
 
 func _on_timer_timeout() -> void:
-	damage_bar.value = health
+	damage_bar.value = lerp(damage_bar.value, health, 0.5)
