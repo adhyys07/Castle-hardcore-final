@@ -1,6 +1,6 @@
 [gd_scene load_steps=66 format=3 uid="uid://t12edx00l8gi"]
 
-[ext_resource type="Script" uid="uid://8e78q6ebnesx" path="res://script/boss.gd" id="1_pdnr3"]
+[ext_resource type="Script" path="res://script/boss.gd" id="1_pdnr3"]
 [ext_resource type="Texture2D" uid="uid://bu5xc67b3mo0c" path="res://assets/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_pgna8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km3be"]
