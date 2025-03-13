@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://sq854lsbmrwn"]
+[gd_scene load_steps=10 format=3 uid="uid://sq854lsbmrwn"]
 
-[ext_resource type="Script" uid="uid://c4a7nhtteljyl" path="res://scene/global/shop.gd" id="1_8ucre"]
-[ext_resource type="Texture2D" uid="uid://bxugqdvavlrwf" path="res://assets/shop/MediavelFree.png" id="2_wvdg4"]
+[ext_resource type="Script" path="res://scene/global/shop.gd" id="1_8ucre"]
+[ext_resource type="Texture2D" uid="uid://h2sk87iyi1fy" path="res://assets/shop/hud.png" id="2_jvubp"]
+[ext_resource type="Texture2D" uid="uid://b1vubonhwhsfu" path="res://assets/coin.png" id="3_koqw1"]
+[ext_resource type="Texture2D" uid="uid://oulic2d3d3xv" path="res://assets/shop/SQUARE.png" id="3_yv46d"]
+[ext_resource type="Texture2D" uid="uid://1ot3x3lps5uw" path="res://assets/shop/diamondsword.png" id="4_62yjd"]
+[ext_resource type="Texture2D" uid="uid://c72rnnf540by6" path="res://assets/shop/diamondhammer.png" id="5_top3q"]
+[ext_resource type="Texture2D" uid="uid://8satq25dtkbk" path="res://assets/shop/goldensword.png" id="6_t1f3b"]
+[ext_resource type="Texture2D" uid="uid://da00rsmelfie2" path="res://assets/shop/gold hammer.png" id="7_v2h7c"]
+[ext_resource type="Texture2D" uid="uid://qkrxxkid6kun" path="res://assets/shop/health_gain.png" id="8_e1laj"]
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_8ucre")
@@ -9,12 +16,144 @@ script = ExtResource("1_8ucre")
 [node name="CloseButton" type="Button" parent="."]
 offset_right = 8.0
 offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
 
-[node name="MediavelFree" type="Sprite2D" parent="."]
-position = Vector2(944, 527)
-scale = Vector2(25.2308, 11.8984)
-texture = ExtResource("2_wvdg4")
-region_enabled = true
-region_rect = Rect2(-0.193268, 0, 78.4619, 95.4883)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.695
+anchor_top = 20.448
+anchor_right = -1.695
+anchor_bottom = 20.448
+offset_left = 621.8
+offset_top = -365.92
+offset_right = 1143.8
+offset_bottom = -64.92
+
+[node name="Hud" type="Sprite2D" parent="Control"]
+position = Vector2(814.531, 618.5)
+scale = Vector2(4.9994, 4.60714)
+texture = ExtResource("2_jvubp")
+
+[node name="shopitems" type="CanvasGroup" parent="."]
+
+[node name="Dhammer" type="Button" parent="shopitems"]
+offset_left = 707.0
+offset_top = 571.0
+offset_right = 761.0
+offset_bottom = 626.0
+
+[node name="DHammerbox" type="Sprite2D" parent="shopitems/Dhammer"]
+position = Vector2(25.9999, 28.0001)
+scale = Vector2(1.14583, 1.11458)
+texture = ExtResource("3_yv46d")
+
+[node name="Dhammer" type="Sprite2D" parent="shopitems/Dhammer/DHammerbox"]
+position = Vector2(5.26099, 5.35864)
+rotation = 1.5708
+scale = Vector2(0.133205, 0.188968)
+texture = ExtResource("5_top3q")
+
+[node name="Gsword" type="Button" parent="shopitems"]
+offset_left = 784.0
+offset_top = 573.0
+offset_right = 838.0
+offset_bottom = 626.0
+
+[node name="Gsword2" type="Sprite2D" parent="shopitems/Gsword"]
+position = Vector2(27.9999, 26)
+scale = Vector2(1.14583, 1.10417)
+texture = ExtResource("3_yv46d")
+
+[node name="Gsword" type="Sprite2D" parent="shopitems/Gsword/Gsword2"]
+position = Vector2(-3.60645, -0.418457)
+rotation = 4.75777
+scale = Vector2(0.0722022, 0.11959)
+texture = ExtResource("6_t1f3b")
+
+[node name="Ghammer" type="Button" parent="shopitems"]
+offset_left = 865.0
+offset_top = 572.0
+offset_right = 920.0
+offset_bottom = 625.0
+
+[node name="Ghammer" type="Sprite2D" parent="shopitems/Ghammer"]
+position = Vector2(26.9999, 27)
+scale = Vector2(1.14583, 1.10417)
+texture = ExtResource("3_yv46d")
+
+[node name="Ghammer" type="Sprite2D" parent="shopitems/Ghammer/Ghammer"]
+position = Vector2(5.98145, 5.15137)
+rotation = 1.5708
+scale = Vector2(0.134714, 0.187694)
+texture = ExtResource("7_v2h7c")
+
+[node name="Health_in" type="Button" parent="shopitems"]
+offset_left = 942.0
+offset_top = 572.0
+offset_right = 997.0
+offset_bottom = 626.0
+
+[node name="Health+" type="Sprite2D" parent="shopitems/Health_in"]
+position = Vector2(28, 27)
+scale = Vector2(1.14583, 1.10417)
+texture = ExtResource("3_yv46d")
+
+[node name="HealthGain" type="Sprite2D" parent="shopitems/Health_in/Health+"]
+position = Vector2(-1.74414, 0.905273)
+scale = Vector2(0.0528411, 0.0484669)
+texture = ExtResource("8_e1laj")
+
+[node name="Dsword2" type="Button" parent="shopitems"]
+offset_left = 630.0
+offset_top = 573.0
+offset_right = 685.0
+offset_bottom = 625.0
+
+[node name="DSwordbox" type="Sprite2D" parent="shopitems/Dsword2"]
+position = Vector2(26, 26)
+scale = Vector2(1.14583, 1.10417)
+texture = ExtResource("3_yv46d")
+
+[node name="Dsword" type="Sprite2D" parent="shopitems/Dsword2"]
+position = Vector2(27.8949, 25.5989)
+rotation = -1.52371
+scale = Vector2(0.0696626, 0.128531)
+skew = -0.00335765
+texture = ExtResource("4_62yjd")
+
+[node name="coins" type="CanvasGroup" parent="."]
+
+[node name="Coin5" type="Sprite2D" parent="coins"]
+position = Vector2(671.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin" type="Sprite2D" parent="coins"]
+position = Vector2(747.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin2" type="Sprite2D" parent="coins"]
+position = Vector2(828.5, 637.5)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin3" type="Sprite2D" parent="coins"]
+position = Vector2(912, 637)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
+
+[node name="Coin4" type="Sprite2D" parent="coins"]
+position = Vector2(992, 637)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("3_koqw1")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

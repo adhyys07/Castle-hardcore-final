@@ -1,9 +1,12 @@
 extends Node2D
-@onready var popup_scene = preload("res://scene/global/shop.tscn")
+@onready var shop = $SHOP/shop
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Gamemanager.current_level_path = get_tree().current_scene.scene_file_path
+	shop.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,4 +23,5 @@ func _on_bonus_button_pressed() -> void:
 
 
 func _on_shop_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/global/shop.tscn")
+	shop.visible = true
+	
