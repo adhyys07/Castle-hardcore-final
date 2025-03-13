@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://t12edx00l8gi"]
+[gd_scene load_steps=66 format=3 uid="uid://t12edx00l8gi"]
 
 [ext_resource type="Script" uid="uid://8e78q6ebnesx" path="res://script/boss.gd" id="1_pdnr3"]
 [ext_resource type="Texture2D" uid="uid://bu5xc67b3mo0c" path="res://assets/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_pgna8"]
@@ -451,6 +451,12 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp2bn"]
+size = Vector2(72, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p1qf"]
+size = Vector2(59, 91.5)
+
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_pdnr3")
 
@@ -462,8 +468,25 @@ animation = &"walk"
 autoplay = "idle"
 frame_progress = 0.0997667
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -65.0
-offset_top = -433.0
-offset_right = 424.0
-offset_bottom = -406.0
+[node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(109, -53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(66, 1)
+shape = SubResource("RectangleShape2D_wp2bn")
+
+[node name="attackzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
+position = Vector2(108, -43.25)
+shape = SubResource("RectangleShape2D_3p1qf")
+debug_color = Color(1, 0.0137427, 0.040081, 0.352941)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="attackzone"]
+position = Vector2(243, -43)
+shape = SubResource("RectangleShape2D_3p1qf")
+debug_color = Color(1, 0.0137427, 0.040081, 0.352941)
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
+[connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
