@@ -13,6 +13,19 @@ const JUMP_VELOCITY = -315.0
 @onready var hurtbox = $Area2D
 @onready var floor_ray_cast: RayCast2D = $RayCast2D
 
+const RunSpeed = 200
+const Acceleration = 40
+const Decelaration = 25
+const Gravity = 500
+const JumpVelocity = -315
+const MaxJumps = 1
+
+var moveSpeed = RunSpeed
+var moveDirection = 0
+var jumps = 0
+var facing = 1
+
+
 @export var accelerationValue = 0.1 
 @export var slideValue = 0.01
 @export var FullStopValue = 15
@@ -35,6 +48,10 @@ func _ready():
 	hurtbox.area_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("left"):	facing = -1
+	if Input.is_action_just_pressed("right"):	facing = 1
+	
 	if !is_on_floor() and floor_ray_cast.is_colliding():
 			$falling.play()
 	# Add the gravity.
@@ -66,19 +83,19 @@ func _physics_process(delta: float) -> void:
 
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	
+	_normal_movement()
 		
-	if direction:
-		if isAttacking == false:
-			velocity.x = direction * speed
-			sprite.flip_h = direction < 0
-			sprite.play("walk")
-	else:
-		if isAttacking == false:
-			velocity.x = move_toward(velocity.x, 0, speed)
-			if is_on_floor():
-				sprite.play("idle")
-	
+	#if direction:
+		#if isAttacking == false:
+			#velocity.x = direction * speed
+			#sprite.scale.x = -1 if direction < 0 else 1
+			#sprite.play("walk")
+	#else:
+		#if isAttacking == false:
+			#velocity.x = move_toward(velocity.x, 0, speed)
+			#if is_on_floor():
+				#sprite.play("idle")
+	#
 	if Input.is_action_just_pressed("pierce_attack"):
 		sprite.play("pierce_attack")
 		Input.start_joy_vibration(0,0.2,0.09,0.7)
@@ -93,7 +110,8 @@ func _physics_process(delta: float) -> void:
 		_movement_on_ice(direction)
 	else:
 		_normal_movement(direction)
-		
+	
+	HandleFlipH()	
 	move_and_slide()
 	
 func _movement_on_ice(direction):
@@ -105,12 +123,15 @@ func _movement_on_ice(direction):
 		if velocity.x < FullStopValue and velocity.x > -FullStopValue:
 			velocity.x = 0
 		
-func _normal_movement(direction):
-	if direction:
-		velocity.x = direction * speed
+func _normal_movement(acceleration: float = Acceleration, decelaration: float = Decelaration):
+	moveDirection = Input.get_axis("left", "right")
+	if moveDirection != 0:
+		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Acceleration)
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed) 
-		
+		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Decelaration)
+
+func HandleFlipH():
+		sprite.flip_h = facing < 1
 		
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -184,3 +205,6 @@ func _is_on_ice():
 	var collider = floor_ray_cast.get_collider()
 	if not collider: return false
 	return collider.name == "iceBlocks"
+	#
+#func HandleFlipH():
+	#sprite.scale.x = -1 if direction < 1 else 1
