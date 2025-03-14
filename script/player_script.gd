@@ -113,6 +113,18 @@ func _physics_process(delta: float) -> void:
 		$cooldown.start()
 		$pierce_effect.play()
 		isAttacking = true
+	
+	if Input.is_action_just_pressed("hammer_attack"):
+		$AnimatedSprite2D.play("hammer_attack")
+		Input.start_joy_vibration(0,0.2,0.09,0.7)
+		$AttackArea/Hammer.disabled = false
+		$AttackArea/Hammer2.disabled = false
+		$cooldown.start()
+		$hammer.play()
+		isAttacking = true
+	
+	
+	
 	#Apply movement
 		
 	if _is_on_ice():
@@ -194,6 +206,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "pierce_attack":
 		$AttackArea/Pierce.disabled = true
 		$AttackArea/Pierce2.disabled = true
+		isAttacking = false
+	if sprite.animation == "hammer_attack":
+		$AttackArea/Hammer.disabled = true
+		$AttackArea/Hammer2.disabled = true
 		isAttacking = false
 	elif sprite.animation == "taunt":
 		isAttacking = false

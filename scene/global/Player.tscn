@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=238 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_c4chy"]
 [ext_resource type="Texture2D" uid="uid://c00dimk6e4xwm" path="res://assets/sheets/spr_Dash_strip.png" id="2_r3yp4"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bu8cktq8dpdaq" path="res://scene/global/mobilecont.tscn" id="11_38vjx"]
 [ext_resource type="PackedScene" uid="uid://caf2e24erkf4u" path="res://scene/global/healthbar.tscn" id="12_4i342"]
 [ext_resource type="AudioStream" uid="uid://bwl3af2c002en" path="res://assets/sounds/pierce.wav" id="13_6a5fw"]
-[ext_resource type="AudioStream" uid="uid://ddwj2e4q5fplo" path="res://assets/sounds/hammer sound.wav" id="14_e6fkk"]
+[ext_resource type="AudioStream" uid="uid://ddwj2e4q5fplo" path="res://assets/sounds/hammers.wav" id="14_e6fkk"]
 [ext_resource type="AudioStream" uid="uid://brwox6gcblfwp" path="res://assets/sounds/Landing Sound Effect.wav" id="15_yda4h"]
 [ext_resource type="AudioStream" uid="uid://8oiu23hgoyaa" path="res://assets/sounds/jump_10.wav" id="16_q1ulm"]
 [ext_resource type="PackedScene" uid="uid://bck65kspxv7gi" path="res://scene/global/Dash.tscn" id="17_8c5b7"]
@@ -1585,6 +1585,9 @@ size = Vector2(20, 33)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyurs"]
 size = Vector2(26, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2sv4"]
+size = Vector2(18, 29)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_c4chy")
 
@@ -1594,6 +1597,8 @@ scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
 animation = &"hammer_attack"
 autoplay = "idle"
+frame = 18
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-28, -17)
@@ -1616,11 +1621,25 @@ position = Vector2(-106, -4)
 position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_uyurs")
 disabled = true
+debug_color = Color(0, 0.629903, 0.477949, 0.42)
 
 [node name="Pierce2" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-55.5, -11)
 shape = SubResource("RectangleShape2D_uyurs")
 disabled = true
+debug_color = Color(7.70092e-07, 0.631805, 0.458285, 0.42)
+
+[node name="Hammer" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-5, -16.5)
+shape = SubResource("RectangleShape2D_k2sv4")
+disabled = true
+debug_color = Color(0.821537, 0.0890421, 0.936718, 0.42)
+
+[node name="Hammer2" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-52, -16)
+shape = SubResource("RectangleShape2D_k2sv4")
+disabled = true
+debug_color = Color(0.779884, 0.162585, 0.976919, 0.42)
 
 [node name="Healthbar" parent="." instance=ExtResource("12_4i342")]
 offset_left = -48.0
