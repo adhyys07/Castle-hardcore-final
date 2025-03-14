@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if player and not is_attacking:
 		if global_position.distance_to(player.global_position) <200:
 			move_toward_player(delta)
-		if global_position.distance_to(player.global_position) < 50:
+		if global_position.distance_to(player.global_position) < 1:
 			attack()
 		
 func move_toward_player(delta):
@@ -33,9 +33,12 @@ func move_toward_player(delta):
 		
 	var direction = (player.global_position - global_position).normalized()
 	velocity = direction* speed
-	move_and_slide()
+	
 	if velocity.length() >1:
 		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("idle")
+	move_and_slide()
 
 	
 func attack():
@@ -80,7 +83,7 @@ func _on_attackzone_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		player = area.get_parent()
 		print("boss detected player", player.name)
-		attack()
+		
 		
 
 func _on_attackzone_area_exited(area: Area2D) -> void:
