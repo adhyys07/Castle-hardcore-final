@@ -156,4 +156,6 @@ position = Vector2(992, 637)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("3_koqw1")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]
