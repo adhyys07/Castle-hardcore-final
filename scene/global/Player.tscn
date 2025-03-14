@@ -1691,7 +1691,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7nvs")
 }],
-"loop": false,
+"loop": true,
 "name": &"taunt",
 "speed": 14.0
 }, {
@@ -1747,10 +1747,8 @@ script = ExtResource("1_c4chy")
 position = Vector2(-24, -26)
 scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
-animation = &"taunt"
+animation = &"pierce_attack"
 autoplay = "idle"
-frame = 17
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-28, -17)
