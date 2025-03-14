@@ -13,6 +13,7 @@ var health = 100
 var current_health
 
 func _ready():
+	current_health = health
 	hurtbox.area_entered.connect(_on_hurtbox_area_entered)
 	attackzone.area_entered.connect(_on_attackzone_area_entered)
 	attackzone.area_exited.connect(_on_attackzone_area_exited)
@@ -21,7 +22,10 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	if player and not is_attacking:
-		move_toward_player(delta)
+		if global_position.distance_to(player.global_position) <200:
+			move_toward_player(delta)
+		if global_position.distance_to(player.global_position) < 50:
+			attack()
 		
 func move_toward_player(delta):
 	if not player:
@@ -30,6 +34,8 @@ func move_toward_player(delta):
 	var direction = (player.global_position - global_position).normalized()
 	velocity = direction* speed
 	move_and_slide()
+	if velocity.length() >1:
+		animated_sprite.play("walk")
 
 	
 func attack():
@@ -58,6 +64,7 @@ func take_damage(amount):
 func die():
 	animated_sprite.play("die")
 	await animated_sprite.animation_finished
+	
 	queue_free()
 	
 func _on_hurtbox_area_entered(area: Area2D) -> void:
@@ -69,8 +76,10 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 
 
 func _on_attackzone_area_entered(area: Area2D) -> void:
+	print("some enter: ", area.name,"groups: ", area.get_groups())
 	if area.is_in_group("player"):
 		player = area.get_parent()
+		print("boss detected player", player.name)
 		attack()
 		
 

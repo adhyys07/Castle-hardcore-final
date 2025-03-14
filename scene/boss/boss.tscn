@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://t12edx00l8gi"]
+[gd_scene load_steps=67 format=3 uid="uid://t12edx00l8gi"]
 
 [ext_resource type="Script" path="res://script/boss.gd" id="1_pdnr3"]
 [ext_resource type="Texture2D" uid="uid://bu5xc67b3mo0c" path="res://assets/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_pgna8"]
@@ -407,7 +407,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 8.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -455,18 +455,21 @@ animations = [{
 size = Vector2(72, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3p1qf"]
-size = Vector2(59, 91.5)
+size = Vector2(231.5, 91.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_herof"]
+size = Vector2(31, 88)
 
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_pdnr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(170, -122.625)
-scale = Vector2(1.59722, 1.61719)
+position = Vector2(170, -110.156)
+scale = Vector2(1.4375, 1.39805)
 sprite_frames = SubResource("SpriteFrames_u2aob")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0997667
+frame_progress = 0.497351
 
 [node name="hurtbox" type="Area2D" parent="."]
 position = Vector2(109, -53)
@@ -476,16 +479,19 @@ position = Vector2(66, 1)
 shape = SubResource("RectangleShape2D_wp2bn")
 
 [node name="attackzone" type="Area2D" parent="."]
+position = Vector2(79, 120)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
-position = Vector2(108, -43.25)
+position = Vector2(-59.25, -172)
 shape = SubResource("RectangleShape2D_3p1qf")
 debug_color = Color(1, 0.0137427, 0.040081, 0.352941)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="attackzone"]
-position = Vector2(243, -43)
-shape = SubResource("RectangleShape2D_3p1qf")
-debug_color = Color(1, 0.0137427, 0.040081, 0.352941)
+position = Vector2(156.5, -168)
+shape = SubResource("RectangleShape2D_herof")
+debug_color = Color(0.981451, 0.135227, 1.92523e-07, 0.42)
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]

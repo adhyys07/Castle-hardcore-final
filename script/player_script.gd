@@ -29,6 +29,8 @@ var knockback_force = 200
 
 func _ready():
 	#Gamemanager.player = self
+	hurtbox.add_to_group("player")
+	print("hurtx in group: ", hurtbox.get_groups())
 	healthbar.init_health(health)
 	hurtbox.area_entered.connect(_on_area_2d_body_entered)
 
