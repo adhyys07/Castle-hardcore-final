@@ -1,7 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@onready
-var sprite = $AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D
 @onready var healthbar = $Healthbar
 
 const JUMP_VELOCITY = -315.0
@@ -24,18 +23,21 @@ var moveSpeed = RunSpeed
 var moveDirection = 0
 var jumps = 0
 var facing = 1
+const dash_speed = 500
+const dash_duration = 0.2
 
+@onready var dash = $Dash
 
 @export var accelerationValue = 0.1 
 @export var slideValue = 0.01
 @export var FullStopValue = 15
-var direction := Input.get_axis("ui_left", "ui_right")
+var direction := Input.get_axis("left", "right")
 
 var JumpBuffer: bool = false
 @export var JumpBufferTime = 0.05
 var JumpBufferTimer = 0.0
 
-var coyote_time = 0.3
+var coyote_time = 0.5
 var can_jump = false
 var health = 200
 var knockback_force = 200
@@ -48,10 +50,20 @@ func _ready():
 	hurtbox.area_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta: float) -> void:
-	
-	if Input.is_action_just_pressed("left"):	facing = -1
-	if Input.is_action_just_pressed("right"):	facing = 1
-	
+	direction = Input.get_axis("left", "right")
+
+	if direction < 0:
+		facing = -1
+	elif direction > 0:
+		facing = 1
+
+	_normal_movement()
+
+	if Input.is_action_just_pressed("dash") && dash.can_dash && !dash.is_dashing():
+		dash.start_dash(sprite,dash_duration)
+
+	moveSpeed = dash_speed if dash.is_dashing() else RunSpeed
+
 	if !is_on_floor() and floor_ray_cast.is_colliding():
 			$falling.play()
 	# Add the gravity.
@@ -81,10 +93,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			$jump.play()
 
-	
-	var direction := Input.get_axis("ui_left", "ui_right")
-	_normal_movement()
-		
+
 	#if direction:
 		#if isAttacking == false:
 			#velocity.x = direction * speed
@@ -97,7 +106,7 @@ func _physics_process(delta: float) -> void:
 				#sprite.play("idle")
 	#
 	if Input.is_action_just_pressed("pierce_attack"):
-		sprite.play("pierce_attack")
+		$AnimatedSprite2D.play("pierce_attack")
 		Input.start_joy_vibration(0,0.2,0.09,0.7)
 		$AttackArea/Pierce.disabled = false
 		$AttackArea/Pierce2.disabled = false
@@ -111,7 +120,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		_normal_movement(direction)
 	
-	HandleFlipH()	
+	_on_animated_sprite_2d_animation_finished()
+	#HandleFlipH()	
 	move_and_slide()
 	
 func _movement_on_ice(direction):
@@ -127,20 +137,19 @@ func _normal_movement(acceleration: float = Acceleration, decelaration: float = 
 	moveDirection = Input.get_axis("left", "right")
 	if moveDirection != 0:
 		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Acceleration)
+		sprite.play("walk")
+		sprite.flip_h = direction < 1
 	else:
 		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Decelaration)
-
-func HandleFlipH():
-		sprite.flip_h = facing < 1
+		sprite.play("idle")
 		
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	
-	
 	if body.is_in_group("Collectible"):
 		body.Collect()
 
 func take_damage(amount,knockdown_direction):
+	if dash.is_dashing(): return
 	health -= amount
 	health =  max(health,0)
 	
@@ -187,7 +196,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		isAttacking = false
 	elif sprite.animation == "taunt":
 		isAttacking = false
-	if $AnimatedSprite2D.animation == "death":
+	elif $AnimatedSprite2D.animation == "death":
 		get_tree().change_scene_to_file("res://scene/global/main_menu.tscn")
 	
 

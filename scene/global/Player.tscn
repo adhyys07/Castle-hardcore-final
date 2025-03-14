@@ -1,4 +1,4 @@
-[gd_scene load_steps=236 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=237 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_c4chy"]
 [ext_resource type="Texture2D" uid="uid://c00dimk6e4xwm" path="res://assets/sheets/spr_Dash_strip.png" id="2_r3yp4"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://ddwj2e4q5fplo" path="res://assets/sounds/hammer sound.wav" id="14_e6fkk"]
 [ext_resource type="AudioStream" uid="uid://brwox6gcblfwp" path="res://assets/sounds/Landing Sound Effect.wav" id="15_yda4h"]
 [ext_resource type="AudioStream" uid="uid://8oiu23hgoyaa" path="res://assets/sounds/jump_10.wav" id="16_q1ulm"]
+[ext_resource type="PackedScene" uid="uid://bck65kspxv7gi" path="res://scene/global/Dash.tscn" id="17_8c5b7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiln3"]
 atlas = ExtResource("2_r3yp4")
@@ -1389,7 +1390,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"pierce_attack",
-"speed": 18.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1588,13 +1589,11 @@ size = Vector2(26, 20)
 script = ExtResource("1_c4chy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-21, -26)
+position = Vector2(-24, -26)
 scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
-animation = &"walk"
+animation = &"hammer_attack"
 autoplay = "idle"
-frame = 7
-frame_progress = 0.91199
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-28, -17)
@@ -1656,6 +1655,8 @@ pitch_scale = 0.8
 stream = ExtResource("16_q1ulm")
 volume_db = -15.0
 pitch_scale = 0.75
+
+[node name="Dash" parent="." instance=ExtResource("17_8c5b7")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

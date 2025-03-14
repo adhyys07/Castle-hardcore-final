@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://03dgpjtm1x6x"]
 
-[ext_resource type="Script" uid="uid://dj1bv58dx0thu" path="res://script/movin_mob.gd" id="1_bcqn3"]
+[ext_resource type="Script" path="res://script/movin_mob.gd" id="1_bcqn3"]
 [ext_resource type="Texture2D" uid="uid://bc7btcwxj13pn" path="res://assets/faaltu/32x32-bat-sprite.png" id="2_0fn8m"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlh2j"]
@@ -85,8 +85,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g4dym"]
 _data = {
-&"RESET": SubResource("Animation_54mgf"),
-&"move": SubResource("Animation_wtac6")
+"RESET": SubResource("Animation_54mgf"),
+"move": SubResource("Animation_wtac6")
 }
 
 [node name="Straight" type="Path2D" groups=["mob"]]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dart1hpcpydh3"]
+
+[ext_resource type="Script" path="res://script/dash_ghost.gd" id="1_u8wqj"]
+[ext_resource type="Texture2D" uid="uid://dnvejdjsjv3rj" path="res://icon.svg" id="1_xdxdh"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_xdxdh")
+script = ExtResource("1_u8wqj")

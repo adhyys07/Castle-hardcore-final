@@ -455,7 +455,11 @@ animations = [{
 size = Vector2(72, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3p1qf"]
+<<<<<<< Updated upstream
 size = Vector2(228.5, 68.75)
+=======
+size = Vector2(24.5, 87.75)
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_herof"]
 size = Vector2(31, 88)
@@ -487,7 +491,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
+<<<<<<< Updated upstream
 position = Vector2(-57.75, -160.625)
+=======
+position = Vector2(40, -168)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_3p1qf")
 debug_color = Color(1, 0.0137427, 0.040081, 0.352941)
 

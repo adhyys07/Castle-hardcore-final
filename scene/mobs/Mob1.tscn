@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cwbycoo62m3w5"]
 
-[ext_resource type="Script" uid="uid://cfpgs7pfleoxy" path="res://script/enemy_1.gd" id="1_dm27u"]
+[ext_resource type="Script" path="res://script/enemy_1.gd" id="1_dm27u"]
 [ext_resource type="Texture2D" uid="uid://bc7btcwxj13pn" path="res://assets/faaltu/32x32-bat-sprite.png" id="2_1k6xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymve7"]
