@@ -178,7 +178,7 @@ flat = true
 position = Vector2(322, -35)
 
 [node name="Boss" parent="." instance=ExtResource("6_fdn04")]
-position = Vector2(22, -3)
+position = Vector2(-50, 9)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -206.0

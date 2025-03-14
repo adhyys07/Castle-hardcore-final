@@ -37,7 +37,7 @@ var JumpBufferTimer = 0.0
 
 var coyote_time = 0.3
 var can_jump = false
-var health = 20
+var health = 200
 var knockback_force = 200
 
 func _ready():

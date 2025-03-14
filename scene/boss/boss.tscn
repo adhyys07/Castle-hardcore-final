@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://t12edx00l8gi"]
+[gd_scene load_steps=68 format=3 uid="uid://t12edx00l8gi"]
 
 [ext_resource type="Script" path="res://script/boss.gd" id="1_pdnr3"]
 [ext_resource type="Texture2D" uid="uid://bu5xc67b3mo0c" path="res://assets/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_pgna8"]
@@ -460,6 +460,9 @@ size = Vector2(228.5, 68.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_herof"]
 size = Vector2(31, 88)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o36uq"]
+size = Vector2(153.5, 43)
+
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_pdnr3")
 
@@ -493,6 +496,16 @@ position = Vector2(156.5, -168)
 shape = SubResource("RectangleShape2D_herof")
 debug_color = Color(0.981451, 0.135227, 1.92523e-07, 0.42)
 
+[node name="attack_hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_hitbox"]
+position = Vector2(61.75, -27)
+shape = SubResource("RectangleShape2D_o36uq")
+debug_color = Color(1.34766e-06, 0.599444, 0.703191, 0.42)
+
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
 [connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
+[connection signal="area_entered" from="attack_hitbox" to="." method="_on_attack_hitbox_area_entered"]

@@ -23,9 +23,9 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if player and not is_attacking:
 		var distance = global_position.distance_to(player.global_position) 
-		if distance > 2:
+		if distance > 40:
 			move_toward_player(delta)
-		elif distance <= 2:
+		elif distance <= 40:
 			velocity = Vector2.ZERO
 			
 			attack()
@@ -35,7 +35,11 @@ func move_toward_player(delta):
 		return
 		
 	var direction = (player.global_position - global_position).normalized()
-	velocity = direction* speed
+	if direction.x > 0:
+		animated_sprite.flip_h = false
+	else:
+		animated_sprite.flip_h = true
+	velocity = direction * speed
 	
 	
 	move_and_slide()
@@ -49,7 +53,7 @@ func attack():
 	animated_sprite.play("attack")	
 	await animated_sprite.animation_finished
 	
-	if player and global_position.distance_to(player.global_position)< 20:
+	if player and global_position.distance_to(player.global_position)< 50:
 		player.take_damage(attack_damage)
 	
 	is_attacking = false
@@ -91,4 +95,22 @@ func _on_attackzone_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		player = null
 		
+func _on_attack_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		var knockdown_direction = (global_position - area.global_position).normalized()
+		#print("50")
+		var player_node = area.get_parent()
+		if player_node.has_method("take_damage"):
+			player_node.take_damage(attack_damage,knockdown_direction)
+			print("50")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
