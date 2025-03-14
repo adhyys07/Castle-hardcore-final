@@ -13,6 +13,7 @@ func Update(delta: float) -> void:
 	Player.HandleFalling()
 	Player.HandleJump()
 	Player.HorizontalMovement()
+	Player.HandlePierceAttack()
 	if Player.moveDirection != 0:
 		Player.ChangeState(States.Run)
 	HandleAnimations()

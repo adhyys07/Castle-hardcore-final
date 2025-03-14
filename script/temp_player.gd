@@ -26,7 +26,11 @@ var left = false
 var right = false
 var down = false
 var jumpPressed = false
+var pa = false
+var ha = false
 
+@export var Pattacking = false 
+@export var Hattacking = false
 #StateMachine
 var currentState = null
 var previousState = null
@@ -45,6 +49,10 @@ func _ready() -> void:
 	previousState = States.Fall
 	currentState = States.Fall
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pierce_attack"):
+		HandlePierceAttack()
+
 func _draw() -> void:
 	currentState.Draw()
 
@@ -56,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	HandleGravity(delta)
 	HorizontalMovement()
 	HandleJump()
-
+	HandlePierceAttack()
 	move_and_slide()
 	
 func ChangeState(newState):
@@ -65,7 +73,7 @@ func ChangeState(newState):
 		currentState = newState
 		previousState.ExitState()
 		currentState.ExitState()
-		print("State change from:" + previousState.Name + " to:" + currentState.Name)
+		print(previousState.Name + currentState.Name)
 
 #endregion		
 
@@ -77,6 +85,9 @@ func GetInputStates():
 	left = Input.is_action_pressed("left")
 	right = Input.is_action_pressed("right")
 	jumpPressed = Input.is_action_just_pressed("jump")
+	pa = Input.is_action_just_pressed("pierce_attack")
+	ha = Input.is_action_just_pressed("hammer_attack")
+	
 	
 	if (right): facing = 1
 	if (left): facing = -1
@@ -113,5 +124,11 @@ func HandleLanding():
 
 func HandleFlipH():
 	Sprite.flip_h = facing < 1
+	
+func HandlePierceAttack():
+	Pattacking = true
+	Animator.play("Pierce_Attack")
+	
+
 
 #endregion
