@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Button.connect("pressed", Callable(self, "_on_button_pressed"))
+	MusicManager.stop()
 
 func _input(event):
 	if event.is_action_pressed("my_button_action"):

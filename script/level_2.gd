@@ -2,6 +2,9 @@ extends Node2D
 
 func _ready() -> void:
 	Gamemanager.current_level_path = get_tree().current_scene.scene_file_path
+	if not MusicManager.is_playing():
+		MusicManager.play()
+
 
 func _on_level_portal_2_body_entered(body: Player):
 	get_tree().change_scene_to_file("res://scene/World 1/level_3.tscn")
