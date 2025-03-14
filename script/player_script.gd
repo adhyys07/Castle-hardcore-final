@@ -39,7 +39,7 @@ var JumpBufferTimer = 0.0
 
 var coyote_time = 0.5
 var can_jump = false
-var health = 200
+var health = 20
 var knockback_force = 200
 
 func _ready():
@@ -120,9 +120,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		_normal_movement(direction)
 	
-	_on_animated_sprite_2d_animation_finished()
 	#HandleFlipH()	
 	move_and_slide()
+	
 	
 func _movement_on_ice(direction):
 	if direction:
@@ -134,14 +134,15 @@ func _movement_on_ice(direction):
 			velocity.x = 0
 		
 func _normal_movement(acceleration: float = Acceleration, decelaration: float = Decelaration):
-	moveDirection = Input.get_axis("left", "right")
-	if moveDirection != 0:
-		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Acceleration)
-		sprite.play("walk")
-		sprite.flip_h = direction < 1
-	else:
-		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Decelaration)
-		sprite.play("idle")
+	if !isAttacking:
+		moveDirection = Input.get_axis("left", "right")
+		if moveDirection != 0:
+			velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Acceleration)
+			sprite.play("walk")
+			sprite.flip_h = direction < 1
+		else:
+			velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Decelaration)
+			sprite.play("idle")
 		
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -196,14 +197,14 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		isAttacking = false
 	elif sprite.animation == "taunt":
 		isAttacking = false
-	elif $AnimatedSprite2D.animation == "death":
+	if $AnimatedSprite2D.animation == "death":
 		get_tree().change_scene_to_file("res://scene/global/main_menu.tscn")
 	
 
 
 func die():
 	animated_sprite.play("death")
-	queue_free()
+	
 
 
 func _on_coyote_timer_timeout() -> void:
