@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg1uddkl7tx45"]
+
+[ext_resource type="AudioStream" uid="uid://bb2425es7hdtf" path="res://assets/sounds/old city theme.wav" id="1_akx4k"]
+[ext_resource type="Script" path="res://script/MusicManager2.gd" id="2_qs1wm"]
+
+[node name="MusicManager2" type="AudioStreamPlayer"]
+stream = ExtResource("1_akx4k")
+volume_db = 5.0
+script = ExtResource("2_qs1wm")

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://sq854lsbmrwn" path="res://scene/global/shop.tscn" id="10_gb2mm"]
 [ext_resource type="PackedScene" uid="uid://cbv678l85yc5o" path="res://scene/traps+platforms/breakaway.tscn" id="11_ah2i5"]
 [ext_resource type="PackedScene" uid="uid://bmyyp2bcj2oip" path="res://scene/mobs/movinbat.tscn" id="12_3ct7t"]
-[ext_resource type="Script" path="res://scene/bonus/limitarea.gd" id="13_8haln"]
+[ext_resource type="Script" path="res://script/limitarea.gd" id="13_8haln"]
 [ext_resource type="PackedScene" uid="uid://p8j0ek7nv2kr" path="res://scene/traps+platforms/jump_thru.tscn" id="14_vop4e"]
 [ext_resource type="PackedScene" uid="uid://03dgpjtm1x6x" path="res://scene/mobs/movin_mob.tscn" id="15_3jr3u"]
 [ext_resource type="PackedScene" uid="uid://cwbycoo62m3w5" path="res://scene/mobs/Mob1.tscn" id="16_1rh4w"]

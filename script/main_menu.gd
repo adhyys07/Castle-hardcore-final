@@ -5,6 +5,7 @@ extends Control
 func _ready() -> void:
 	$Button.connect("pressed", Callable(self, "_on_button_pressed"))
 	MusicManager.stop()
+	MusicManager2.stop()
 
 func _input(event):
 	if event.is_action_pressed("my_button_action"):

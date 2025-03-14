@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://du4xvssa6ues3"]
+[gd_scene load_steps=21 format=3 uid="uid://du4xvssa6ues3"]
 
 [ext_resource type="PackedScene" uid="uid://ce2mebnsaxsrf" path="res://scene/global/Player.tscn" id="1_1n1qt"]
 [ext_resource type="Script" path="res://script/w_2_level_1.gd" id="1_emd4p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5fcfg4mn50x" path="res://scene/global/coin_ui.tscn" id="2_200ek"]
 [ext_resource type="Texture2D" uid="uid://o0udbpla0yea" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_i4k7c"]
 [ext_resource type="Texture2D" uid="uid://r8xqnbyscnk4" path="res://assets/oak_woods_v1.0/oak_woods_tileset.png" id="3_3cpsc"]
+[ext_resource type="PackedScene" uid="uid://dg1uddkl7tx45" path="res://scene/global/MusicManager2.tscn" id="3_p3t26"]
 [ext_resource type="PackedScene" uid="uid://chmqai7u8uat6" path="res://scene/global/coin.tscn" id="5_v5qe2"]
 [ext_resource type="PackedScene" uid="uid://csy122of26ss6" path="res://scene/global/level_portal.tscn" id="7_rolv8"]
 [ext_resource type="Texture2D" uid="uid://d04vh8g3tbnfu" path="res://assets/arrows/box arrow_2.png" id="8_x3md3"]
@@ -339,7 +340,7 @@ texture = ExtResource("3_3cpsc")
 17:5/0 = 0
 17:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:5/0 = 0
-21:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.25, 8, -0.125, 8, 8, -0.125, 8, -6.5, 8, -8, 8)
+21:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:5/0 = 0
 22:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:5/0 = 0
@@ -847,7 +848,7 @@ position = Vector2(247, -240)
 zoom = Vector2(3.01, 2.1)
 
 [node name="Player" parent="." instance=ExtResource("1_1n1qt")]
-position = Vector2(8, -11)
+position = Vector2(-16, -332)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("2_200ek")]
 
@@ -931,6 +932,8 @@ position = Vector2(119, -252)
 
 [node name="Sprite2D9" parent="passthrough" instance=ExtResource("12_slp38")]
 position = Vector2(9, -179)
+
+[node name="MusicManager2" parent="." instance=ExtResource("3_p3t26")]
 
 [connection signal="body_entered" from="level_portal_8" to="." method="_on_level_portal_8_body_entered"]
 [connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]

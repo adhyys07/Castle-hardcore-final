@@ -22,6 +22,7 @@ Gamecontroller="*res://script/gamecontroller.gd"
 CoinManager="*res://script/coin_manager.gd"
 MusicManager="*res://scene/global/MusicManager.tscn"
 SoundManager="*res://script/sound_manager.gd"
+MusicManager2="*res://scene/global/MusicManager2.tscn"
 
 [display]
 

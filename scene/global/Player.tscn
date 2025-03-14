@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bsy2pw0dktwbl" path="res://assets/sheets/spr_SpinAttack_strip.png" id="8_j743p"]
 [ext_resource type="Texture2D" uid="uid://8okd7phknyc" path="res://assets/sheets/spr_Taunt_strip.png" id="9_gbk2k"]
 [ext_resource type="Texture2D" uid="uid://c7v2fx2btphvq" path="res://assets/sheets/spr_Walk_strip.png" id="10_2gdju"]
-[ext_resource type="PackedScene" uid="uid://bu8cktq8dpdaq" path="res://scene/mobilecont.tscn" id="11_38vjx"]
+[ext_resource type="PackedScene" uid="uid://bu8cktq8dpdaq" path="res://scene/global/mobilecont.tscn" id="11_38vjx"]
 [ext_resource type="PackedScene" uid="uid://caf2e24erkf4u" path="res://scene/global/healthbar.tscn" id="12_4i342"]
 [ext_resource type="AudioStream" uid="uid://bwl3af2c002en" path="res://assets/sounds/pierce.wav" id="13_6a5fw"]
 [ext_resource type="AudioStream" uid="uid://ddwj2e4q5fplo" path="res://assets/sounds/hammer sound.wav" id="14_e6fkk"]
