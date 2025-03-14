@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=3 uid="uid://ce2mebnsaxsrf"]
+[gd_scene load_steps=262 format=3 uid="uid://ce2mebnsaxsrf"]
 
 [ext_resource type="Script" path="res://script/player_script.gd" id="1_c4chy"]
 [ext_resource type="Texture2D" uid="uid://c00dimk6e4xwm" path="res://assets/sheets/spr_Dash_strip.png" id="2_r3yp4"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://8oiu23hgoyaa" path="res://assets/sounds/jump_10.wav" id="16_q1ulm"]
 [ext_resource type="PackedScene" uid="uid://bck65kspxv7gi" path="res://scene/global/Dash.tscn" id="17_8c5b7"]
 [ext_resource type="AudioStream" uid="uid://donb87qyp5jvo" path="res://assets/sounds/spin.wav" id="17_kpjj6"]
+[ext_resource type="AudioStream" uid="uid://3jip78ehlhfd" path="res://assets/sounds/taunt.mp3" id="18_os5cy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiln3"]
 atlas = ExtResource("2_r3yp4")
@@ -1690,7 +1691,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7nvs")
 }],
-"loop": true,
+"loop": false,
 "name": &"taunt",
 "speed": 14.0
 }, {
@@ -1746,9 +1747,9 @@ script = ExtResource("1_c4chy")
 position = Vector2(-24, -26)
 scale = Vector2(1.01618, 0.908854)
 sprite_frames = SubResource("SpriteFrames_ytty7")
-animation = &"spin_attack"
+animation = &"taunt"
 autoplay = "idle"
-frame = 50
+frame = 17
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1841,6 +1842,10 @@ pitch_scale = 0.75
 [node name="spin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_kpjj6")
 volume_db = -15.055
+
+[node name="taunt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_os5cy")
+volume_db = -15.0
 
 [node name="Dash" parent="." instance=ExtResource("17_8c5b7")]
 position = Vector2(-5, -8)

@@ -132,6 +132,11 @@ func _physics_process(delta: float) -> void:
 		$spin.play()
 		isAttacking = true	
 	
+	if Input.is_action_just_pressed("taunt"):
+		$AnimatedSprite2D.play("taunt")
+		Input.start_joy_vibration(0,0.2,0.09,0.7)
+		$taunt.play()
+
 	
 	#Apply movement
 		
@@ -216,16 +221,17 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		$AttackArea/Pierce.disabled = true
 		$AttackArea/Pierce2.disabled = true
 		isAttacking = false
-	if sprite.animation == "hammer_attack":
+	elif sprite.animation == "hammer_attack":
 		$AttackArea/Hammer.disabled = true
 		$AttackArea/Hammer2.disabled = true
 		isAttacking = false
-	if sprite.animation == "spin_attack":
+	elif sprite.animation == "spin_attack":
 		$AttackArea/SpinAttack.disabled = true
 		$AttackArea/SpinAttack2.disabled = true
 		isAttacking = false
-	elif sprite.animation == "taunt":
-		isAttacking = false
+	#elif sprite.animation == "taunt":
+		#sprite.play("idle")
+		#isAttacking = false
 	if $AnimatedSprite2D.animation == "death":
 		get_tree().change_scene_to_file("res://scene/global/main_menu.tscn")
 	
