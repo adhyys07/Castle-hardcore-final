@@ -123,6 +123,14 @@ func _physics_process(delta: float) -> void:
 		$hammer.play()
 		isAttacking = true
 	
+	if Input.is_action_just_pressed("spin_attack"):
+		$AnimatedSprite2D.play("spin_attack")
+		Input.start_joy_vibration(0,0.2,0.09,0.7)
+		$AttackArea/SpinAttack.disabled = false
+		$AttackArea/SpinAttack2.disabled = false
+		$cooldown.start()
+		$spin.play()
+		isAttacking = true	
 	
 	
 	#Apply movement
@@ -163,6 +171,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func take_damage(amount,knockdown_direction):
 	if dash.is_dashing(): return
+	if isAttacking: return
 	health -= amount
 	health =  max(health,0)
 	
@@ -210,6 +219,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "hammer_attack":
 		$AttackArea/Hammer.disabled = true
 		$AttackArea/Hammer2.disabled = true
+		isAttacking = false
+	if sprite.animation == "spin_attack":
+		$AttackArea/SpinAttack.disabled = true
+		$AttackArea/SpinAttack2.disabled = true
 		isAttacking = false
 	elif sprite.animation == "taunt":
 		isAttacking = false
