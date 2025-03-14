@@ -22,9 +22,12 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	if player and not is_attacking:
-		if global_position.distance_to(player.global_position) <200:
+		var distance = global_position.distance_to(player.global_position) 
+		if distance > 2:
 			move_toward_player(delta)
-		if global_position.distance_to(player.global_position) < 1:
+		elif distance <= 2:
+			velocity = Vector2.ZERO
+			
 			attack()
 		
 func move_toward_player(delta):
@@ -34,11 +37,9 @@ func move_toward_player(delta):
 	var direction = (player.global_position - global_position).normalized()
 	velocity = direction* speed
 	
-	if velocity.length() >1:
-		animated_sprite.play("walk")
-	else:
-		animated_sprite.play("idle")
+	
 	move_and_slide()
+	animated_sprite.play("walk")
 
 	
 func attack():
@@ -48,7 +49,7 @@ func attack():
 	animated_sprite.play("attack")	
 	await animated_sprite.animation_finished
 	
-	if player and global_position.distance_to(player.global_position)< 50:
+	if player and global_position.distance_to(player.global_position)< 20:
 		player.take_damage(attack_damage)
 	
 	is_attacking = false
