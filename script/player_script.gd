@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -315.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var attack = false
 @export var isAttacking = false
+@export var isTaunting = false
 @onready var hurtbox = $Area2D
 @onready var floor_ray_cast: RayCast2D = $RayCast2D
 
@@ -113,6 +114,7 @@ func _physics_process(delta: float) -> void:
 		$cooldown.start()
 		$pierce_effect.play()
 		isAttacking = true
+		isTaunting = false
 	
 	if Input.is_action_just_pressed("hammer_attack"):
 		$AnimatedSprite2D.play("hammer_attack")
@@ -122,6 +124,7 @@ func _physics_process(delta: float) -> void:
 		$cooldown.start()
 		$hammer.play()
 		isAttacking = true
+		isTaunting = false
 	
 	if Input.is_action_just_pressed("spin_attack"):
 		$AnimatedSprite2D.play("spin_attack")
@@ -131,11 +134,14 @@ func _physics_process(delta: float) -> void:
 		$cooldown.start()
 		$spin.play()
 		isAttacking = true	
+		isTaunting = false
 	
 	if Input.is_action_just_pressed("taunt"):
 		$AnimatedSprite2D.play("taunt")
-		Input.start_joy_vibration(0,0.2,0.09,0.7)
+		#Input.start_joy_vibration(0,0.2,0.09,0.7)
 		$taunt.play()
+		isTaunting = true
+		isAttacking = false
 
 	
 	#Apply movement
@@ -159,7 +165,7 @@ func _movement_on_ice(direction):
 			velocity.x = 0
 		
 func _normal_movement(acceleration: float = Acceleration, decelaration: float = Decelaration):
-	if !isAttacking:
+	if !isAttacking && !isTaunting:
 		moveDirection = Input.get_axis("left", "right")
 		if moveDirection != 0:
 			velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Acceleration)
@@ -221,17 +227,21 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		$AttackArea/Pierce.disabled = true
 		$AttackArea/Pierce2.disabled = true
 		isAttacking = false
+		isTaunting = false
 	elif sprite.animation == "hammer_attack":
 		$AttackArea/Hammer.disabled = true
 		$AttackArea/Hammer2.disabled = true
 		isAttacking = false
+		isTaunting = false
 	elif sprite.animation == "spin_attack":
 		$AttackArea/SpinAttack.disabled = true
 		$AttackArea/SpinAttack2.disabled = true
 		isAttacking = false
-	#elif sprite.animation == "taunt":
-		#sprite.play("idle")
-		#isAttacking = false
+		isTaunting = false
+	elif sprite.animation == "taunt":
+		sprite.play("idle")
+		isAttacking = false
+		isTaunting = false
 	if $AnimatedSprite2D.animation == "death":
 		get_tree().change_scene_to_file("res://scene/global/main_menu.tscn")
 	
