@@ -1284,12 +1284,10 @@ animation = &"taunt"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-28, -17)
 shape = SubResource("RectangleShape2D_bewli")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -1301,7 +1299,6 @@ shape = SubResource("RectangleShape2D_278y1")
 position = Vector2(-106, -4)
 
 [node name="AttackArea" type="Area2D" parent="." groups=["Attacks"]]
-visible = false
 
 [node name="Pierce" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-1, -11)

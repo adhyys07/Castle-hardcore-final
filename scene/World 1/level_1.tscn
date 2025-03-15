@@ -260,6 +260,7 @@ position = Vector2(105, -214)
 position = Vector2(128, -90)
 
 [node name="Straight" parent="movinplat" instance=ExtResource("2_4sxqk")]
+visible = false
 position = Vector2(-94, 12)
 curve = SubResource("Curve2D_leqh7")
 loop = false
