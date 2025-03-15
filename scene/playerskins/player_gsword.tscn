@@ -405,9 +405,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dhdn5")
 }],
-"loop": true,
+"loop": false,
 "name": &"dash",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -530,14 +530,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2fpuj")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"hammer attack",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -588,19 +588,19 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o0uwp")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"pierce attack",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"spin attack",
-"speed": 5.0
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -657,9 +657,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ixlae")
 }],
-"loop": true,
+"loop": false,
 "name": &"taunt",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -686,9 +686,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jcq1o")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
-"speed": 5.0
+"speed": 14.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_278y1"]
@@ -713,7 +713,7 @@ shape = SubResource("RectangleShape2D_bewli")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_layc1")
-animation = &"idle"
+animation = &"spin attack"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]

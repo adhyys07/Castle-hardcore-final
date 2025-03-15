@@ -532,9 +532,9 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"hammer_attack",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -590,14 +590,14 @@ animations = [{
 "speed": 13.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"pierce_attack",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"spin attack",
-"speed": 5.0
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -654,7 +654,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oda6c")
 }],
-"loop": true,
+"loop": false,
 "name": &"taunt",
 "speed": 14.0
 }, {
@@ -683,7 +683,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8luuy")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 15.0
 }]
@@ -709,7 +709,7 @@ script = ExtResource("1_bf54f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-21, -28)
 sprite_frames = SubResource("SpriteFrames_qg3ua")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
