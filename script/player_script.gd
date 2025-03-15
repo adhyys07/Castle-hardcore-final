@@ -40,7 +40,7 @@ var JumpBufferTimer = 0.0
 
 var coyote_time = 0.5
 var can_jump = false
-var health = 20
+var health = 200
 var knockback_force = 200
 
 func _ready():
@@ -181,8 +181,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.Collect()
 
 func take_damage(amount,knockdown_direction):
-	if dash.is_dashing(): return
-	if isAttacking: return
+	#if dash.is_dashing(): return
+	#if isAttacking: return
 	health -= amount
 	health =  max(health,0)
 	

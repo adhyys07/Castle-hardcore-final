@@ -165,7 +165,7 @@ tile_map_data = PackedByteArray("AAABAPD/AAAGAAEAAAAAAPL/AAAGAAEAAAAAAPT/AAAGAAE
 tile_set = SubResource("TileSet_vxh2p")
 
 [node name="Player" parent="." instance=ExtResource("2_6i4sf")]
-position = Vector2(195, 78)
+position = Vector2(258, 55)
 
 [node name="boss" parent="." instance=ExtResource("6_fdn04")]
-position = Vector2(362, 88)
+position = Vector2(371, 78)

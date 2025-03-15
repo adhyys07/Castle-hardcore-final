@@ -465,10 +465,10 @@ size = Vector2(261, 84)
 size = Vector2(95.5, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmk5h"]
-size = Vector2(84.5, 107)
+size = Vector2(82, 113.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvuw"]
-size = Vector2(116, 68)
+size = Vector2(139, 68)
 
 [node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_efx0r")
@@ -477,16 +477,15 @@ script = ExtResource("1_efx0r")
 position = Vector2(68, -117)
 scale = Vector2(1.32639, 1.4625)
 sprite_frames = SubResource("SpriteFrames_20qm1")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.025102
 
 [node name="attackzone" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
-position = Vector2(-119.5, -52)
+position = Vector2(-104, -43)
 shape = SubResource("RectangleShape2D_llbdn")
 debug_color = Color(0.992448, 0, 0.251883, 0.42)
 
@@ -496,11 +495,9 @@ shape = SubResource("RectangleShape2D_2byqr")
 debug_color = Color(0.932944, 0.259313, 0, 0.42)
 
 [node name="hurtbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(63.75, -63)
+position = Vector2(72, -58.75)
 shape = SubResource("RectangleShape2D_jmk5h")
 
 [node name="attack_hitbox" type="Area2D" parent="."]
@@ -508,6 +505,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_hitbox"]
-position = Vector2(-48, -44)
+position = Vector2(-46.5, -40)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
+
+[connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
+[connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="attack_hitbox" to="." method="_on_attack_hitbox_area_entered"]
