@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var attackzone = $attackzone
 @onready var attack_hitbox = $attack_hitbox
 @onready var debug_label = $Label
+@onready var attack_timer = $Timer
 
 
 
@@ -105,16 +106,18 @@ func _on_attackzone_area_exited(area: Area2D) -> void:
 		player = null
 		
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
-	var attack_timer = $Timer
+	
 	if area.is_in_group("player") and can_damage:
 		can_damage = false
 		is_attacking = true
 		
 		animated_sprite.play("attack")
 		update_debug_label("attack")
+		await  get_tree().create_timer(animated_sprite.get_animation_length("attack")).timeout
+		animated_sprite.stop()
+		update_debug_label("finished ")
 		
-		await animated_sprite.animation_finished
-		update_debug_label("await anim")
+		
 		var knockdown_direction = (global_position - area.global_position).normalized()
 		#print("50")
 		var player_node = area.get_parent()
@@ -128,7 +131,9 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 		update_debug_label("waiting for timer")	
 		
 		attack_timer.start()
-		await attack_timer.timeout()
+		update_debug_label("timer start")
+		update_debug_label(attack_timer.time_left)
+		await attack_timer.timeout
 		update_debug_label("timer finished ")
 		can_damage = true
 		is_attacking = false
