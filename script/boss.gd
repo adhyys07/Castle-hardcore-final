@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var hurtbox = $hurtbox
 @onready var attackzone = $attackzone
 @onready var attack_hitbox = $attack_hitbox
+@onready var debug_label = $Label
+
+
 
 var speed = 50
 var attack_damage = 20
@@ -21,6 +24,9 @@ func _ready():
 	animated_sprite.play("idle")
 	
 func _physics_process(delta: float) -> void:
+	if is_attacking:
+		return
+		
 	if player and can_damage:
 		var distance = global_position.distance_to(player.global_position) 
 		if distance > 30:
@@ -46,6 +52,7 @@ func move_toward_player(delta):
 	
 	move_and_slide()
 	animated_sprite.play("walk")
+
 
 	
 '''func attack():
@@ -98,19 +105,42 @@ func _on_attackzone_area_exited(area: Area2D) -> void:
 		player = null
 		
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
+	var attack_timer = $Timer
 	if area.is_in_group("player") and can_damage:
 		can_damage = false
+		is_attacking = true
+		
 		animated_sprite.play("attack")
+		update_debug_label("attack")
+		
 		await animated_sprite.animation_finished
+		update_debug_label("await anim")
 		var knockdown_direction = (global_position - area.global_position).normalized()
 		#print("50")
 		var player_node = area.get_parent()
+		print ("100")
 		
 		if player_node.has_method("take_damage"):
 			player_node.take_damage(attack_damage,knockdown_direction)
-			print("50")
-		await get_tree().create_timer(0.5).timeout
+			print("50")	
+			update_debug_label("took damage")
+		animated_sprite.play("idle")
+		update_debug_label("waiting for timer")	
+		
+		attack_timer.start()
+		await attack_timer.timeout()
+		update_debug_label("timer finished ")
 		can_damage = true
+		is_attacking = false
+		update_debug_label("c dam")
+
+
+func update_debug_label(text: String):
+	if debug_label:
+		debug_label.text = text
+func log_debug_message(msg):
+	var label = get_node("Label") # Change to correct path
+	label.text += msg + "\n"
 	
 	
 	

@@ -295,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x7oua")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 8.0
 }, {
@@ -508,6 +508,14 @@ collision_mask = 2
 position = Vector2(-46.5, -40)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+justification_flags = 162
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
 [connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
