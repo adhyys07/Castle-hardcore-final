@@ -169,3 +169,8 @@ position = Vector2(258, 55)
 
 [node name="boss" parent="." instance=ExtResource("6_fdn04")]
 position = Vector2(371, 78)
+
+[node name="Label12" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+justification_flags = 171
