@@ -25,9 +25,7 @@ func _ready():
 	animated_sprite.play("idle")
 	
 func _physics_process(delta: float) -> void:
-	if is_attacking:
-		return
-		
+	
 	if player and can_damage:
 		var distance = global_position.distance_to(player.global_position) 
 		if distance > 30:
@@ -109,34 +107,19 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("player") and can_damage:
 		can_damage = false
-		is_attacking = true
-		
+	
 		animated_sprite.play("attack")
 		update_debug_label("attack")
-		await  get_tree().create_timer(animated_sprite.get_animation_length("attack")).timeout
-		animated_sprite.stop()
+		await  animated_sprite.animation_finished
 		update_debug_label("finished ")
-		
-		
 		var knockdown_direction = (global_position - area.global_position).normalized()
-		#print("50")
 		var player_node = area.get_parent()
-		print ("100")
-		
 		if player_node.has_method("take_damage"):
 			player_node.take_damage(attack_damage,knockdown_direction)
-			print("50")	
-			update_debug_label("took damage")
 		animated_sprite.play("idle")
-		update_debug_label("waiting for timer")	
 		
-		attack_timer.start()
-		update_debug_label("timer start")
-		update_debug_label(attack_timer.time_left)
-		await attack_timer.timeout
-		update_debug_label("timer finished ")
 		can_damage = true
-		is_attacking = false
+		
 		update_debug_label("c dam")
 
 
