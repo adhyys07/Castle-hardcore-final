@@ -7,10 +7,12 @@ extends CharacterBody2D
 @onready var debug_label = $Label
 @onready var attack_timer = $Timer
 
+var is_player_dead = false
+
 
 
 var speed = 50
-var attack_damage = 20
+var attack_damage = 50
 var is_attacking = false
 var player = null
 
@@ -26,7 +28,7 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	
-	if player and can_damage:
+	if player and can_damage and  not is_player_dead:
 		var distance = global_position.distance_to(player.global_position) 
 		if distance > 30:
 			move_toward_player(delta)
@@ -105,7 +107,7 @@ func _on_attackzone_area_exited(area: Area2D) -> void:
 		
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 	
-	if area.is_in_group("player") and can_damage:
+	if area.is_in_group("player") and can_damage and not is_player_dead:
 		can_damage = false
 	
 		animated_sprite.play("attack")
@@ -117,7 +119,8 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 		if player_node.has_method("take_damage"):
 			player_node.take_damage(attack_damage,knockdown_direction)
 		animated_sprite.play("idle")
-		
+		if player_node.health<=0:
+			is_player_dead = true
 		can_damage = true
 		
 		update_debug_label("c dam")

@@ -248,7 +248,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func die():
-	animated_sprite.play("death")
+	sprite.play("death")
+	queue_free()
+	get_tree().change_scene_to_file("res://scene/global/retry.tscn")
+	
 	
 
 
