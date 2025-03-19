@@ -39,6 +39,7 @@ Attacks=""
 player=""
 damage=""
 main_camera=""
+real_mobs=""
 
 [importer_defaults]
 
