@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://sq854lsbmrwn"]
+[gd_scene load_steps=11 format=3 uid="uid://sq854lsbmrwn"]
 
 [ext_resource type="Script" path="res://script/shop.gd" id="1_8ucre"]
 [ext_resource type="Texture2D" uid="uid://h2sk87iyi1fy" path="res://assets/shop/hud.png" id="2_jvubp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://8satq25dtkbk" path="res://assets/shop/goldensword.png" id="6_t1f3b"]
 [ext_resource type="Texture2D" uid="uid://da00rsmelfie2" path="res://assets/shop/gold hammer.png" id="7_v2h7c"]
 [ext_resource type="Texture2D" uid="uid://qkrxxkid6kun" path="res://assets/shop/health_gain.png" id="8_e1laj"]
+[ext_resource type="Texture2D" uid="uid://c5eg62kksd1ls" path="res://scene/global/icon_path_follow.png" id="10_4ohb8"]
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_8ucre")
@@ -158,4 +159,19 @@ texture = ExtResource("3_koqw1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="exit" type="Button" parent="."]
+offset_left = 989.0
+offset_top = 674.0
+offset_right = 1020.0
+offset_bottom = 703.0
+
+[node name="IconPathFollow" type="Sprite2D" parent="exit"]
+position = Vector2(14.25, 15.4999)
+scale = Vector2(1.46875, 1.43751)
+texture = ExtResource("10_4ohb8")
+flip_h = true
+
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="shopitems/Gsword" to="." method="_on_gsword_pressed"]
+[connection signal="pressed" from="shopitems/Ghammer" to="." method="_on_ghammer_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

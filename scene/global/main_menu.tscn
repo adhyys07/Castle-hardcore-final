@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://8ms87mq81cuk"]
+[gd_scene load_steps=30 format=3 uid="uid://8ms87mq81cuk"]
 
 [ext_resource type="Script" path="res://script/main_menu.gd" id="1_u6vg6"]
 [ext_resource type="Texture2D" uid="uid://cqb4veq8mcrjb" path="res://assets/bgi.png" id="2_8h8nf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8okd7phknyc" path="res://assets/sheets/spr_Taunt_strip.png" id="5_5gw40"]
 [ext_resource type="Texture2D" uid="uid://vrwjhx65ns5b" path="res://assets/title/c2981d7225cd89496b49d2fdc9fec527.png" id="6_lgnvr"]
 [ext_resource type="Texture2D" uid="uid://b8k66vpe2nkux" path="res://assets/title/e488502890e1ccca7964fcaa6a923ab7.png" id="7_mwa0s"]
+[ext_resource type="Texture2D" uid="uid://c5eg62kksd1ls" path="res://scene/global/icon_path_follow.png" id="8_7x3hh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jp8b6"]
 texture = ExtResource("2_8h8nf")
@@ -214,4 +215,17 @@ position = Vector2(963, 344)
 scale = Vector2(1.15611, 1.22619)
 texture = ExtResource("7_mwa0s")
 
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 118.0
+offset_bottom = 115.0
+
+[node name="IconPathFollow" type="Sprite2D" parent="exit"]
+position = Vector2(56, 48)
+scale = Vector2(5.84375, 5.28125)
+texture = ExtResource("8_7x3hh")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

@@ -640,9 +640,5 @@ region_rect = Rect2(16, 16, 32, 8)
 [node name="bonuslvl_portal_in" parent="portals" instance=ExtResource("4_gtrhf")]
 position = Vector2(-373, -450)
 
-[node name="level_portal_14" parent="portals" instance=ExtResource("4_gtrhf")]
-position = Vector2(225, -309)
-
 [connection signal="pressed" from="Button14" to="." method="_on_button_14_pressed"]
 [connection signal="body_entered" from="portals/bonuslvl_portal_in" to="." method="_on_bonuslvl_portal_in_body_entered"]
-[connection signal="body_entered" from="portals/level_portal_14" to="." method="_on_level_portal_14_body_entered"]
