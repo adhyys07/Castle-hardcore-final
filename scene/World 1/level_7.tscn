@@ -165,10 +165,10 @@ tile_map_data = PackedByteArray("AAABAPD/AAAGAAEAAAAAAPL/AAAGAAEAAAAAAPT/AAAGAAE
 tile_set = SubResource("TileSet_vxh2p")
 
 [node name="Player" parent="." instance=ExtResource("2_6i4sf")]
-position = Vector2(274, 71)
+position = Vector2(402, 76)
 
 [node name="boss" parent="." instance=ExtResource("6_fdn04")]
-position = Vector2(389, 78)
+position = Vector2(452, 85)
 
 [node name="Label12" type="Label" parent="."]
 offset_right = 40.0
