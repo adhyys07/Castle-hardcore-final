@@ -3,12 +3,14 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @export var attack_delay: float = 0.5
 @export  var shake_duration: float = 0.2
-@export var  shake_intenskty: float = 5.0
+@export var  shake_intensity: float = 5.0
 @onready var hurtbox = $hurtbox
 @onready var attackzone = $attackzone
 @onready var attack_hitbox = $attack_hitbox
 @onready var debug_label = $Label
 @onready var attack_timer = $Timer
+
+var camera: Camera2D = null
 
 var is_player_dead = false
 var dealing_damage = false
@@ -24,6 +26,7 @@ var current_health
 var can_damage = true 
 
 func _ready():
+	camera = get_tree().get_first_node_in_group("main_camera")
 	current_health = health
 	attackzone.area_exited.connect(_on_attackzone_area_exited)
 	
@@ -100,6 +103,7 @@ func attack_loop():
 		can_damage = false
 		animated_sprite.play("attack")
 		await animated_sprite.animation_finished
+		screen_shake()
 		if player and player.health>0:
 			var knockback_direction = (global_position - player.global_position).normalized()
 			
@@ -149,3 +153,12 @@ func log_debug_message(msg):
 func _on_attack_hitbox_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		inside = false 
+
+func screen_shake():
+	if camera:
+		var shake_time = shake_duration
+		if shake_time >0:
+			camera.offset = Vector2(randf_range(-shake_intensity,shake_intensity), randf_range(-shake_intensity,shake_intensity))
+			await get_tree().create_timer(0.02).timeout
+			shake_time -= 0.02
+		camera.offset = Vector2.ZERO
