@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var healthbar = $hb_boss
 @export var attack_delay: float = 0.5
 @export  var shake_duration: float = 0.2
 @export var  shake_intensity: float = 5.0
@@ -21,7 +22,7 @@ var attack_damage = 50
 var is_attacking = false
 var player = null
 
-var health = 100
+var health = 200
 var current_health
 var can_damage = true 
 
@@ -76,6 +77,9 @@ func move_toward_player(delta):
 		
 func take_damage1(amount):
 	current_health -= amount
+	current_health = max(current_health,0)
+	healthbar._set_health(current_health)
+	healthbar.value = current_health
 	animated_sprite.play("hurt")
 	await animated_sprite.animation_finished
 	
