@@ -83,7 +83,7 @@ func take_damage1(amount):
 	animated_sprite.play("hurt")
 	await animated_sprite.animation_finished
 	
-	if current_health <= 0:
+	if health <= 0:
 		die()
 	else:
 		animated_sprite.play("idle")
@@ -94,6 +94,7 @@ func die():
 	await animated_sprite.animation_finished
 	
 	queue_free()
+	get_tree().change_scene_to_file("res://scene/global/won.tscn")
 	
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Attacks"):

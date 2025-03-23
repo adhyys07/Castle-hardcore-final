@@ -367,7 +367,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vp2b2")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 5.0
 }, {
@@ -478,7 +478,7 @@ script = ExtResource("1_efx0r")
 position = Vector2(60, -118)
 scale = Vector2(1.32639, 1.4625)
 sprite_frames = SubResource("SpriteFrames_20qm1")
-animation = &"hurt"
+animation = &"die"
 autoplay = "idle"
 
 [node name="attackzone" type="Area2D" parent="."]
