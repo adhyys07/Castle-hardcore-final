@@ -387,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5br25")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -475,10 +475,10 @@ size = Vector2(139, 68)
 script = ExtResource("1_efx0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(68, -117)
+position = Vector2(60, -118)
 scale = Vector2(1.32639, 1.4625)
 sprite_frames = SubResource("SpriteFrames_20qm1")
-animation = &"attack"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="attackzone" type="Area2D" parent="."]
@@ -486,7 +486,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
-position = Vector2(-104, -43)
+position = Vector2(-132, -46)
 shape = SubResource("RectangleShape2D_llbdn")
 debug_color = Color(0.992448, 0, 0.251883, 0.42)
 
@@ -498,7 +498,7 @@ debug_color = Color(0.932944, 0.259313, 0, 0.42)
 [node name="hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(70, -58)
+position = Vector2(54, -52)
 shape = SubResource("RectangleShape2D_jmk5h")
 
 [node name="attack_hitbox" type="Area2D" parent="."]
@@ -506,7 +506,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_hitbox"]
-position = Vector2(-46.5, -40)
+position = Vector2(-136, -37)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
 
@@ -519,12 +519,11 @@ justification_flags = 162
 one_shot = true
 
 [node name="hb_boss" parent="." instance=ExtResource("3_nhobn")]
-offset_left = -40.0
-offset_top = -161.0
-offset_right = 194.0
-offset_bottom = -153.0
-max_value = 200.0
-value = 0.0
+offset_left = -63.0
+offset_top = -163.0
+offset_right = 171.0
+offset_bottom = -155.0
+value = 200.0
 
 [connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
 [connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]

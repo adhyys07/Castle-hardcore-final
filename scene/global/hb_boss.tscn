@@ -25,11 +25,12 @@ offset_right = 575.0
 offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_1oo0o")
 theme_override_styles/fill = SubResource("StyleBoxFlat_gsv6w")
+max_value = 200.0
 value = 60.0
 show_percentage = false
 script = ExtResource("1_u6153")
 
-[node name="DamageBar" type="ProgressBar" parent="."]
+[node name="Damagebar" type="ProgressBar" parent="."]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15

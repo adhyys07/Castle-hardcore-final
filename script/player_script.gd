@@ -2,6 +2,14 @@ class_name Player extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var healthbar = $Healthbar
+'''attack'''
+@onready var attack_hitbox = $AttackArea
+@onready var hammer = $AttackArea/Hammer
+@onready var hammer2 = $AttackArea/Hammer2
+@onready var pierce = $AttackArea/Pierce
+@onready var pierce2 = $AttackArea/Pierce2
+@onready var spin_attack = $AttackArea/SpinAttack
+@onready var spin_attack2 = $AttackArea/SpinAttack2
 
 const JUMP_VELOCITY = -315.0
 @export var jump_force: float = -315.0
@@ -179,6 +187,48 @@ func _normal_movement(acceleration: float = Acceleration, decelaration: float = 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
 		body.Collect()
+		
+func attack_loop(attack_type: String):
+	if isAttacking :
+		return
+	isAttacking = true
+	
+	pierce.disabled = true
+	pierce2.disabled = true
+	hammer.disabled = true
+	hammer2.disabled = true
+	spin_attack.disabled = true
+	spin_attack2.disabled = true
+	
+	match attack_type:
+		"hammer":
+			sprite.play("hammer_attack")
+			hammer.disabled = false
+		"hammer2":
+			sprite.play("hammer_attack")
+			hammer2.disabled = false
+		"spin_attack2":
+			sprite.play("spin_attack")
+			spin_attack2.disabled = false
+		"spin_attack":
+			sprite.play("spin_attack")
+			spin_attack.disabled = false
+		"pierce2":
+			sprite.play("pierce_attack")
+			pierce2.disabled = false
+		"pierce":
+			sprite.play("pierce_attack")
+			pierce.disabled = false
+	await  sprite.animation_finished
+	
+	hammer.disabled = true
+	hammer2.disabled = true
+	spin_attack.disabled = true 
+	spin_attack2.disabled = true
+	pierce.disabled = true 
+	pierce2.disabled = true
+	
+	isAttacking = false
 
 func take_damage(amount,knockdown_direction):
 	#if dash.is_dashing(): return

@@ -28,7 +28,7 @@ var can_damage = true
 
 func _ready():
 	camera = get_tree().get_first_node_in_group("main_camera")
-	current_health = health
+
 	attackzone.area_exited.connect(_on_attackzone_area_exited)
 	
 	animated_sprite.play("idle")
@@ -76,10 +76,10 @@ func move_toward_player(delta):
 	is_attacking = false'''
 		
 func take_damage1(amount):
-	current_health -= amount
-	current_health = max(current_health,0)
-	healthbar._set_health(current_health)
-	healthbar.value = current_health
+	health -= amount
+	health = max(health,0)
+	healthbar._set_health(health)
+	healthbar.value = health
 	animated_sprite.play("hurt")
 	await animated_sprite.animation_finished
 	
@@ -95,9 +95,11 @@ func die():
 	
 	queue_free()
 	
-'''func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("player_attack"):
-		take_damage1(20)'''
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Attacks"):
+		player = area.get_parent()
+		if player and player.isAttacking:
+			take_damage1(20)
 	
 	 # Replace with function body.
 func attack_loop():
