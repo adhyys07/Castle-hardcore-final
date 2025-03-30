@@ -17,7 +17,7 @@ var is_player_dead = false
 var dealing_damage = false
 var inside = false
 
-var speed = 50
+var speed = 70
 var attack_damage = 50
 var is_attacking = false
 var player = null
@@ -35,9 +35,9 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	
-	if player and can_damage and  not is_player_dead:
+	if player and can_damage and not is_player_dead:
 		var distance = global_position.distance_to(player.global_position) 
-		if distance > 30:
+		if distance > 50:
 			move_toward_player(delta)
 		else:
 			velocity = Vector2.ZERO
@@ -94,7 +94,7 @@ func die():
 	await animated_sprite.animation_finished
 	
 	queue_free()
-	get_tree().change_scene_to_file("res://scene/global/won.tscn")
+	get_tree().change_scene_to_file("res://scene/World 1/level_7.tscn")
 	
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Attacks"):

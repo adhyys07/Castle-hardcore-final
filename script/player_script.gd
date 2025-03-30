@@ -172,18 +172,31 @@ func _movement_on_ice(direction):
 		if velocity.x < FullStopValue and velocity.x > -FullStopValue:
 			velocity.x = 0
 		
-func _normal_movement(acceleration: float = Acceleration, decelaration: float = Decelaration):
-	if !isAttacking && !isTaunting:
-		moveDirection = Input.get_axis("left", "right")
-		if moveDirection != 0:
-			velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Acceleration)
-			sprite.play("walk")
-			sprite.flip_h = direction < 1
-		else:
-			velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, Decelaration)
-			sprite.play("idle")
-		
+func _normal_movement(acceleration: float = Acceleration, deceleration: float = Decelaration):
+	moveDirection = Input.get_axis("left", "right")
 	
+	if moveDirection != 0:
+		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, acceleration)
+		sprite.flip_h = direction < 1
+		
+		# Check for attack animations while moving
+		if isAttacking:
+			match sprite.animation:
+				"pierce_attack":
+					sprite.play("pierce_attack")
+				"hammer_attack":
+					sprite.play("hammer_attack")
+				"spin_attack":
+					sprite.play("spin_attack")
+				_:
+					sprite.play("walk") # Default to walk if no specific attack is happening
+		else:
+			sprite.play("walk")  # Normal walk animation when not attacking
+	else:
+		velocity.x = move_toward(velocity.x, moveDirection * moveSpeed, deceleration)
+		if !isAttacking:
+			sprite.play("idle")
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Collectible"):
 		body.Collect()
