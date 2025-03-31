@@ -81,12 +81,13 @@ func take_damage1(amount):
 	healthbar._set_health(health)
 	healthbar.value = health
 	animated_sprite.play("hurt")
-	await animated_sprite.animation_finished
+	#await animated_sprite.animation_finished
 	
 	if health <= 0:
 		die()
 	else:
 		animated_sprite.play("idle")
+		attack_loop()
 	
 		
 func die():
@@ -110,6 +111,7 @@ func attack_loop():
 		can_damage = false
 		animated_sprite.play("attack")
 		await animated_sprite.animation_finished
+		move_toward_player(60)
 		screen_shake()
 		if player and player.health>0:
 			var knockback_direction = (global_position - player.global_position).normalized()
@@ -136,6 +138,7 @@ func _on_attackzone_area_entered(area: Area2D) -> void:
 func _on_attackzone_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		player = null
+		can_damage = false
 		
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 	

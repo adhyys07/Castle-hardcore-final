@@ -460,16 +460,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llbdn"]
-size = Vector2(318.25, 1)
+size = Vector2(542.25, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2byqr"]
-size = Vector2(139.75, 68)
+size = Vector2(710.75, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmk5h"]
 size = Vector2(69, 107.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvuw"]
-size = Vector2(139, 68)
+size = Vector2(139, 63.5)
 
 [node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_efx0r")
@@ -486,12 +486,12 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
-position = Vector2(-160.875, -1.5)
+position = Vector2(-272.875, -3)
 shape = SubResource("RectangleShape2D_llbdn")
 debug_color = Color(0.992448, 0, 0.251883, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="attackzone"]
-position = Vector2(187.125, -35)
+position = Vector2(472.625, -2)
 shape = SubResource("RectangleShape2D_2byqr")
 debug_color = Color(0.932944, 0.259313, 0, 0.42)
 
@@ -506,12 +506,12 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_hitbox"]
-position = Vector2(-71, -35)
+position = Vector2(-71, -36.5)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="attack_hitbox"]
-position = Vector2(187, -35)
+position = Vector2(187, -35.75)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
 
