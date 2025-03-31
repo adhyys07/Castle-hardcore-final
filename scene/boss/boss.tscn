@@ -469,7 +469,7 @@ size = Vector2(710.75, 2)
 size = Vector2(69, 107.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvuw"]
-size = Vector2(139, 63.5)
+size = Vector2(82.5, 47.25)
 
 [node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_efx0r")
@@ -478,8 +478,10 @@ script = ExtResource("1_efx0r")
 position = Vector2(60, -118)
 scale = Vector2(1.32639, 1.4625)
 sprite_frames = SubResource("SpriteFrames_20qm1")
-animation = &"hurt"
+animation = &"attack"
 autoplay = "idle"
+frame = 14
+frame_progress = 1.0
 
 [node name="attackzone" type="Area2D" parent="."]
 collision_layer = 2
@@ -506,12 +508,12 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_hitbox"]
-position = Vector2(-71, -36.5)
+position = Vector2(-42.75, -28.375)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="attack_hitbox"]
-position = Vector2(187, -35.75)
+position = Vector2(187, -26.75)
 shape = SubResource("RectangleShape2D_3nvuw")
 debug_color = Color(0.142047, 0.575145, 0.795086, 0.42)
 

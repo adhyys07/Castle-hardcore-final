@@ -102,6 +102,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		player = area.get_parent()
 		if player and player.isAttacking:
 			take_damage1(20)
+			attack_loop()
 	
 	 # Replace with function body.
 func attack_loop():
@@ -151,6 +152,8 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 			attack_loop()
 			
 
+			
+
 
 func update_debug_label(text: String):
 	if debug_label:
@@ -172,3 +175,14 @@ func screen_shake():
 			await get_tree().create_timer(0.02).timeout
 			shake_time -= 0.02
 		camera.offset = Vector2.ZERO
+
+
+func _on_attack_hitbox_area_exited(area: Area2D) -> void:
+		if area.is_in_group("player") and can_damage and not is_player_dead:
+			player = area.get_parent()
+			if player and player.health>0:
+				inside = false
+				can_damage = false
+				dealing_damage = false
+				attack_loop()
+			
