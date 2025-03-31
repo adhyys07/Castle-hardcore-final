@@ -94,7 +94,7 @@ func die():
 	await animated_sprite.animation_finished
 	
 	queue_free()
-	get_tree().change_scene_to_file("res://scene/World 1/level_7.tscn")
+	get_tree().change_scene_to_file("res://scene/World 2/w_2_level_1.tscn")
 	
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Attacks"):
@@ -157,9 +157,9 @@ func log_debug_message(msg):
 	label.text += msg + "\n"
 	
 
-func _on_attack_hitbox_area_exited(area: Area2D) -> void:
-	if area.is_in_group("player"):
-		inside = false 
+#func _on_attack_hitbox_area_exited(area: Area2D) -> void:
+#	if area.is_in_group("player"):
+#		inside = false 
 
 func screen_shake():
 	if camera:
