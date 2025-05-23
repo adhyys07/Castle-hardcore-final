@@ -24,6 +24,8 @@ Embark on a perilous journey through a treacherous castle filled with formidable
 - [Godot Engine](https://godotengine.org/)
 - GDScript
 
+## Play the latest version 
+- https://adhyys.itch.io/castle-hardcore
 ---
 
 
